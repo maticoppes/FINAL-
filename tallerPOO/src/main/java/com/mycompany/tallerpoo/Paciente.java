@@ -77,7 +77,7 @@ public class Paciente extends Persona { //extender de persona
 
         super(nombre, fechaNacimiento, domicilio, documento, telefoFijo, telefonoCelular, estadoCivil, correoElectronico);
         this.personaContacto = personaContacto;
-        this.motivo = motivo;
+        this.motivo = "";
         this.estudios = estudios;
         this.admisiones = admisiones;
     }

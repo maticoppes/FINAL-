@@ -126,7 +126,7 @@ public class ListaMedicos {
      *
      * @param archivo El nombre del archivo que contiene la información de los médicos.
      */    
-    public void leer(String archivo){
+    public ArrayList<Medico> leer(String archivo){
         
         try {
             BufferedReader reader= new BufferedReader (new FileReader(archivo));
@@ -165,6 +165,7 @@ public class ListaMedicos {
             ex.printStackTrace();
         }
         System.out.println(medicos.size());
+        return medicos;
     }
     /**
      * Sobrescribe el método `toString()` de la clase  para proporcionar una representación en forma de cadena
@@ -183,10 +184,6 @@ public class ListaMedicos {
      * @return El objeto `Medico` en la posición `i` de la lista, si existe.
      * @throws UnsupportedOperationException si la implementación actual no admite esta operación.
      */
-    Medico get(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
     
 
 }

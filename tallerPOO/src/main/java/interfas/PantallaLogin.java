@@ -40,9 +40,9 @@ public class PantallaLogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        txtUsuario1 = new javax.swing.JTextField();
+        txtUsuar = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtContrasenia1 = new javax.swing.JPasswordField();
+        txtContrasen = new javax.swing.JPasswordField();
         btnInicioSesion1 = new javax.swing.JButton();
 
         jRadioButton1.setText("jRadioButton1");
@@ -122,15 +122,20 @@ public class PantallaLogin extends javax.swing.JFrame {
 
         jLabel6.setText("Usuario");
 
-        txtUsuario1.addActionListener(new java.awt.event.ActionListener() {
+        txtUsuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuario1ActionPerformed(evt);
+                txtUsuarActionPerformed(evt);
             }
         });
 
         jLabel4.setText("Contraseña");
 
-        txtContrasenia1.setText("jPasswordField1");
+        txtContrasen.setText("jPasswordField1");
+        txtContrasen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtContrasenActionPerformed(evt);
+            }
+        });
 
         btnInicioSesion1.setText("Iniciar Sesion");
         btnInicioSesion1.addActionListener(new java.awt.event.ActionListener() {
@@ -143,21 +148,21 @@ public class PantallaLogin extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtUsuario1)
-                    .addComponent(txtContrasenia1)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel4))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(61, Short.MAX_VALUE)
                 .addComponent(btnInicioSesion1)
                 .addGap(62, 62, 62))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtContrasen)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel4))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(txtUsuar))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,11 +170,11 @@ public class PantallaLogin extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtUsuar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtContrasenia1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtContrasen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(btnInicioSesion1)
                 .addContainerGap(69, Short.MAX_VALUE))
@@ -216,17 +221,21 @@ public class PantallaLogin extends javax.swing.JFrame {
       
     }//GEN-LAST:event_btnInicioSesionActionPerformed
 
-    private void txtUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario1ActionPerformed
+    private void txtUsuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarActionPerformed
 
-    }//GEN-LAST:event_txtUsuario1ActionPerformed
+    }//GEN-LAST:event_txtUsuarActionPerformed
 
     private void btnInicioSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioSesion1ActionPerformed
 
         ValidarSesion control = new ValidarSesion();
-        control.sesion(txtUsuario.getText(), txtContrasenia.getText());
+        control.sesion(txtUsuar.getText(), txtContrasen.getText());
         dispose();
 
     }//GEN-LAST:event_btnInicioSesion1ActionPerformed
+
+    private void txtContrasenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtContrasenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,9 +253,9 @@ public class PantallaLogin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JPasswordField txtContrasen;
     private javax.swing.JPasswordField txtContrasenia;
-    private javax.swing.JPasswordField txtContrasenia1;
+    private javax.swing.JTextField txtUsuar;
     private javax.swing.JTextField txtUsuario;
-    private javax.swing.JTextField txtUsuario1;
     // End of variables declaration//GEN-END:variables
 }

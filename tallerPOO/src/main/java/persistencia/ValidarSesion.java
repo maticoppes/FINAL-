@@ -7,8 +7,11 @@ package persistencia;
 
 import interfas.PantallaAdminSist;
 import com.mycompany.tallerpoo.FuncionarioGeneral;
+import com.mycompany.tallerpoo.ListaMedicos;
 import java.awt.Component;
 import java.io.File;
+import com.mycompany.tallerpoo.ListaMedicos;
+import com.mycompany.tallerpoo.Medico;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -23,30 +26,33 @@ public class ValidarSesion {
 
     String barra = File.separator;
     // Ruta relativa a la carpeta "TallerPoovvvv/Registro" dentro del proyecto
-    String Ubicacion = System.getProperty("user.dir") + barra + "BaseDatos" + barra;
+    String Ubicacion = System.getProperty("user.dir")+barra+"Archivos" + barra+"Medicos.txt";
     private Component rootPane;
-    String[] documentos = new String[]{"Medico.txt", "Enfermero.txt", "AdminSistem.txt",
-        "GestorCentro.txt,Sector.txt"};
+    
+       
 
     public void sesion(String usuario, String contrasenia) {
-        for (int i = 0; i < documentos.length; i++) {
-            String archivo = (Ubicacion + documentos[i]);
+        
+            String archivo = (Ubicacion);
             File direccion = new File(archivo);
             if (usuario.equals("") || contrasenia.equals("")) {
                 JOptionPane.showMessageDialog(rootPane, "Complete los campos");
 
             } else {
-                if (direccion.exists()) {
+                System.out.println(archivo);
+             
                     try {
-                        LecturaDatosFuncionariosGenerales buscar = new LecturaDatosFuncionariosGenerales();
-                        ArrayList<FuncionarioGeneral> funci = buscar.leer(archivo);
-                        for (FuncionarioGeneral funcionario : funci) {
+                        
+                        ListaMedicos funci = new ListaMedicos();
+                        ArrayList <Medico> funca = funci.leer(archivo);
+                        
+                        for (Medico funcionario : funca) {
                             if (funcionario.getDocumento() == (Integer.parseInt(usuario))) {
                                 if (funcionario.getContrasenia().equals(contrasenia)) {
                                     
                                     Mostrar mostrar = new Mostrar();
                                     mostrar.valido();
-                                  continue;
+                                 
                                     
 
                                 }
@@ -59,13 +65,9 @@ public class ValidarSesion {
                         }
                     } catch (Exception e) {
                     }
-                } else {
-
-                    JOptionPane.showMessageDialog(rootPane, "Usuario y/o contraseña incorrecto");
-
-                }
+               
 
             }
-        }
+       
     }
 }

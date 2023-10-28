@@ -149,8 +149,8 @@ public class TallerPOO {
         
 //        System.out.println(lista);
 
-        BuscarEstFecha buscar=new BuscarEstFecha();
+        /*BuscarEstFecha buscar=new BuscarEstFecha();
         buscar.setVisible(true);
-        buscar.setLocationRelativeTo(null); 
+        buscar.setLocationRelativeTo(null); */
     }
 }
