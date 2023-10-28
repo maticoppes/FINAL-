@@ -21,6 +21,8 @@ public class GuardarDatosNuevoPacientes {
             escritor.newLine();
             escritor.close();
             
+            
+            
         } catch (IOException e) {
             System.err.println("Error al cargar datos en el archivo: " + e.getMessage());
         }

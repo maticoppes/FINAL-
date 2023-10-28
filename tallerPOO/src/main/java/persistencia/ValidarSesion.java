@@ -45,24 +45,22 @@ public class ValidarSesion {
             try {
                 while (linea != null) {
                     String[] split = linea.split(",");
-                    Medico funci = new Medico();
+                    FuncionarioGeneral funci = new FuncionarioGeneral();
                     funci.setDocumento(Integer.parseInt(split[0]));
                     funci.setContrasenia(split[11]);
 
                     if (funci.getDocumento() == (Integer.parseInt(usuario)) && funci.getContrasenia().equals(contrasenia)) {
-
                         Mostrar mostrar = new Mostrar();
-                        mostrar.valido();
+                        mostrar.valido(split[9]);
                         break;
-
                     } else {
+                        linea = reader.readLine();
 
-                        JOptionPane.showMessageDialog(rootPane, "Usuario y/o contraseña incorrecto");
-                        break;
                     }
 
                 }
             } catch (Exception e) {
+                JOptionPane.showMessageDialog(rootPane, "Usuario y/o contraseña incorrecto");
             }
 
         }

@@ -9,6 +9,7 @@ import com.mycompany.tallerpoo.FuncionarioGeneral;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import persistencia.GuardarDatosNuevoPacientes;
 import persistencia.RegistrarDatosNuevoPaciente;
 
 /**
@@ -269,7 +270,7 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
         txtTelCel.getText()+","+txtEstadoCivil.getText()+","+txtPersonaCont.getText()+","+
         txtContrasenia.getText()+","+txtRol.getText()+","+txtContrasenia.getText()+ ","+txtSector.getText();
-        RegistrarDatosNuevoFuncionario cargar = new RegistrarDatosNuevoFuncionario();
+        GuardarDatosNuevoPacientes cargar = new GuardarDatosNuevoPacientes();
         cargar.Carga(lugar, datos);
     }//GEN-LAST:event_btnCargarActionPerformed
 

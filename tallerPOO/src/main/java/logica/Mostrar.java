@@ -22,37 +22,34 @@ public class Mostrar {
     String barra = File.separator;
     String ubicacion = System.getProperty("user.dir") + barra + "Archivos" + barra + "Medicos.txt";
 
-    public void valido() throws IOException {
+    public void valido(String rol) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(ubicacion));
         String linea = reader.readLine();
 
         while (linea != null) {
-            String[] split = linea.split(",");
-            Medico roles = new Medico();
-            roles.setRol(split[9]);
-                
-            if (roles.getRol().equals("Medico")) {
+            String[] split = linea.split(",");             
+            if (rol.equals("Medico")) {
                 InterfazDoc doc = new InterfazDoc();
                 doc.setVisible(true);
                 doc.setLocationRelativeTo(null);
                 System.out.println("a");
                 break;
             } else {
-                if (roles.getRol().equals("Enfermero")) {
+                if (rol.equals("Enfermero")) {
                     InterfazEnferm doc = new InterfazEnferm();
                     doc.setVisible(true);
                     doc.setLocationRelativeTo(null);
                      System.out.println("b");
                     break;
                 } else {
-                    if (roles.getRol().equals("Administrador de Sistemas")) {
+                    if (rol.equals("Administrador de Sistemas")) {
                         PantallaAdminSist doc = new PantallaAdminSist();
                         doc.setVisible(true);
                         doc.setLocationRelativeTo(null);
                          System.out.println("c");
                         break;
                     } else {
-                        if (roles.getRol().equals("Sector")) {
+                        if (rol.equals("Sector")) {
                             IngresoDNI doc = new IngresoDNI();
                             doc.setVisible(true);
                             doc.setLocationRelativeTo(null);
