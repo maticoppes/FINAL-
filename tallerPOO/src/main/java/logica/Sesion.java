@@ -13,6 +13,7 @@ public class Sesion {
     // Ruta relativa a la carpeta "TallerPoovvvv/Registro" dentro del proyecto
     String Ubicacion = System.getProperty("user.dir") + barra + "BaseDatos" + barra;
     private Component rootPane;
+    String patron = "\\d{7,8}";
 
     public void sesion(String usuario, String contrasenia) {
 
@@ -22,34 +23,39 @@ public class Sesion {
             JOptionPane.showMessageDialog(rootPane, "Complete los campos");
 
         } else {
-            if (direccion.exists()) {
-                try {
-
-                    FileInputStream aValidar = new FileInputStream(direccion);
-                    Properties validar = new Properties();
-                    validar.load(aValidar);
-                    String contraseniA = validar.getProperty("Contraseña");
-                    if (contraseniA.equals(contrasenia)) {
-
-                        //ControlLogin control = new ControlLogin();
-                        PantallaAdminSist control = new PantallaAdminSist();
-                        //control.rol(usuario);
-                        control.setVisible(true);
-                        control.setLocationRelativeTo(null);
-                    } else {
-
-                        JOptionPane.showMessageDialog(rootPane, "Usuario y/o contraseña incorrecto");
-                    }
-                } catch (Exception e) {
-                }
+            if (usuario != patron) {
+                JOptionPane.showMessageDialog(rootPane, "Ingrese el usuario en un formato valido");
             } else {
 
-                JOptionPane.showMessageDialog(rootPane, "Usuario y/o contraseña incorrecto");
+                if (direccion.exists()) {
+                    try {
+
+                        FileInputStream aValidar = new FileInputStream(direccion);
+                        Properties validar = new Properties();
+                        validar.load(aValidar);
+                        String contraseniA = validar.getProperty("Contraseña");
+                        if (contraseniA.equals(contrasenia)) {
+
+                            //ControlLogin control = new ControlLogin();
+                            PantallaAdminSist control = new PantallaAdminSist();
+                            //control.rol(usuario);
+                            control.setVisible(true);
+                            control.setLocationRelativeTo(null);
+                        } else {
+
+                            JOptionPane.showMessageDialog(rootPane, "Usuario y/o contraseña incorrecto");
+                        }
+                    } catch (Exception e) {
+                    }
+                } else {
+
+                    JOptionPane.showMessageDialog(rootPane, "Usuario y/o contraseña incorrecto");
+
+                }
 
             }
 
         }
 
     }
-
 }

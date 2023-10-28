@@ -5,6 +5,8 @@
  */
 package interfas;
 
+import persistencia.ValidarSesion;
+
 /**
  *
  * @author Alumno
@@ -40,7 +42,6 @@ public class PantallaLogin extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         txtUsuario1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        btnLogin1 = new javax.swing.JButton();
         txtContrasenia1 = new javax.swing.JPasswordField();
         btnInicioSesion1 = new javax.swing.JButton();
 
@@ -129,13 +130,6 @@ public class PantallaLogin extends javax.swing.JFrame {
 
         jLabel4.setText("Contraseña");
 
-        btnLogin1.setText("Registrar");
-        btnLogin1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogin1ActionPerformed(evt);
-            }
-        });
-
         txtContrasenia1.setText("jPasswordField1");
 
         btnInicioSesion1.setText("Iniciar Sesion");
@@ -161,13 +155,9 @@ public class PantallaLogin extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(52, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnInicioSesion1)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(btnLogin1)))
-                .addGap(71, 71, 71))
+                .addContainerGap(61, Short.MAX_VALUE)
+                .addComponent(btnInicioSesion1)
+                .addGap(62, 62, 62))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,11 +170,9 @@ public class PantallaLogin extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtContrasenia1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(32, 32, 32)
                 .addComponent(btnInicioSesion1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(btnLogin1)
-                .addGap(23, 23, 23))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -219,26 +207,18 @@ public class PantallaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        registrar();
+        
 
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioSesionActionPerformed
 
-        ValidarSesion control = new ValidarSesion();
-        control.sesion(txtUsuario.getText(), txtContrasenia.getText());
-        dispose();
-
+      
     }//GEN-LAST:event_btnInicioSesionActionPerformed
 
     private void txtUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario1ActionPerformed
 
     }//GEN-LAST:event_txtUsuario1ActionPerformed
-
-    private void btnLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogin1ActionPerformed
-        registrar();
-
-    }//GEN-LAST:event_btnLogin1ActionPerformed
 
     private void btnInicioSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioSesion1ActionPerformed
 
@@ -251,43 +231,11 @@ public class PantallaLogin extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PantallaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PantallaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PantallaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PantallaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PantallaLogin().setVisible(true);
-            }
-        });
-    }
-
+  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInicioSesion;
     private javax.swing.JButton btnInicioSesion1;
     private javax.swing.JButton btnLogin;
-    private javax.swing.JButton btnLogin1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

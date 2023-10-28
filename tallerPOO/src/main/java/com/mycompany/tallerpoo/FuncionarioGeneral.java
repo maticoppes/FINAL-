@@ -2,6 +2,8 @@
 package com.mycompany.tallerpoo;
 
 import java.time.LocalDate;
+import persistencia.LecturaDatosFuncionariosGenerales;
+import java.util.ArrayList;
 
 /**
  *
@@ -50,5 +52,10 @@ public class FuncionarioGeneral extends Persona{
         this.contrasenia = contrasenia;
     }
     
+    public ArrayList<FuncionarioGeneral> leer(String ubicacion){
+        LecturaDatosFuncionariosGenerales algo = new LecturaDatosFuncionariosGenerales();
+        algo.leer(ubicacion);
+        return null;
+    }
     
 }

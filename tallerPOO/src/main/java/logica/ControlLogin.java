@@ -10,15 +10,15 @@ public class ControlLogin {
     // Ruta relativa a la carpeta "TallerPoovvvv/Registro" dentro del proyecto
     String Ubicacion = System.getProperty("user.dir") + barra + "BaseDatos"+barra+"Roles"+barra+"Medico"+barra;
     private Component rootPane;
+     String patron = "\\d{7,8}";
     public void rol(String usuario){
         
         //obtengo el nombre del usuario dentro del archivo
         File direccion = new File(Ubicacion + usuario+ ".txt" );
             if(direccion.exists()){
- 
-                    OpcionesDoc cambio = new OpcionesDoc();
-                    cambio.setVisible(true);
-                    cambio.setLocationRelativeTo(null);
+                   Mostrar mostrar = new Mostrar();
+                   mostrar.valido();
+                  
             }else{
                 
                 JOptionPane.showMessageDialog(rootPane, "Personal sin autorizacion");

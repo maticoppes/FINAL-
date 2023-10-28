@@ -123,7 +123,6 @@ public class Medico extends Persona{
      * @param pulso
      * @param estadoMental
      * @param conciencia
-     * @param dificultadRespiracion
      * @param lesionesGraves
      * @param edad
      * @param fiebre
