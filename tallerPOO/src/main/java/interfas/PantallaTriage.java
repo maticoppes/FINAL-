@@ -27,9 +27,9 @@ public class PantallaTriage extends javax.swing.JFrame {
         
         }
    
-     public void cargar(int algo){
+     public void cargar(String algo){
        System.out.println(algo);
-       resultado.setText(algo);
+       txtColorSugerido.setText(algo);
    }    
    
    public void pasar(String [] array){
@@ -50,7 +50,7 @@ public class PantallaTriage extends javax.swing.JFrame {
         lesionesGraves = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         lesionesLeves = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
+        txtColorFinal = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         pulso = new javax.swing.JComboBox<>();
@@ -59,7 +59,7 @@ public class PantallaTriage extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         estadoMental = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
-        resultado = new javax.swing.JTextField();
+        txtColorSugerido = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         dolorAbdomen = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
@@ -75,11 +75,11 @@ public class PantallaTriage extends javax.swing.JFrame {
         btnaceptar = new javax.swing.JButton();
         btnCarga = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        txtMotivodeCambio = new javax.swing.JTextField();
+        Fecha = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        Hora = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         fiebre1 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
@@ -133,6 +133,8 @@ public class PantallaTriage extends javax.swing.JFrame {
 
         jLabel11.setText("Color final");
 
+        txtColorSugerido.setEditable(false);
+
         jLabel13.setText("Dolor abdominal");
 
         dolorAbdomen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nopresente", "Moderado", "Severo" }));
@@ -178,13 +180,13 @@ public class PantallaTriage extends javax.swing.JFrame {
 
         jLabel18.setText("Ingrese el motivo del cambio;");
 
-        jTextField4.setText("aaaa/mm/dd");
+        Fecha.setText("aaaa/mm/dd");
 
         jLabel19.setText("Fecha");
 
         jLabel20.setText("Hora");
 
-        jTextField5.setText("hh:mm");
+        Hora.setText("hh:mm");
 
         jLabel21.setText("Sangrado");
 
@@ -223,15 +225,15 @@ public class PantallaTriage extends javax.swing.JFrame {
                                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lesionesLeves, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel4)
-                                    .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtColorSugerido, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel19))
                                 .addGap(18, 18, 18)
                                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Hora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel11)
                                     .addComponent(estadoMental, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtColorFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel20)))
                             .addGroup(pLayout.createSequentialGroup()
                                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,7 +283,7 @@ public class PantallaTriage extends javax.swing.JFrame {
                                                 .addComponent(btnCarga)
                                                 .addGap(32, 32, 32)
                                                 .addComponent(jButton1))
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(txtMotivodeCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addComponent(jLabel9))))
                 .addContainerGap(67, Short.MAX_VALUE))
         );
@@ -341,20 +343,20 @@ public class PantallaTriage extends javax.swing.JFrame {
                     .addGroup(pLayout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtColorFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtColorSugerido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel19)
                             .addComponent(jLabel20)))
                     .addGroup(pLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtMotivodeCambio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Hora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnaceptar)
                         .addComponent(btnCarga)
                         .addComponent(jButton1)))
@@ -410,10 +412,19 @@ public class PantallaTriage extends javax.swing.JFrame {
             shockk,lesionesLev,estadoMen,concienciaa,vomitoss,sangra};
         pasar(lista);
         
+        
        
     }//GEN-LAST:event_btnaceptarActionPerformed
 
     private void btnCargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargaActionPerformed
+        String colorSugerida=txtColorSugerido.getText();
+        String colorfinal=txtColorFinal.getText();
+        String motivo=txtMotivodeCambio.getText();
+        String fecha=Fecha.getText();
+        String Hola =Hora.getText();
+        
+        String [] triage = new String[]{colorSugerida, colorfinal, motivo, fecha, Hola};
+        
         
     }//GEN-LAST:event_btnCargaActionPerformed
 
@@ -427,6 +438,8 @@ public class PantallaTriage extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Fecha;
+    private javax.swing.JTextField Hora;
     private javax.swing.JButton btnCarga;
     private javax.swing.JButton btnaceptar;
     private javax.swing.JComboBox<String> conciencia;
@@ -457,18 +470,16 @@ public class PantallaTriage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JComboBox<String> lesionesGraves;
     private javax.swing.JComboBox<String> lesionesLeves;
     private javax.swing.JPanel p;
     private javax.swing.JComboBox<String> pulso;
     private javax.swing.JComboBox<String> respiracion;
-    private javax.swing.JTextField resultado;
     private javax.swing.JComboBox<String> sangrado;
     private javax.swing.JComboBox<String> shock;
+    private javax.swing.JTextField txtColorFinal;
+    private javax.swing.JTextField txtColorSugerido;
+    private javax.swing.JTextField txtMotivodeCambio;
     private javax.swing.JComboBox<String> vomitos;
     // End of variables declaration//GEN-END:variables
 }

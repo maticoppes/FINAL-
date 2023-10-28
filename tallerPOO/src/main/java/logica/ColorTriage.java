@@ -128,8 +128,9 @@ public class ColorTriage {
             
             PantallaTriage a = new PantallaTriage();
             if(resultado == 0){
-            a.cargar(Integer.toString(resultado));
+            a.cargar("Verde");
             }
+           
             
         
         
@@ -138,12 +139,11 @@ public class ColorTriage {
         
         
 
-      
-      
-      
+        }
     }
-    
 }
-}
+
+
+
         
 

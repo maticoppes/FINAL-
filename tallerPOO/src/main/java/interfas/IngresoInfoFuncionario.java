@@ -5,7 +5,9 @@
  */
 package interfas;
 
+import com.mycompany.tallerpoo.FuncionarioGeneral;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import persistencia.CargarDatosNuevoPaciente;
 
@@ -77,7 +79,6 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         jLabel14 = new javax.swing.JLabel();
         txtCorreoElec1 = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
-        txtApellido = new javax.swing.JTextField();
 
         jPanel1.setPreferredSize(new java.awt.Dimension(700, 300));
 
@@ -123,18 +124,15 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2)
-                    .addComponent(txtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                     .addComponent(jLabel4)
-                    .addComponent(txtDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDomicilio, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                     .addComponent(jLabel5)
-                    .addComponent(txtRol, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtRol, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                     .addComponent(jLabel3)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtNombre))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
@@ -187,7 +185,6 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
                     .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -223,7 +220,7 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
                             .addComponent(txtContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                         .addComponent(btnCargar)
                         .addGap(14, 14, 14))))
         );
@@ -253,7 +250,7 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 729, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,11 +260,10 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
 
     private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
 
-        String datos=txtNombre.getText()+","+txtApellido.getText()+","+ txtDni.getText()+","+
+        ArrayList <FuncionarioGeneral> datos = txtNombre.getText()+","+ txtDni.getText()+","+
         txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
         txtTelCel.getText()+","+txtEstadoCivil.getText()+","+txtPersonaCont.getText()+","+
-        txtContrasenia.getText()+","+txtRol.getText()+","+txtContrasenia.getText()+
-                ","+txtSector.getText();
+        txtContrasenia.getText()+","+txtRol.getText()+","+txtContrasenia.getText()+ ","+txtSector.getText();
         direccion(txtRol.getText(), txtSector.getText());
         CargarDatosNuevoPaciente cargar = new CargarDatosNuevoPaciente();
         cargar.Carga(lugar, datos);
@@ -291,7 +287,6 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtContrasenia;
     private javax.swing.JTextField txtCorreoElec1;
     private javax.swing.JTextField txtDni;
