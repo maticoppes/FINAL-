@@ -28,9 +28,12 @@ public class SectorAdmision extends FuncionarioGeneral{
      * @param telefonoCelular telefono celular
      * @param estadoCivil estado civil
      * @param correoElectronico correo electronico
+     * @param rol
+     * @param sector
+     * @param contrasenia
      */
-    public SectorAdmision(String nombre, LocalDate fechaNacimiento, String domicilio, int documento, int telefoFijo, int telefonoCelular, String estadoCivil, String correoElectronico) {
-        super(nombre, fechaNacimiento, domicilio, documento, telefoFijo, telefonoCelular, estadoCivil, correoElectronico);
+    public SectorAdmision(String nombre, LocalDate fechaNacimiento, String domicilio, int documento, int telefoFijo, int telefonoCelular, String estadoCivil, String correoElectronico, String rol,String sector,String contrasenia) {
+        super(nombre, fechaNacimiento, domicilio, documento, telefoFijo, telefonoCelular, estadoCivil, correoElectronico, rol, sector, contrasenia);
     }
     
     /**
@@ -73,14 +76,15 @@ public class SectorAdmision extends FuncionarioGeneral{
      * @param estadoCivil
      * @param correoElectronico
      * @param personaContacto
+     * @param motivo
      * @return Objeto tipo paciente con los datos pasados por parametro.
      */
     public Paciente registrarPaciente(String nombre, LocalDate fechaNacimiento, String domicilio,
                                       int documento, int telefoFijo, int telefonoCelular, 
                                       String estadoCivil, String correoElectronico,
-                                      String personaContacto){
+                                      String personaContacto,String motivo){
         
-        Paciente paci=new Paciente(nombre, fechaNacimiento, domicilio, documento, telefoFijo, telefonoCelular, estadoCivil, correoElectronico, personaContacto);
+        Paciente paci=new Paciente(nombre, fechaNacimiento, domicilio, documento, telefoFijo, telefonoCelular, estadoCivil, correoElectronico, personaContacto,motivo);
         
         DatosTaller.agregarPaciente(paci);
         

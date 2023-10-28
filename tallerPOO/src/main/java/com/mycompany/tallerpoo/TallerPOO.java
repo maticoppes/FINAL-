@@ -4,8 +4,8 @@ package com.mycompany.tallerpoo;
  *
  * @author 54345
  */
-import Interfas.MenuGestorCentro;
-import InterfazUsuario.*;
+
+import interfas.*;
 import static com.mycompany.tallerpoo.ManejoArchivos.*;
 import static com.mycompany.tallerpoo.RegistroMedico.CalcularPacPorEdadesyFechas;
 import static com.mycompany.tallerpoo.RegistroMedico.calcularMasConsPorFecha;
@@ -22,7 +22,7 @@ public class TallerPOO {
 
     public static void main(String[] args) throws IOException {        
        
-        Medico medi=new Medico("Lucas Nuñez",LocalDate.of(2022,1,1),"Alegria 123",44092390,4438354,3454343,"Soltero","lucasmagiconunez@gmail.com",7827);
+        //Medico medi=new Medico("Lucas Nuñez",LocalDate.of(2022,1,1),"Alegria 123",44092390,4438354,3454343,"Soltero","lucasmagiconunez@gmail.com",7827);
         LocalDate fecha1 = LocalDate.of(2000, 7, 15);
         LocalDate fecha2 = LocalDate.of(2025, 10, 24);
        
@@ -70,7 +70,7 @@ public class TallerPOO {
         LocalTime hora=LocalTime.of(1, 2,3);
         AdmisionDeEmergencia admi=new AdmisionDeEmergencia(fecha1, hora, "ahsdsa");
         
-        medi.hacerTriage(1, 1, 1, 1, 1, 1 ,1, 1, 1, 1, 1, 1,admi);
+        //medi.hacerTriage(1, 1, 1, 1, 1, 1 ,1, 1, 1, 1, 1, 1,admi);
         /////////////////////////////////////////////////////////////////////
         /*
         DatosTaller.setTriages(prueba);
@@ -140,7 +140,7 @@ public class TallerPOO {
        
        
         //////////////////////////////////////////////////////////////////////////////////////           
-        MenuGestorCentro abc=new MenuGestorCentro();
+        PantallaLogin abc=new PantallaLogin();
         abc.setVisible(true);
         abc.setLocationRelativeTo(null);
         
