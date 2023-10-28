@@ -18,27 +18,48 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * La clase `ListaTriage` almacena una lista de objetos `Triage` y proporciona
+ * métodos para gestionar estos objetos, como agregar, eliminar, leer desde un archivo y 
+ * escribir en un archivo. También permite asociar triajes con admisiones de emergencia.
+ * 
  * @author Matias
  */
 public class ListaTriage {
     ArrayList<Triage> triages;
-
+    
+    /**
+     * Constructor parametrizado de la clase `ListaTriage`.
+     *
+     * @param triages La lista de triajes a almacenar.
+     */
 
     public ListaTriage(ArrayList<Triage> triages) {
         this.triages = triages;
     }
 
+    /**
+     * Constructor por defecto de la clase `ListaTriage`. Inicializa una lista vacía de triajes.
+     */    
     public ListaTriage() {
         this.triages= new ArrayList<Triage>();        
     }
     
-    
+    /**
+     * Agrega un objeto `Triage` a la lista de triajes.
+     *
+     * @param tri El objeto `Triage` a agregar.
+     */
     
     public void agregar (Triage tri) {
         triages.add(tri);
     }
     
+    /**
+     * Elimina un objeto `Triage` de la lista de triajes.
+     *
+     * @param tri El objeto `Triage` a eliminar.
+     * @return `true` si se eliminó con éxito, `false` si no se encontró en la lista.
+     */    
     public boolean eliminar (Triage tri) {
         if (triages.contains(tri)) {
             triages.remove(tri);
@@ -46,6 +67,14 @@ public class ListaTriage {
         }
         return false;
     }
+    
+    /**
+     * Escribe un objeto `Triage` en un archivo específico, junto con la información
+     * de la admisión de emergencia asociada.
+     *
+     * @param archivoNombre La ruta del archivo donde se escribirá el triaje.
+     * @param triage El objeto `Triage` a escribir en el archivo.
+     */
     public void agregarArchivo(String archivoNombre, Triage triage){
         PrintWriter salida= null;
         try {
@@ -62,7 +91,13 @@ public class ListaTriage {
             salida.close();
         } 
     }
-       
+
+    /**
+     * Lee los triajes desde un archivo y los almacena en la lista.
+     *
+     * @param archivo La ruta del archivo a leer.
+     * @throws IOException Si ocurre un error de lectura del archivo.
+     */    
     public void leer (String archivo) throws IOException {
         
         Triage tri; 
@@ -99,6 +134,13 @@ public class ListaTriage {
                 System.out.println(triages.size());
                 }
     
+    /**
+     * Escribe información de admisión de emergencia en un archivo.
+     *
+     * @param archivoNombre La ruta del archivo donde se escribirá la información de admisión.
+     * @param admi La admisión de emergencia a escribir en el archivo.
+     */    
+    
     public void agregarAlArchivo(String archivoNombre, AdmisionDeEmergencia admi){
         PrintWriter salida= null;
         try {
@@ -115,6 +157,12 @@ public class ListaTriage {
         }
     }
 
+    /**
+     * Devuelve una representación en forma de cadena de la lista de triajes.
+     *
+     * @return La representación en cadena de la lista de triajes.
+     */    
+    
     @Override
     public String toString() {
         return "ListaTriage{" + "triages=" + triages + '}';
