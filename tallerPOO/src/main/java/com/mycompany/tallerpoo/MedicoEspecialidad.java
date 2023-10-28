@@ -15,6 +15,11 @@ public class MedicoEspecialidad {
     private Medico medico;
     private Especialidad especialidad;    
     
+    /**
+     * Constructor parametrizado de la clase.
+     * @param fecha
+     * @param Universidad 
+     */
     public MedicoEspecialidad(LocalDate fecha, String Universidad) {
         this.fecha = fecha;
         this.Universidad = Universidad;
