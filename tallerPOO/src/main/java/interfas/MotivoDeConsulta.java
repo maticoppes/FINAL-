@@ -5,7 +5,7 @@
  */
 package interfas;
 import java.io.File;
-import persistencia.CargarDatosNuevoPaciente;
+import persistencia.RegistrarDatosNuevoPaciente;
 /**
  *
  * @author Alumno
@@ -161,7 +161,7 @@ public class MotivoDeConsulta extends javax.swing.JFrame {
 
         String datos = txtDni.getText()+","+txtFech.getText() +","+ txtHora.getText()+","+
            txtMotivo.getText();
-           CargarDatosNuevoPaciente cargar = new CargarDatosNuevoPaciente();
+           RegistrarDatosNuevoPaciente cargar = new RegistrarDatosNuevoPaciente();
            cargar.Carga(ubicacion, datos);
            this.dispose();
        SeleccionPacienteConsulta l = new SeleccionPacienteConsulta();

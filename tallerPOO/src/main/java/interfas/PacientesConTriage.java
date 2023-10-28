@@ -13,7 +13,7 @@ import com.mycompany.tallerpoo.Paciente;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
-import persistencia.CargarDatosPacientesConsultas;
+import persistencia.CargarDatosPacientesConsultasTabla;
 
 /**
  *
@@ -49,7 +49,7 @@ public class PacientesConTriage extends javax.swing.JFrame {
 
     private void llamar() {
 
-        CargarDatosPacientesConsultas pac = new CargarDatosPacientesConsultas();
+        CargarDatosPacientesConsultasTabla pac = new CargarDatosPacientesConsultasTabla();
 
         try {
             ArrayList<Paciente> pacientes = pac.leer(Ubicacion);

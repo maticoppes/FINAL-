@@ -76,14 +76,14 @@ public class TallerPOO {
 //        
 //        medi.hacerTriage(1, 1, 1, 1, 1, 1 ,1, 1, 1, 1, 1, 1,admi);
 //        /////////////////////////////////////////////////////////////////////
-        /*
-        DatosTaller.setTriages(prueba);
+        
+        /*DatosTaller.setTriages(prueba);
                 AdmisionDeEmergencia admision2 = new AdmisionDeEmergencia(
             LocalDate.of(2023, 10, 26),
             LocalTime.of(15, 30,30),
             "Dolor en el pecho", Paciente,Triage);
         
-        
+        */
         //listaAdmisiones.agregar(primera);
         //listaAdmisiones.agregarAlArchivo("Archivos/Admisiones.txt", primera);
         ListaAdmisiones adm = DatosTaller.getAdmisiones();        
@@ -92,7 +92,7 @@ public class TallerPOO {
         for (AdmisionDeEmergencia paciente : adm.getAdmisiones()) {
             System.out.println("Fecha de admision: " + paciente.getFecha());
         }
-        */
+        
         
         
         /////////////////////////////////////////////////////////

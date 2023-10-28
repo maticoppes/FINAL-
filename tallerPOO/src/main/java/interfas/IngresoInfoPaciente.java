@@ -5,7 +5,7 @@
  */
 package interfas;
 
-import persistencia.CargarDatosNuevoPaciente;
+import persistencia.RegistrarDatosNuevoPaciente;
 
 /**
  *

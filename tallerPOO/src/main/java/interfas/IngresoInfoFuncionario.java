@@ -9,7 +9,7 @@ import com.mycompany.tallerpoo.FuncionarioGeneral;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
-import persistencia.CargarDatosNuevoPaciente;
+import persistencia.RegistrarDatosNuevoPaciente;
 
 /**
  *
@@ -17,8 +17,8 @@ import persistencia.CargarDatosNuevoPaciente;
  */
 public class IngresoInfoFuncionario extends javax.swing.JPanel {
     String barra = File.separator;
-    String ubicacion= System.getProperty("user.dir")+barra+"BaseDatos"+barra+
-            "Funcionarios";
+    String ubicacion= System.getProperty("user.dir")+barra+"Archivos"+barra+
+            "aaaaaaaaa.txt";
     String [] archivo = {"Medicos.txt","Enfermeros.txt", "GestorCentro.txt",
         "AdminSistemas.txt", "Sector.txt" }; 
     String lugar ="";
@@ -260,12 +260,16 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
 
     private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
 
-        ArrayList <FuncionarioGeneral> datos = txtNombre.getText()+","+ txtDni.getText()+","+
+        /*ArrayList <FuncionarioGeneral> datos = txtNombre.getText()+","+ txtDni.getText()+","+
         txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
         txtTelCel.getText()+","+txtEstadoCivil.getText()+","+txtPersonaCont.getText()+","+
         txtContrasenia.getText()+","+txtRol.getText()+","+txtContrasenia.getText()+ ","+txtSector.getText();
-        direccion(txtRol.getText(), txtSector.getText());
-        CargarDatosNuevoPaciente cargar = new CargarDatosNuevoPaciente();
+        direccion(txtRol.getText(), txtSector.getText());*/
+        String datos =  txtDni.getText()+";"+txtNombre.getText()+","+","+
+        txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
+        txtTelCel.getText()+","+txtEstadoCivil.getText()+","+txtPersonaCont.getText()+","+
+        txtContrasenia.getText()+","+txtRol.getText()+","+txtContrasenia.getText()+ ","+txtSector.getText();
+        RegistrarDatosNuevoFuncionario cargar = new RegistrarDatosNuevoFuncionario();
         cargar.Carga(lugar, datos);
     }//GEN-LAST:event_btnCargarActionPerformed
 

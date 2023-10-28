@@ -8,7 +8,7 @@ package interfas;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
-import persistencia.CargarDatosNuevoPaciente;
+import persistencia.RegistrarDatosNuevoPaciente;
 
 /**
  *
@@ -16,8 +16,7 @@ import persistencia.CargarDatosNuevoPaciente;
  */
 public class RegistrarNuevoPaciente extends javax.swing.JFrame {
      String barra= File.separator;
-    String ubicacion = System.getProperty("user.dir")+barra+"BaseDatos"+barra+
-            "Pacientes"+barra+"PacientesEnElSitema.txt";
+    String ubicacion = System.getProperty("user.dir")+barra+"Archivos"+barra+"PacientesEnElSitema.txt";
     public RegistrarNuevoPaciente() {
         initComponents();
     }
@@ -385,7 +384,7 @@ public class RegistrarNuevoPaciente extends javax.swing.JFrame {
         txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
         txtTelCel.getText()+","+txtEstadoCivil.getText()+","+txtPersonaCont.getText()+","+
         txtCorreoElec.getText();
-        CargarDatosNuevoPaciente cargar = new CargarDatosNuevoPaciente();
+        RegistrarDatosNuevoPaciente cargar = new RegistrarDatosNuevoPaciente();
         cargar.Carga(ubicacion, datos);
     }//GEN-LAST:event_jButton1ActionPerformed
 

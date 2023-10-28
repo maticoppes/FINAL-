@@ -10,15 +10,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class CargarDatosPacientesConsultas {
+public class CargarDatosPacientesConsultasTabla {
 
    public ArrayList<Paciente> pacientes;
    
-   public CargarDatosPacientesConsultas() {
+   public CargarDatosPacientesConsultasTabla() {
         this.pacientes = new ArrayList<Paciente>();
     }
     
-    public CargarDatosPacientesConsultas(ArrayList<Paciente> pacientes) {
+    public CargarDatosPacientesConsultasTabla(ArrayList<Paciente> pacientes) {
         this.pacientes = pacientes;
     }
     

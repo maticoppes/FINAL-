@@ -58,7 +58,6 @@ public class LecturaDatosFuncionariosGenerales {
             
             while (linea!=null){
                 String[] split=linea.split(",");//splitea la linea
-                System.out.println(split);
                 String[] splitFecha=split[2].split("/");//splitea la fecha 
                 //System.out.println(Arrays.toString(splitFecha));
                 FuncionarioGeneral paci=new FuncionarioGeneral();
