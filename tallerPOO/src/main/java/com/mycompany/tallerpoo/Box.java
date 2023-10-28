@@ -33,7 +33,7 @@ public class Box {
     /**
      * Constructor parametrizado de la clase. Se establece el box como desocupado.
      * @param numero numero de box
-     * @param ocupado establece si esta ocupado o no.
+     *
      */
     public Box(int numero) {
         this.numero = numero;
