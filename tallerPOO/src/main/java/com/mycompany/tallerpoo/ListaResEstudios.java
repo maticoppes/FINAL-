@@ -141,7 +141,7 @@ public class ListaResEstudios {
             BufferedReader reader= new BufferedReader (new FileReader(archivo));
             String linea = reader.readLine();
             
-            while (linea!=null && !linea.isBlank()){
+            while (linea!=null && !linea.trim().isEmpty()){
                 String[] split=linea.split(",");//splitea la linea
                 String[] splitFecha=split[1].split("/");//splitea la fecha 
                 String[] splitHora=split[2].split(":");//splitea la hora

@@ -72,7 +72,7 @@ public class ListaTriage {
             String linea = br.readLine();
                         
             
-            while (null!=linea && !linea.isBlank()) {
+            while (null!=linea && !linea.trim().isEmpty()) {
                 String [] campos = linea.split(",");
           // Validar que haya al menos dos campos en la línea antes de procesarla
             if (campos.length >= 2) {

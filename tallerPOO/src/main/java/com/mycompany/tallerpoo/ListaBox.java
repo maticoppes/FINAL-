@@ -124,7 +124,7 @@ public class ListaBox{
             BufferedReader reader= new BufferedReader (new FileReader(archivo));
             String linea = reader.readLine();
             
-            while (linea!=null && !linea.isBlank()){
+            while (linea!=null && !linea.trim().isEmpty()){
                 String[] split=linea.split(",");//splitea la linea
                 
                 Box box=new Box();

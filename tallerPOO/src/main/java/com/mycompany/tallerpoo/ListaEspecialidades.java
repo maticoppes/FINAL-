@@ -117,7 +117,7 @@ public class ListaEspecialidades {
             BufferedReader reader= new BufferedReader (new FileReader(archivo));
             String linea = reader.readLine();
             
-            while (linea!=null && !linea.isBlank()){
+            while (linea!=null && !linea.trim().isEmpty()){
                 String[] split=linea.split(",");//splitea la linea                
                 String infoMedico= split[0].replace("[", "");
                 infoMedico= infoMedico.replace("]", "");
