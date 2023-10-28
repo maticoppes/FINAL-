@@ -7,36 +7,77 @@ import java.util.ArrayList;
 import java.time.format.DateTimeFormatter;
 
 /**
- *
- * @author Usuario
+ * La clase `ListaPacientes` representa una lista de pacientes y proporciona métodos para gestionar pacientes y realizar operaciones de lectura y escritura de datos de pacientes.
+ * Cada paciente en la lista se representa como una instancia de la clase `Paciente`.
+ * @author Lucas
  */
+
 public class ListaPacientes {
+    /**
+     * 
+     * Esta lista contiene los pacientes que están siendo gestionados por la instancia de `ListaPacientes`.
+     */
     public ArrayList <Paciente> pacientes;
-    
+
+    /**
+     * Constructor predeterminado que inicializa una instancia de `ListaPacientes` con una lista vacía de pacientes.
+     */    
     public ListaPacientes() {
         this.pacientes = new ArrayList<Paciente>();
     }
-    
+
+    /**
+     * Constructor que permite inicializar una instancia de `ListaPacientes` con una lista de pacientes existente.
+     *
+     * @param pacientes La lista de pacientes a ser asignada.
+     */    
     public ListaPacientes(ArrayList<Paciente> pacientes) {
         this.pacientes = pacientes;
     }
 
+    /**
+     * Obtiene la lista de pacientes.
+     *
+     * @return La lista de pacientes.
+     */    
+    
     public ArrayList<Paciente> getPacientes() {
         return pacientes;
     }
-
+    /**
+     * Establece la lista de pacientes con una nueva lista de pacientes.
+     *
+     * @param pacientes La nueva lista de pacientes a ser asignada.
+     */
     public void setPacientes(ArrayList<Paciente> pacientes) {
         this.pacientes = pacientes;
     }
-    
+
+    /**
+     * Agrega un paciente a la lista de pacientes.
+     *
+     * @param paci El paciente a ser agregado.
+     */    
     public void agregar(Paciente paci){
         pacientes.add(paci);
     }
     
+    /**
+     * Elimina un paciente de la lista de pacientes.
+     *
+     * @param paci El paciente a ser eliminado.
+     */    
+    
     public void eliminar(Paciente paci){
         pacientes.remove(paci);
     }
-    
+
+    /**
+     * Busca un paciente en la lista de pacientes por número de documento.
+     *
+     * @param dni El número de documento del paciente a buscar.
+     * @return El paciente encontrado o null si no se encuentra ningún paciente con ese número de documento.
+     */    
     public Paciente getPorDni(int dni){
         for (Paciente paci : this.pacientes){
            if (paci.getDocumento()==dni){
@@ -45,6 +86,13 @@ public class ListaPacientes {
         }
         return null;
     }
+
+    /**
+     * Agrega los datos de un paciente al archivo especificado. Los datos del paciente se escriben en formato CSV.
+     *
+     * @param archivoNombre El nombre del archivo en el que se agregarán los datos del paciente.
+     * @param paciente El paciente cuyos datos se agregarán al archivo.
+     */    
     
     public void agregarAlArchivo(String archivoNombre, Paciente paciente){
         PrintWriter salida= null;
@@ -62,7 +110,13 @@ public class ListaPacientes {
             salida.close();
         } 
     }
-    
+
+    /**
+     * Lee los datos de pacientes desde el archivo especificado y los agrega a la lista de pacientes.
+     *
+     * @param archivo El nombre del archivo del que se leerán los datos de los pacientes.
+     * @return La lista de pacientes que se ha llenado con los datos del archivo.
+     */    
     public ArrayList<Paciente> leer(String archivo){
         
         try {
@@ -100,7 +154,13 @@ public class ListaPacientes {
         }
         return pacientes;
     }
-
+    
+    /**
+     * Sobrescribe el método `toString()` de la clase `Object` para proporcionar una representación en forma de cadena
+     * de la instancia de la clase `ListaPacientes`.
+     *
+     * @return Una cadena que representa la instancia de la clase `ListaPacientes`.
+     */
     @Override
     public String toString() {
         return "ListaPacientes{" + "pacientes=" + pacientes + '}';
