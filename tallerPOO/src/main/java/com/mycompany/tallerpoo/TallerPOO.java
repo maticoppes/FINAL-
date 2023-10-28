@@ -4,6 +4,7 @@ package com.mycompany.tallerpoo;
  *
  * @author 54345
  */
+import Interfas.MenuGestorCentro;
 import InterfazUsuario.*;
 import static com.mycompany.tallerpoo.ManejoArchivos.*;
 import static com.mycompany.tallerpoo.RegistroMedico.CalcularPacPorEdadesyFechas;
@@ -65,11 +66,11 @@ public class TallerPOO {
         DatosTaller.setPacientesTriageados(listaPaciTriageados);
         DatosTaller.setEnfermeros(listaenfermeros);
         
-        /*
+        
         LocalTime hora=LocalTime.of(1, 2,3);
         AdmisionDeEmergencia admi=new AdmisionDeEmergencia(fecha1, hora, "ahsdsa");
         
-        medi.hacerTriage(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,admi);/
+        medi.hacerTriage(1, 1, 1, 1, 1, 1 ,1, 1, 1, 1, 1, 1,admi);
         /////////////////////////////////////////////////////////////////////
         /*
         DatosTaller.setTriages(prueba);
