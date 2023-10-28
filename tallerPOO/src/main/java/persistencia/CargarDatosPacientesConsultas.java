@@ -1,7 +1,7 @@
 package persistencia;
 
-import com.mycompany.taller.Paciente;
-import com.mycompany.taller.Persona;
+import com.mycompany.tallerpoo.Paciente;
+import com.mycompany.tallerpoo.Persona;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -44,7 +44,6 @@ public class CargarDatosPacientesConsultas {
                      if (split.length >= 4) { // Verifica que haya al menos 4 elementos en la línea
                 Paciente paci = new Paciente();
                 paci.setNombre(split[0]);
-                paci.setMotivo(split[3]);
                 this.agregar(paci);
             } else {
                 // Manejar el caso donde la línea no tiene suficientes elementos

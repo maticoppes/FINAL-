@@ -5,8 +5,8 @@
  */
 package interfas;
 
-import InterfazUsuario.MenuAdminSistemas;
-import InterfazUsuario.TablaPacientes;
+import interfas.PantallaAdminSist;
+import interfas.TablaPacientes;
 
 /**
  *
@@ -126,7 +126,7 @@ public class PantallaInfoAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnListPacActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       MenuAdminSistemas atras = new MenuAdminSistemas();
+       PantallaAdminSist atras = new PantallaAdminSist();
         atras.setVisible(true);
         atras.setLocationRelativeTo(null);
         dispose();

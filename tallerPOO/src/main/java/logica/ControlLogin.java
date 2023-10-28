@@ -1,6 +1,6 @@
 
 package logica;
-import Interfaz.OpcionesDoc;
+import interfas.OpcionesDoc;
 import java.awt.Component;
 import java.io.File;
 import javax.swing.JOptionPane;

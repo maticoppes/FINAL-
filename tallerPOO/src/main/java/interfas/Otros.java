@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interfas;
+package interfas;
 
 /**
  * Esta clase representa una interfaz que muestra información adicional o "otros" datos en el sistema.
@@ -92,9 +92,9 @@ public class Otros extends javax.swing.JFrame {
      * @param evt El evento de acción del botón.
      */
     private void btnAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnteriorActionPerformed
-        InfoAdministrativa atras = new InfoAdministrativa();
-        atras.setVisible(true);
-        atras.setLocationRelativeTo(null);
+        InfoAdministrativa atrass = new InfoAdministrativa();
+        atrass.setVisible(true);
+        atrass.setLocationRelativeTo(null);
         dispose();
     }//GEN-LAST:event_btnAnteriorActionPerformed
 

@@ -128,7 +128,7 @@ public class InfoAdministrativa extends javax.swing.JFrame {
      * @param evt El evento de acción del botón.
      */
     private void jButtonPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPacientesActionPerformed
-        ListaPacientes opcion1 = new ListaPacientes();
+        TablaPacientes opcion1 = new TablaPacientes();
         opcion1.setVisible(true);
         opcion1.setLocationRelativeTo(null);
         dispose();
