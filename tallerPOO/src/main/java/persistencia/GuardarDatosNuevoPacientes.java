@@ -21,6 +21,7 @@ public class GuardarDatosNuevoPacientes {
             try (BufferedWriter escritor = new BufferedWriter(new FileWriter(archivo, true))) {
                 escritor.write(datos);
                 escritor.newLine();
+                escritor.close();
                 a.correcto();
             }
         } catch (IOException e) {

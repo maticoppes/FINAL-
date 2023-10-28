@@ -18,7 +18,7 @@ public class ColorTriage {
     int concienciaa;
     int vomitoss;
     int sangrado;
-    int resultado=0;
+    int resultado;
     int dolorAb;
     String triage;
 
@@ -122,7 +122,8 @@ public class ColorTriage {
                       }
             
         }
-        resultado = res + pulso + dolorPe + lesionGrav + edadd
+         resultado = 0;
+         resultado = res + pulso + dolorPe + lesionGrav + edadd
          + fiebree + shockk + lesionesLev + estadoMen + concienciaa + vomitoss+sangrado;
             System.out.println(resultado);
             

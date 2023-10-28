@@ -10,7 +10,6 @@ import java.awt.Component;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
-import persistencia.CargarInfoFuncionarioGeneral;
 import persistencia.GuardarDatosNuevoPacientes;
 import persistencia.RegistrarDatosNuevoPaciente;
 
