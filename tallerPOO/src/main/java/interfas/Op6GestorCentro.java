@@ -13,6 +13,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -154,6 +155,8 @@ public class Op6GestorCentro extends javax.swing.JFrame {
     * @param evt El evento de acción.
     */
     private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
+        DefaultTableModel model= (DefaultTableModel) jTableTriage.getModel();
+        model.setRowCount(0);
         LocalDate primeraFecha = LocalDate.of(0001, 01, 01);
         LocalDate segundaFecha = LocalDate.of(2024, 01, 01);
         try {
