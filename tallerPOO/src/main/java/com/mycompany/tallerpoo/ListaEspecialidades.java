@@ -10,44 +10,107 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 
 /**
- *
+ * La clase ListaEspecialidades es una colección que almacena instancias de la clase Especialidad.
+ * Permite agregar especialidades a la lista, así como leer información de especialidades desde un archivo.
+ * 
  * @author Lucas
  */
+
 public class ListaEspecialidades {
+    /**
+     * Una lista que almacena instancias de la clase Especialidad.
+     */
     protected ArrayList <Especialidad> especialidades;
 
+    /**
+     * Constructor de  ListaEspecialidades que deja inicializar la lista con una lista
+     * existente de especialidades.
+     *
+     * @param especialidades La lista de especialidades para inicializar.
+     */
     public ListaEspecialidades(ArrayList<Especialidad> especialidades) {
         this.especialidades = especialidades;
     }
 
+    /**
+     * Constructor de la clase ListaEspecialidades que crea una lista vacía de especialidades.
+     */
     public ListaEspecialidades() {
         this.especialidades=new ArrayList <Especialidad>();
     }
-
+    
+    /**
+     * Obtiene la lista de especialidades.
+     *
+     * @return La lista de especialidades almacenada en esta instancia.
+     */
+    
     public ArrayList<Especialidad> getResultados() {
         return especialidades;
     }
-
+    
+    /**
+     * Establece la lista de especialidades con una nueva lista.
+     *
+     * @param especialidades La nueva lista de especialidades a establecer.
+     */
+    
     public void setResultados(ArrayList<Especialidad> especialidades) {
         this.especialidades = especialidades;
     }
     
+    /**
+     * Agrega una instancia de Especialidad a la lista de especialidades.
+     *
+     * @param espe La instancia de Especialidad que se agregará a la lista.
+     */    
+    
     public void agregar(Especialidad espe){
         especialidades.add(espe);
     }
+
+    /**
+     * Elimina una instancia de Especialidad de la lista de especialidades.
+     *
+     * @param espe La instancia de Especialidad que se eliminará de la lista.
+     */    
     
     public void eliminar(Especialidad espe){
         especialidades.remove(espe);
     }
     
+    /**
+     * Lee información de especialidades desde un archivo especificado y agrega las especialidades a la lista.
+     *
+     * @param archivo El nombre del archivo del cual se leerá la información de las especialidades.
+     * @param listamed Una lista de médicos para relacionar con las especialidades leídas.
+     * @param listamedesp Una lista de asociaciones entre médicos y especialidades para actualizar.
+     */
+    
     public void leer(String archivo){
         leerInterno(archivo,null,null);
     }
+
+    /**
+     * Lee información de especialidades desde un archivo especificado y agrega las especialidades a la lista.
+     *
+     * @param archivo     El nombre del archivo del cual se leerá la información de las especialidades.
+     * @param listamed    Una lista de médicos para relacionar con las especialidades leídas.
+     * @param listamedesp Una lista de asociaciones entre médicos y especialidades para actualizar.
+     */
     
     public void leer(String archivo, ListaMedicos listamed, ListaMedEsp listamedesp){
         leerInterno(archivo,listamed,listamedesp);
     }
-        
+    
+    /**
+     * Método interno utilizado para leer y procesar la información de especialidades desde un archivo.
+     *
+     * @param archivo     El nombre del archivo del cual se leerá la información de las especialidades.
+     * @param listamed    Una lista de médicos para relacionar con las especialidades leídas.
+     * @param listamedesp Una lista de asociaciones entre médicos y especialidades para actualizar.
+     */
+    
     private void leerInterno(String archivo, ListaMedicos listamed, ListaMedEsp listamedesp){
         
         try {
@@ -106,6 +169,13 @@ public class ListaEspecialidades {
 
     }
 
+/**
+ * Convierte la instancia de ListaEspecialidades en una representación en forma de cadena.
+ *
+ * @return Una cadena que representa la instancia de ListaEspecialidades, incluyendo
+ *         información sobre las especialidades almacenadas en la lista.
+ */    
+    
     @Override
     public String toString() {
         return "ListaEspecialidades{" + "especialidades=" + especialidades + '}';
