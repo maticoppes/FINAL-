@@ -289,6 +289,8 @@ public class Op1GestorCentro extends javax.swing.JFrame {
      * información de médicos y mostrarla en la tabla.
      */
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        DefaultTableModel model= (DefaultTableModel) tablaMedicos.getModel();
+        model.setRowCount(0);
         llamar();
     }//GEN-LAST:event_btnActualizarActionPerformed
 
