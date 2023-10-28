@@ -25,9 +25,9 @@ public class FuncionarioGeneral extends Persona{
                               String estadoCivil, String correoElectronico,
                               String rol,String sector, String contrasenia ){
         super(nombre, fechaNacimiento, domicilio, documento, telefoFijo, telefonoCelular, estadoCivil, correoElectronico);
-        this.rol="";
-        this.sector="";
-        this.contrasenia="";
+        this.rol=rol;
+        this.sector=sector;
+        this.contrasenia=contrasenia;
     }
 
     public String getRol() {

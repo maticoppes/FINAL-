@@ -12,7 +12,11 @@ import java.awt.Component;
 import java.io.File;
 import com.mycompany.tallerpoo.ListaMedicos;
 import com.mycompany.tallerpoo.Medico;
+import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Properties;
 import javax.swing.JOptionPane;
@@ -31,28 +35,29 @@ public class ValidarSesion {
     
        
 
-    public void sesion(String usuario, String contrasenia) {
-        
-            String archivo = (Ubicacion);
-            File direccion = new File(archivo);
+    public void sesion(String usuario, String contrasenia) throws FileNotFoundException, IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(Ubicacion));
+           String linea = reader.readLine();
+           
             if (usuario.equals("") || contrasenia.equals("")) {
                 JOptionPane.showMessageDialog(rootPane, "Complete los campos");
 
             } else {
-                System.out.println(archivo);
+                System.out.println(reader);
              
                     try {
-                        
-                        ListaMedicos funci = new ListaMedicos();
-                        ArrayList <Medico> funca = funci.leer(archivo);
-                        
-                        for (Medico funcionario : funca) {
-                            if (funcionario.getDocumento() == (Integer.parseInt(usuario))) {
-                                if (funcionario.getContrasenia().equals(contrasenia)) {
+                        while(linea !=null){
+                            String[]split=linea.split(",");
+                        Medico funci = new Medico();
+                        funci.setDocumento(Integer.parseInt(split[0]));
+                        funci.setContrasenia(split[11]);
+                       
+                            if (funci.getDocumento() == (Integer.parseInt(usuario))) {
+                                if (funci.getContrasenia().equals(contrasenia)) {
                                     
                                     Mostrar mostrar = new Mostrar();
                                     mostrar.valido();
-                                 
+                                 break;
                                     
 
                                 }
@@ -60,7 +65,9 @@ public class ValidarSesion {
                             } else {
 
                                 JOptionPane.showMessageDialog(rootPane, "Usuario y/o contraseña incorrecto");
+                            break;
                             }
+                            break;
 
                         }
                     } catch (Exception e) {

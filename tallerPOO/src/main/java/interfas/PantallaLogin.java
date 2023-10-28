@@ -5,6 +5,9 @@
  */
 package interfas;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import persistencia.ValidarSesion;
 
 /**
@@ -228,7 +231,11 @@ public class PantallaLogin extends javax.swing.JFrame {
     private void btnInicioSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioSesion1ActionPerformed
 
         ValidarSesion control = new ValidarSesion();
-        control.sesion(txtUsuar.getText(), txtContrasen.getText());
+        try {
+            control.sesion(txtUsuar.getText(), txtContrasen.getText());
+        } catch (IOException ex) {
+            Logger.getLogger(PantallaLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
         dispose();
 
     }//GEN-LAST:event_btnInicioSesion1ActionPerformed
