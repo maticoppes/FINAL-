@@ -16,7 +16,7 @@ import persistencia.RegistrarDatosNuevoPaciente;
  */
 public class RegistrarNuevoPaciente extends javax.swing.JFrame {
      String barra= File.separator;
-    String ubicacion = System.getProperty("user.dir")+barra+"Archivos"+barra+"PacientesEnElSitema.txt";
+    String ubicacion = System.getProperty("user.dir")+barra+"Archivos"+barra+"Pacientes.txt";
     public RegistrarNuevoPaciente() {
         initComponents();
     }
@@ -35,7 +35,7 @@ public class RegistrarNuevoPaciente extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
-        txtNacimiento = new javax.swing.JTextField();
+        txtDia = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         txtDomicilio = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
@@ -46,6 +46,8 @@ public class RegistrarNuevoPaciente extends javax.swing.JFrame {
         txtTelCel = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         txtApellido = new javax.swing.JTextField();
+        txtMes = new javax.swing.JTextField();
+        txtAnio = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
@@ -75,7 +77,7 @@ public class RegistrarNuevoPaciente extends javax.swing.JFrame {
 
         jLabel5.setText("Nombre y apellido");
 
-        jLabel6.setText("Fecha de Nacimiento");
+        jLabel6.setText("Fecha de Nacimiento (dia/mes/año)");
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,9 +85,9 @@ public class RegistrarNuevoPaciente extends javax.swing.JFrame {
             }
         });
 
-        txtNacimiento.addActionListener(new java.awt.event.ActionListener() {
+        txtDia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNacimientoActionPerformed(evt);
+                txtDiaActionPerformed(evt);
             }
         });
 
@@ -162,22 +164,40 @@ public class RegistrarNuevoPaciente extends javax.swing.JFrame {
             }
         });
 
+        txtMes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMesActionPerformed(evt);
+            }
+        });
+
+        txtAnio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAnioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel10)
-                    .addComponent(txtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtApellido))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtMes, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -197,12 +217,15 @@ public class RegistrarNuevoPaciente extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         jButton1.setText("Cargar");
@@ -285,7 +308,7 @@ public class RegistrarNuevoPaciente extends javax.swing.JFrame {
                         .addGap(133, 133, 133)
                         .addComponent(jButton1)
                         .addContainerGap(50, Short.MAX_VALUE))
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 252, Short.MAX_VALUE)))
+                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -345,9 +368,9 @@ public class RegistrarNuevoPaciente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
 
-    private void txtNacimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNacimientoActionPerformed
+    private void txtDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNacimientoActionPerformed
+    }//GEN-LAST:event_txtDiaActionPerformed
 
     private void txtDomicilioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDomicilioActionPerformed
         // TODO add your handling code here:
@@ -379,11 +402,12 @@ public class RegistrarNuevoPaciente extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        
-        String datos= txtDni.getText()+","+txtNombre.getText()+","+
-                txtApellido.getText()+","+
-        txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
-        txtTelCel.getText()+","+txtEstadoCivil.getText()+","+txtPersonaCont.getText()+","+
-        txtCorreoElec.getText();
+        String datos= txtDni.getText()+","+txtNombre.getText()+","+txtApellido.getText()
+                      +","+txtDia.getText()+"/"+txtMes.getText()+"/"+txtAnio.getText()
+                      +","+txtDomicilio.getText()+","+txtTelFijo.getText()+","
+                      +txtTelCel.getText()+","+txtEstadoCivil.getText()+","
+                      +txtPersonaCont.getText()+","+txtCorreoElec.getText();
+        
         RegistrarDatosNuevoPaciente cargar = new RegistrarDatosNuevoPaciente();
         cargar.Carga(ubicacion, datos);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -391,6 +415,14 @@ public class RegistrarNuevoPaciente extends javax.swing.JFrame {
     private void txtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtApellidoActionPerformed
+
+    private void txtMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMesActionPerformed
+
+    private void txtAnioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAnioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -415,12 +447,14 @@ public class RegistrarNuevoPaciente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JTextField txtAnio;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtCorreoElec;
+    private javax.swing.JTextField txtDia;
     private javax.swing.JTextField txtDni;
     private javax.swing.JTextField txtDomicilio;
     private javax.swing.JTextField txtEstadoCivil;
-    private javax.swing.JTextField txtNacimiento;
+    private javax.swing.JTextField txtMes;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtPersonaCont;
     private javax.swing.JTextField txtTelCel;
