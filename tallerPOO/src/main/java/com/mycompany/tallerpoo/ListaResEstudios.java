@@ -36,11 +36,21 @@ public class ListaResEstudios {
     public ListaResEstudios() {
         this.resultados=new ArrayList <ResultadoEstudios>();
     }
-
+    
+    /**
+     * Obtiene la lista de resultados de estudios.
+     *
+     * @return La lista de resultados de estudios.
+     */
     public ArrayList<ResultadoEstudios> getResultados() {
         return resultados;
     }
 
+    /**
+     * Establece la lista de resultados de estudios.
+     *
+     * @param resultados La lista de resultados de estudios a establecer.
+     */    
     public void setResultados(ArrayList<ResultadoEstudios> resultados) {
         this.resultados = resultados;
     }
