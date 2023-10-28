@@ -1,0 +1,11 @@
+44708275,Lucas Nunez,08/02/2003,Alegria 123,4438354,3454343,Soltero,lucasmagiconunez@gmail.com,Papa de Lucas,23/10/2022,31382929
+12345678,María López,15/09/1990,Calle Principal 456,5551234,6662345,Casada,marialopez@email.com,Esposo de María,25/09/2022,35454345
+54321678,Ana González,03/12/1998,Calle Secundaria 567,5555555,6666666,Soltero,anagonzalez@email.com,Hermana de Ana,15/11/2022,42218299
+11223344,Carlos Martínez,10/07/1976,Calle Principal 101,3333333,7777777,Divorciado,carlosmartinez@email.com,Amigo de Carlos,05/10/2022,31382929
+44708275,Lucas Nunez,08/02/2003,Alegria 123,4438354,3454343,Soltero,lucasmagiconunez@gmail.com,Papa de Lucas,15/11/2022,31382929
+12345678,María López,15/09/1990,Calle Principal 456, 5551234,6662345,Casada,marialopez@email.com,Esposo de María,12/10/2022,42218299
+98765432,Juan Pérez,20/05/1985,Av. Central 789,4447890,7778901,Viudo,juanperez@email.com,Hijo de Juan,05/12/2022,42218299
+54321678,Ana González,03/12/1998,Calle Secundaria 567,5555555,6666666,Soltero,anagonzalez@email.com, Hermana de Ana,18/11/2022,35454345
+11223344,Carlos Martínez,10/07/1976,Calle Principal 101,3333333,7777777,Divorciado,carlosmartinez@email.com,Amigo de Carlos,30/11/2022,41293478
+54321678,Ana González,03/12/1998,Calle Secundaria 567,5555555,6666666,Soltero,anagonzalez@email.com,Hermana de Ana,01/10/2023,41293478
+11223344,Carlos Martínez,10/07/1976,Calle Principal 101,3333333,7777777,Divorciado,carlosmartinez@email.com,Amigo de Carlos,15/10/2023,22348901

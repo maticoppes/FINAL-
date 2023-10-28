@@ -1,0 +1,7 @@
+36472190,María Fernández,12/09/1990,Calle 345,55557777,44448888,Casada,maria.fernandez@example.com,Hija de Juan
+42346712,Luis Pérez,05/03/2000,Avenida Central 789,33332222,22221111,Soltero,luis.perez@example.com,Hermano de Ana
+29876543,Ana González,20/07/1995,Plaza Principal 456,44449999,11113333,Casada,ana.gonzalez@example.com,Madre de Martín
+51234987,Diego Rodríguez,03/11/1988,Esquina 1234,66665555,77778888,Soltero,diego.rodriguez@example.com,Primo de Laura
+63452109,Laura Martínez,14/05/1993,Callejón 67,22223333,55552222,Soltera,laura.martinez@example.com,Hija de María
+74563210,Carlos Fernández,30/12/1982,Plaza 789,99990000,33336666,Casado,carlos.fernandez@example.com,Padre de Juan
+87904321,Isabel López,18/04/1980,Avenida 5678,77773333,44447777,Soltera,isabel.lopez@example.com,Hermana de Diego

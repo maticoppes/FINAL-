@@ -1,0 +1,7 @@
+31382929,Pepito Sanchez,01/12/1988,San Lorenzo O. 328,36829292,42129292,Soltero,pepeee@gmail.com,45299
+35454345,Sandro Marche,01/12/1990,Uruguay 3233,32490239,546738284,Soltero,dalesandroo@gmail.com,47213
+42218299,Sofia Acosta,10/07/2005,Salta 777,37829229,43290010,Casada,sofiacostabrava@yahoo.com.ar,78202
+26743928,Maria Gonzalez,15/06/1975,Calle 2 123,4323766,34546433,Casada,maria@gmail.com,60012
+39876234,Juan Rodriuez,28/03/1983,Av. Eva Peron 415,4212234,34568832,Soltero,juanito@email.com,72389
+41293478,Ana Lopez,02/09/2000,Urquiza 789,4304893,33467690,Soltera,analpz78@hotmail.com,51234
+22348901,Luis Perez,11/11/1982,Alem 456,4344434,4371222,Casado,luisperez@gmail.com,36789
