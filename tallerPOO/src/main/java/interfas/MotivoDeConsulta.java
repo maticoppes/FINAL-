@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package interfas;
-import Interfaz.SeleccionarUnPaciente;
 import java.io.File;
 import persistencia.CargarDatosNuevoPaciente;
 /**
@@ -159,11 +158,11 @@ public class MotivoDeConsulta extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDniActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
-      String a = "";
+
         String datos = txtDni.getText()+","+txtFech.getText() +","+ txtHora.getText()+","+
            txtMotivo.getText();
            CargarDatosNuevoPaciente cargar = new CargarDatosNuevoPaciente();
-           cargar.Carga(ubicacion, datos, a);
+           cargar.Carga(ubicacion, datos);
            this.dispose();
        SeleccionPacienteConsulta l = new SeleccionPacienteConsulta();
        l.setVisible(true);

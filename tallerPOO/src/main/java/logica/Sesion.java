@@ -1,6 +1,6 @@
 package logica;
 
-import Interfaz.PantallaAdminSist;
+import Interfas.PantallaAdminSist;
 import java.awt.Component;
 import java.io.File;
 import java.io.FileInputStream;
