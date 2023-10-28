@@ -72,42 +72,93 @@ public class RegistroMedico {
 	this.diagnosticoClinico = "";
     }
 
+    /**
+     * Obtiene la fecha del registro médico.
+     *
+     * @return La fecha del registro médico en formato LocalDate.
+     */        
     public LocalDate getFecha() {
         return fecha;
     }
 
+    /**
+     * Establece la fecha del registro médico.
+     *
+     * @param fecha La fecha del registro médico a establecer en formato LocalDate.
+     */
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
-
+    /**
+     * Obtiene la hora del registro médico.
+     *
+     * @return La hora del registro médico en formato LocalTime.
+     */
     public LocalTime getHora() {
         return hora;
     }
 
+    /**
+     * Establece la hora del registro médico.
+     *
+     * @param hora La hora del registro médico a establecer en formato LocalTime.
+     */
     public void setHora(LocalTime hora) {
         this.hora = hora;
     }
 
+    /**
+     * Obtiene el lugar de atención del registro médico.
+     *
+     * @return El lugar de atención del registro médico como una cadena de caracteres.
+     */    
+    
     public String getLugarAtendido() {
         return lugarAtendido;
     }
 
+    /**
+     * Establece el lugar de atención del registro médico.
+     *
+     * @param lugarAtendido El lugar de atención del registro médico a establecer como una cadena de caracteres.
+     */    
+    
     public void setLugarAtendido(String lugarAtendido) {
         this.lugarAtendido = lugarAtendido;
     }
 
+    /**
+     * Obtiene el diagnóstico del registro médico.
+     *
+     * @return El diagnóstico del registro médico como una cadena de caracteres.
+     */    
     public String getDiagnostico() {
         return diagnostico;
     }
 
+    /**
+     * Establece el diagnóstico del registro médico.
+     *
+     * @param diagnostico El diagnóstico del registro médico a establecer como una cadena de caracteres.
+     */    
+    
     public void setDiagnostico(String diagnostico) {
         this.diagnostico = diagnostico;
     }
-
+    /**
+     * Obtiene el diagnóstico clínico del registro médico.
+     *
+     * @return El diagnóstico clínico del registro médico como una cadena de caracteres.
+     */
     public String getDiagnosticoClinico() {
         return diagnosticoClinico;
     }
-
+    /**
+     * Establece el diagnóstico clínico del registro médico.
+     *
+     * @param diagnosticoClinico El diagnóstico clínico del registro médico a establecer como una cadena de caracteres.
+     */
+    
     public void setDiagnosticoClinico(String diagnosticoClinico) {
         this.diagnosticoClinico = diagnosticoClinico;
     }
