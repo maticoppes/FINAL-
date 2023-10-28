@@ -16,13 +16,10 @@ public class GuardarDatosNuevoPacientes {
         File archivo = new File(Ubicacion);
 
         try {
-            BufferedWriter escritor = new BufferedWriter(new FileWriter(archivo, true));
-            escritor.write(datos);
-            escritor.newLine();
-            escritor.close();
-            
-            
-            
+            try (BufferedWriter escritor = new BufferedWriter(new FileWriter(archivo, true))) {
+                escritor.write(datos);
+                escritor.newLine();
+            }
         } catch (IOException e) {
             System.err.println("Error al cargar datos en el archivo: " + e.getMessage());
         }

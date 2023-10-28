@@ -6,9 +6,11 @@
 package interfas;
 
 import com.mycompany.tallerpoo.FuncionarioGeneral;
+import java.awt.Component;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import persistencia.CargarInfoFuncionarioGeneral;
 import persistencia.GuardarDatosNuevoPacientes;
 import persistencia.RegistrarDatosNuevoPaciente;
 
@@ -23,8 +25,13 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
     String [] archivo = {"Medicos.txt","Enfermeros.txt", "GestorCentro.txt",
         "AdminSistemas.txt", "Sector.txt" }; 
     String lugar ="";
+    
+    
     public IngresoInfoFuncionario() {
         initComponents();
+    }
+     public void correcto(Component rootPane){
+    javax.swing.JOptionPane.showMessageDialog(rootPane, "Registro exitoso");
     }
 
    public String direccion(String rol, String sector){
@@ -41,13 +48,14 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
                     if(rol.equals("AdministradorDeSistemas")){
                         lugar = archivo[3];
                     }else{
-                    if(rol.equals("Sector")){
+                    if(sector.equals("Sector")){
                         lugar=archivo[4];
                     }
                         
                     }
     return lugar;
             }
+          
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -269,7 +277,8 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         String datos =  txtDni.getText()+";"+txtNombre.getText()+","+","+
         txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
         txtTelCel.getText()+","+txtEstadoCivil.getText()+","+txtPersonaCont.getText()+","+
-        txtContrasenia.getText()+","+txtRol.getText()+","+txtContrasenia.getText()+ ","+txtSector.getText();
+        txtContrasenia.getText()+","+txtRol.getText()+","+ ","+txtSector.getText()+","+txtContrasenia.getText();
+        direccion(txtRol.getText(), txtSector.getText());
         GuardarDatosNuevoPacientes cargar = new GuardarDatosNuevoPacientes();
         cargar.Carga(lugar, datos);
     }//GEN-LAST:event_btnCargarActionPerformed

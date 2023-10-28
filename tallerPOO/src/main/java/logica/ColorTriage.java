@@ -127,8 +127,18 @@ public class ColorTriage {
             System.out.println(resultado);
             
             PantallaTriage a = new PantallaTriage();
-            if(resultado == 0){
-            a.cargar("Verde");
+            switch (resultado){
+                case 0:
+                    a.cargar("Azul");
+                    break;
+                case 1,2,3,4:
+                    a.cargar("Verde");
+                case 5,6,7,8,9:
+                    a.cargar("Amarillo");
+                case 10,11,12,13,14:
+                    a.cargar("Naranja");
+                default:
+                    a.cargar("Rojo");
             }
            
             
