@@ -40,20 +40,21 @@ public class Enfermero extends Persona {
      * Se crea un triage y se calcula el color del mismo en base a los datos que
      * se pasen por parametro. Tambien añade al paciente a la lista de pacientes
      * triageados sin atender.
-     * @param respiracion
-     * @param pulso
-     * @param estadoMental
-     * @param conciencia
-     * @param dificultadRespiracion
-     * @param lesionesGraves
-     * @param edad
-     * @param fiebre
-     * @param vomitos
-     * @param dolorAbdominal
-     * @param signosShock
-     * @param lesionesLeves
-     * @param sangrado
-     * @param admision
+     * @param Fecha Fecha.
+     * @param hora Hora.
+     * @param respiracion Respiracion
+     * @param pulso Pulso
+     * @param estadoMental Estado mental.
+     * @param conciencia Conciencia.     
+     * @param lesionesGraves Lesiones Graves.
+     * @param edad Edad.
+     * @param fiebre Fiebre.
+     * @param vomitos Vomitos.
+     * @param dolorAbdominal Dolor abdominal.
+     * @param signosShock Signos de Shock.
+     * @param lesionesLeves Lesiones Leves.
+     * @param sangrado Sagrado
+     * @param admision Admision.
      * @return Objeto tipo Triage con los datos pasados por parametro, y con el color ya calculado.
      * @see #modificarTriage(com.mycompany.tallerpoo.Triage, java.lang.String, java.lang.String) 
      * @see ListaTriage
@@ -89,11 +90,11 @@ public class Enfermero extends Persona {
     }
     
     /**
-    * Modifica el color de un triage.
-    * @param triage triage a modificar
+    * Modifica el color de un triage.    
+    * @param triage Triage.
     * @param color color a seleccionar, debe ser uno de los siguientes: Rojo, Naranja, Amarillo, Verde, Azul
     * @param motivo motivo por el cual se realizo el cambio.
-    * @see #hacerTriage(int, int, int, int, int, int, int, int, int, int, int, int, int, com.mycompany.tallerpoo.AdmisionDeEmergencia) 
+    * 
     */
     public void modificarTriage(Triage triage, String color, String motivo){
         triage.setColorFinal(color);

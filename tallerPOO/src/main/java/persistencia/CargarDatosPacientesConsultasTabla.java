@@ -19,7 +19,9 @@ import java.util.Arrays;
  * 
  */
 public class CargarDatosPacientesConsultasTabla {
-
+    /**
+     * Una lista que almacena objetos de tipo Paciente.
+     */    
    public ArrayList<Paciente> pacientes;
 
     /**
