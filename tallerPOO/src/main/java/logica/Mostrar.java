@@ -1,7 +1,9 @@
 package logica;
 
 import com.mycompany.tallerpoo.FuncionarioGeneral;
+import interfas.IngresoDNI;
 import interfas.InterfazDoc;
+import interfas.InterfazEnferm;
 import interfas.PantallaAdminSist;
 import java.io.File;
 import java.util.ArrayList;
@@ -13,7 +15,7 @@ import persistencia.LecturaDatosFuncionariosGenerales;
  */
 public class Mostrar {
     String barra = File.separator;
-    String ubicacion = System.getProperty("user.dir");
+    String ubicacion = System.getProperty("user.dir")+barra+"";
     public void valido() {
         FuncionarioGeneral funcionario= new FuncionarioGeneral();
         ArrayList <FuncionarioGeneral> rol = funcionario.leer(ubicacion);
@@ -34,7 +36,7 @@ public class Mostrar {
                     doc.setLocationRelativeTo(null);
                 } else {
                     if (roles.getRol().equals("Sector")) {
-                        InterfazSector doc = new InterfazSector();
+                        IngresoDNI doc = new IngresoDNI();
                         doc.setVisible(true);
                         doc.setLocationRelativeTo(null);
                     }

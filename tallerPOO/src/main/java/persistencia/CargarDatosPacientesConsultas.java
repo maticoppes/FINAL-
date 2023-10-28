@@ -44,6 +44,7 @@ public class CargarDatosPacientesConsultas {
                      if (split.length >= 4) { // Verifica que haya al menos 4 elementos en la línea
                 Paciente paci = new Paciente();
                 paci.setNombre(split[0]);
+                paci.setMotivo(split[9]);
                 this.agregar(paci);
             } else {
                 // Manejar el caso donde la línea no tiene suficientes elementos

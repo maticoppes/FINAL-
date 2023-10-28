@@ -45,7 +45,7 @@ public class ValidarSesion {
                                 if (funcionario.getContrasenia().equals(contrasenia)) {
                                     
                                     Mostrar mostrar = new Mostrar();
-                                    mostrar.valido(funcionario);
+                                    mostrar.valido();
                                   continue;
                                     
 

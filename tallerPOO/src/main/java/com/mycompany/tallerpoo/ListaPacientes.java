@@ -142,6 +142,7 @@ public class ListaPacientes {
                 paci.setEstadoCivil(split[6]);
                 paci.setCorreoElectronico(split[7]);
                 paci.setPersonaContacto(split[8]);
+                paci.setMotivo(split[9]);
                 
                 this.agregar(paci);
                 
