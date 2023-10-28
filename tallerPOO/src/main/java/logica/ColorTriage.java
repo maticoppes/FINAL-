@@ -133,13 +133,18 @@ public class ColorTriage {
                     break;
                 case 1,2,3,4:
                     a.cargar("Verde");
+                    break;
                 case 5,6,7,8,9:
                     a.cargar("Amarillo");
+                    break;
                 case 10,11,12,13,14:
                     a.cargar("Naranja");
+                    break;
                 default:
                     a.cargar("Rojo");
-            }
+                    break;
+            }       
+        }
            
             
         
@@ -151,7 +156,7 @@ public class ColorTriage {
 
         }
     }
-}
+
 
 
 

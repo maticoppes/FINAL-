@@ -37,9 +37,9 @@ public class AdmisionDeEmergencia {
     }
     /**
      * Contructor parametrizado de la clase.
-     * @param fecha
-     * @param hora
-     * @param motivoDeConsulta 
+     * @param fecha Fecha pasada por parametros.
+     * @param hora Hora pasada por parametros.
+     * @param motivoDeConsulta  Motivo por el cual se atiende pasada por parametros.
      */
     public AdmisionDeEmergencia(LocalDate fecha, LocalTime hora, String motivoDeConsulta) {
         this.fecha = fecha;
@@ -52,10 +52,10 @@ public class AdmisionDeEmergencia {
     
     /**
      * Contructor parametrizado de la clase, con el paciente incluido.
-     * @param fecha
-     * @param hora
-     * @param motivoDeConsulta
-     * @param paciente 
+     * @param fecha La fecha de la admisión.
+     * @param hora La hora de la admisión.
+     * @param motivoDeConsulta El motivo por el cual se atiende al paciente.
+     * @param paciente El paciente relacionado con la admisión.
      */
     public AdmisionDeEmergencia(LocalDate fecha, LocalTime hora, String motivoDeConsulta,Paciente paciente) {
         this.fecha = fecha;
@@ -67,12 +67,13 @@ public class AdmisionDeEmergencia {
     }
     /**
      * Contructor parametrizado de la clase, con el triage y el paciente incluidos.
-     * @param fecha
-     * @param hora
-     * @param motivoDeConsulta
-     * @param paciente
-     * @param triage 
+     * @param fecha La fecha de la admisión.
+     * @param hora La hora de la admisión.
+     * @param motivoDeConsulta El motivo por el cual se atiende al paciente.
+     * @param paciente El paciente relacionado con la admisión.
+     * @param triage El triage realizado después de la admisión.
      */
+    
     public AdmisionDeEmergencia(LocalDate fecha, LocalTime hora, String motivoDeConsulta, Paciente paciente, Triage triage) {
         this.fecha = fecha;
         this.hora = hora;

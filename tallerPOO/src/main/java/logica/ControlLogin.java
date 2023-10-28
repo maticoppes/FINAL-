@@ -3,6 +3,7 @@ package logica;
 import interfas.OpcionesDoc;
 import java.awt.Component;
 import java.io.File;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 public class ControlLogin {
         
@@ -11,7 +12,7 @@ public class ControlLogin {
     String Ubicacion = System.getProperty("user.dir") + barra + "BaseDatos"+barra+"Roles"+barra+"Medico"+barra;
     private Component rootPane;
      String patron = "\\d{7,8}";
-    public void rol(String usuario){
+    public void rol(String usuario) throws IOException{
         
         //obtengo el nombre del usuario dentro del archivo
         File direccion = new File(Ubicacion + usuario+ ".txt" );
