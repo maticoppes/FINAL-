@@ -2,7 +2,7 @@
 35454345,Sandro Marche,01/12/1990,Uruguay 3233,32490239,546738284,Soltero,dalesandroo@gmail.com,47213,algo,Enfermero,guardia,1212
 42218299,Sofia Acosta,10/07/2005,Salta 777,37829229,43290010,Casada,sofiacostabrava@yahoo.com.ar,78202,Administrador de Sistemas,guardia,121
 26743928,Maria Gonzalez,15/06/1975,Calle 2 123,4323766,34546433,Casada,maria@gmail.com,60012,Medico,guardia,1212
-39876234,Juan Rodriuez,28/03/1983,Av. Eva Peron 415,4212234,34568832,Soltero,juanito@email.com,72389,Medico,guardia,12
+39876234,Juan Rodriuez,28/03/1983,Av. Eva Peron 415,4212234,34568832,Soltero,juanito@email.com,72389,Sector,guardia,12
 41293478,Ana Lopez,02/09/2000,Urquiza 789,4304893,33467690,Soltera,analpz78@hotmail.com,51234,Medico,guardia,12
 22348901,Luis Perez,11/11/1982,Alem 456,4344434,4371222,Casado,luisperez@gmail.com,36789,Medico,guardia,12321
 45758007,Sabtiago Labriola,17/03/2004,Tavella 1303,0000001,soltero,44210180; 
