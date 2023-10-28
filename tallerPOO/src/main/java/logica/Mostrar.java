@@ -19,6 +19,7 @@ public class Mostrar {
     public void valido() {
         FuncionarioGeneral funcionario= new FuncionarioGeneral();
         ArrayList <FuncionarioGeneral> rol = funcionario.leer(ubicacion);
+       
         for(FuncionarioGeneral roles : rol){
         if (roles.getRol().equals("medico")) {
             InterfazDoc doc = new InterfazDoc();

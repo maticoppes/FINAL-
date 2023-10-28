@@ -17,15 +17,17 @@ public class FuncionarioGeneral extends Persona{
     
     public FuncionarioGeneral(){
         super();
+       
     }
     
     public FuncionarioGeneral(String nombre, LocalDate fechaNacimiento, String domicilio,
                               int documento, int telefoFijo, int telefonoCelular,
-                              String estadoCivil, String correoElectronico){
+                              String estadoCivil, String correoElectronico,
+                              String rol,String sector, String contrasenia ){
         super(nombre, fechaNacimiento, domicilio, documento, telefoFijo, telefonoCelular, estadoCivil, correoElectronico);
-        this.rol = rol;
-        this.sector=sector;
-        this.contrasenia=contrasenia;
+        this.rol="";
+        this.sector="";
+        this.contrasenia="";
     }
 
     public String getRol() {

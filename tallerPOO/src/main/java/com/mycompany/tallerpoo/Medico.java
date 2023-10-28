@@ -5,13 +5,13 @@ import java.time.*;
 import java.util.*;
 
 /**
- * Esta clase representa un médico, y hereda los atributos de una persona.
- * @see     Persona
+ * Esta clase representa un médico, y hereda los atributos de una funcionario general.
+ * @see     FuncionarioGeneral
  * @see     Enfermero
  * @see     ListaMedicos
  * @author Lucas
  */
-public class Medico extends Persona{
+public class Medico extends FuncionarioGeneral{
     
     /**
      * Matricula de un medico.
@@ -39,12 +39,15 @@ public class Medico extends Persona{
      * @param estadoCivil
      * @param correoElectronico
      * @param matricula 
+     * @param rol 
+     * @param sector 
+     * @param contrasenia 
      */
     public Medico(String nombre, LocalDate fechaNacimiento, String domicilio, 
                   int documento, int telefoFijo, int telefonoCelular, 
-                  String estadoCivil, String correoElectronico, int matricula) {
+                  String estadoCivil, String correoElectronico, int matricula,String rol, String sector,String contrasenia) {
         
-        super(nombre, fechaNacimiento, domicilio, documento, telefoFijo, telefonoCelular, estadoCivil, correoElectronico);
+        super(nombre, fechaNacimiento, domicilio, documento, telefoFijo, telefonoCelular, estadoCivil, correoElectronico, rol, sector, contrasenia);
         this.matricula=matricula;
         this.especialidad=new ArrayList<Especialidad>();
     }

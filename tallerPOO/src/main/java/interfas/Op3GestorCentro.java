@@ -4,6 +4,7 @@
  */
 package Interfas;
 
+import com.mycompany.tallerpoo.ListaPacientes;
 import com.mycompany.tallerpoo.RegistroMedico;
 import static com.mycompany.tallerpoo.RegistroMedico.calcularMasConsPorFecha;
 import java.awt.event.MouseAdapter;
@@ -55,7 +56,7 @@ public class Op3GestorCentro extends javax.swing.JFrame {
                 if (fila > -1) {
                     pacienteUpdate = (String) jTableListaPacientes.getValueAt(
                             fila, columna);
-                    ListaPacientes registroMedico = new ListaPacientes();
+                    TablaPacientes registroMedico = new TablaPacientes();
                     registroMedico.setVisible(true);
                 }
             }
