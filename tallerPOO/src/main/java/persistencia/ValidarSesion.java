@@ -30,51 +30,42 @@ public class ValidarSesion {
 
     String barra = File.separator;
     // Ruta relativa a la carpeta "TallerPoovvvv/Registro" dentro del proyecto
-    String Ubicacion = System.getProperty("user.dir")+barra+"Archivos" + barra+"Medicos.txt";
+    String Ubicacion = System.getProperty("user.dir") + barra + "Archivos" + barra + "Medicos.txt";
     private Component rootPane;
-    
-       
 
     public void sesion(String usuario, String contrasenia) throws FileNotFoundException, IOException {
         BufferedReader reader = new BufferedReader(new FileReader(Ubicacion));
-           String linea = reader.readLine();
-           
-            if (usuario.equals("") || contrasenia.equals("")) {
-                JOptionPane.showMessageDialog(rootPane, "Complete los campos");
+        String linea = reader.readLine();
 
-            } else {
-                System.out.println(reader);
-             
-                    try {
-                        while(linea !=null){
-                            String[]split=linea.split(",");
-                        Medico funci = new Medico();
-                        funci.setDocumento(Integer.parseInt(split[0]));
-                        funci.setContrasenia(split[11]);
-                       
-                            if (funci.getDocumento() == (Integer.parseInt(usuario))) {
-                                if (funci.getContrasenia().equals(contrasenia)) {
-                                    
-                                    Mostrar mostrar = new Mostrar();
-                                    mostrar.valido();
-                                 break;
-                                    
+        if (usuario.equals("") || contrasenia.equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Complete los campos");
 
-                                }
+        } else {
 
-                            } else {
+            try {
+                while (linea != null) {
+                    String[] split = linea.split(",");
+                    Medico funci = new Medico();
+                    funci.setDocumento(Integer.parseInt(split[0]));
+                    funci.setContrasenia(split[11]);
 
-                                JOptionPane.showMessageDialog(rootPane, "Usuario y/o contraseña incorrecto");
-                            break;
-                            }
-                            break;
+                    if (funci.getDocumento() == (Integer.parseInt(usuario)) && funci.getContrasenia().equals(contrasenia)) {
 
-                        }
-                    } catch (Exception e) {
+                        Mostrar mostrar = new Mostrar();
+                        mostrar.valido();
+                        break;
+
+                    } else {
+
+                        JOptionPane.showMessageDialog(rootPane, "Usuario y/o contraseña incorrecto");
+                        break;
                     }
-               
 
+                }
+            } catch (Exception e) {
             }
-       
+
+        }
+
     }
 }

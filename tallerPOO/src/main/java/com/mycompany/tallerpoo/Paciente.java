@@ -21,8 +21,8 @@ public class Paciente extends Persona { //extender de persona
      */
     public Paciente() {
         super();
-        this.personaContacto = "";
-        this.motivo = "";
+        
+    
         this.estudios = new ArrayList<ResultadoEstudios>();
         this.admisiones = new ArrayList<AdmisionDeEmergencia>();
     }

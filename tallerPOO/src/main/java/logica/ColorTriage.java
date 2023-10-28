@@ -18,7 +18,7 @@ public class ColorTriage {
     int concienciaa;
     int vomitoss;
     int sangrado;
-    int resultado;
+    int resultado=0;
     int dolorAb;
     String triage;
 
@@ -124,12 +124,20 @@ public class ColorTriage {
         }
         resultado = res + pulso + dolorPe + lesionGrav + edadd
          + fiebree + shockk + lesionesLev + estadoMen + concienciaa + vomitoss+sangrado;
-      Triage obt = new Triage();
-      String a = obt.obtenerColorSugerido(res,pulso,estadoMen,concienciaa,lesionGrav,
-              edadd,fiebree,vomitoss,dolorAb,shockk,lesionesLev,sangrado);
-            System.out.println(a);
-      PantallaTriage result = new PantallaTriage();
-      result.cargar(a); 
+            System.out.println(resultado);
+            
+            PantallaTriage a = new PantallaTriage();
+            if(resultado == 0){
+            a.cargar(Integer.toString(resultado));
+            }
+            
+        
+        
+        
+        
+        
+        
+
       
       
       

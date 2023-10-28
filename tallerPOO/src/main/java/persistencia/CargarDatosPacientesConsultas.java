@@ -36,23 +36,23 @@ public class CargarDatosPacientesConsultas {
 
     public ArrayList<Paciente> leer(String archivo) {
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(archivo));
-            System.out.println();
-            String linea; 
-            while ((linea= reader.readLine()) != null) {
-                String[] split = linea.split(",");
-                     if (split.length >= 4) { // Verifica que haya al menos 4 elementos en la línea
-                Paciente paci = new Paciente();
-                paci.setNombre(split[0]);
-                paci.setMotivo(split[9]);
-                this.agregar(paci);
-            } else {
-                // Manejar el caso donde la línea no tiene suficientes elementos
-                System.err.println("Línea incorrecta: " + linea);
+            try(BufferedReader reader = new BufferedReader(new FileReader(archivo))) {
+                System.out.println("ssss");
+                String linea;
+                while ((linea= reader.readLine()) != null) {
+                    String[] split = linea.split(",");
+                    if (split.length >= 4) { // Verifica que haya al menos 4 elementos en la línea
+                        Paciente paci = new Paciente();
+                        paci.setNombre(split[0]);
+                        paci.setMotivo(split[4]);
+                        this.agregar(paci);
+                    } else {
+                        // Manejar el caso donde la línea no tiene suficientes elementos
+                        System.err.println("Línea incorrecta: " + linea);
+                    }
+                    
+                }
             }
-                   
-            }
-            reader.close();
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {

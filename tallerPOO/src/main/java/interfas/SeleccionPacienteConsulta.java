@@ -24,9 +24,8 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
     public static String paciente_update = "";
     String barra = File.separator;
     DefaultTableModel tabla = new DefaultTableModel();
-    String Ubicacion = System.getProperty("user.dir") + barra + "BaseDatos"
-            + barra + "Consultas" + barra + "PacientesConConsultas.txt";
-
+    String Ubicacion = System.getProperty("user.dir") + barra + "Archivos"+barra+"EnEsperaPorAtender.txt";
+    
     public SeleccionPacienteConsulta() {
         initComponents();
         String[] titulo = new String[]{"Nombre", "Motivo"};
@@ -40,19 +39,19 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
 
                 if (fila > -1) {
                     paciente_update = (String) Tabla.getValueAt(fila, columna);
-                    MotivoDeConsulta informacion_paciente = new MotivoDeConsulta();
+                    PantallaTriage informacion_paciente = new PantallaTriage();
                     informacion_paciente.setVisible(true);
+                   
                 }
             }
         });
     }
 
     private void agregar(Paciente a) {
-        if (a != null) {
             Object[] fila = {a.getNombre(), a.getMotivo()};
             tabla.addRow(fila);
         }
-    }
+    
 
     private void llamar(){
            
@@ -60,14 +59,12 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
         
         try {
             ArrayList<Paciente> pacientes = pac.leer(Ubicacion);          
-            if(pacientes !=null){
+            
             for (Paciente paciente : pacientes) {
                 agregar(paciente);
                 System.out.println("b");
             }
-            }else{
-                System.out.println("malio sal");
-            }
+           
 
         } catch (Exception e) {
             

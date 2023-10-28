@@ -111,7 +111,7 @@ public class InterfazDoc extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSelecActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        SeleccionPacienteConsulta triage = new PantallaTriage();
+        SeleccionPacienteConsulta triage = new SeleccionPacienteConsulta();
         triage.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed

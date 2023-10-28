@@ -21,7 +21,10 @@ import java.util.ArrayList;
 
 public class TallerPOO {
 
-    public static void main(String[] args) throws IOException {        
+    public static void main(String[] args) throws IOException {      
+        PantallaLogin abc=new PantallaLogin();
+        abc.setVisible(true);
+        abc.setLocationRelativeTo(null);
        
         //Medico medi=new Medico("Lucas Nuñez",LocalDate.of(2022,1,1),"Alegria 123",44092390,4438354,3454343,"Soltero","lucasmagiconunez@gmail.com",7827);
         LocalDate fecha1 = LocalDate.of(2000, 7, 15);
@@ -141,9 +144,7 @@ public class TallerPOO {
        
        
         //////////////////////////////////////////////////////////////////////////////////////           
-        PantallaLogin abc=new PantallaLogin();
-        abc.setVisible(true);
-        abc.setLocationRelativeTo(null);
+        
         
 //        ArrayList lista=ResultadoEstudios.obtenerResultadoEstudios(LocalDate.of(2023,5,10));
         
