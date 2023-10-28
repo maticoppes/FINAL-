@@ -9,15 +9,6 @@ import javax.swing.JPanel;
 
 public class OpcionesDoc extends javax.swing.JFrame {
 
-    private void mostrar (JPanel p){
-            p.setSize(800, 400);
-            p.setLocation(0,0);
-        
-            content.removeAll();
-            content.add(p, BorderLayout.CENTER);
-            content.revalidate();
-            content.repaint();
-        }
   
     public OpcionesDoc() {
         initComponents();
@@ -136,8 +127,10 @@ public class OpcionesDoc extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRealziarTriageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealziarTriageActionPerformed
-       Triagee panel = new Triagee();
-        mostrar(panel);
+       PantallaTriage panel = new PantallaTriage();
+        panel.setVisible(true);
+        panel.setLocationRelativeTo(null);
+        dispose();
     }//GEN-LAST:event_btnRealziarTriageActionPerformed
 
     private void btnIngresarInfoPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarInfoPacienteActionPerformed
