@@ -45,8 +45,6 @@ public class Op5GestorCentro extends javax.swing.JFrame {
                 int columna = 2;
                 if (fila > -1) {
                     triageUpdate = (String) tablaTriage.getValueAt(fila, columna);
-                    PantallaTriage triage = new PantallaTriage();
-                    triage.setVisible(true);
                 }
             }
         }
