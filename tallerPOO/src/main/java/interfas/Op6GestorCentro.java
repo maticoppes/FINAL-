@@ -47,7 +47,8 @@ public class Op6GestorCentro extends javax.swing.JFrame {
                 int columna = 2; 
                 if (fila > -1){
                     pacienteUpdate = (String) jTableTriage.getValueAt(fila,columna);
-                    
+                    //PantallaTriage triage = new PantallaTriage();
+                    //triage.setVisible(true);
                 }
             }
         }

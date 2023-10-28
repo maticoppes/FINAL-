@@ -5,6 +5,8 @@
  */
 package Interfas;
 
+import com.mycompany.tallerpoo.ListaMedicos;
+import com.mycompany.tallerpoo.Medico;
 import com.mycompany.tallerpoo.RegistroMedico;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -195,9 +197,13 @@ public class Op4GestorCentro extends javax.swing.JFrame {
             DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
             LocalDate primeraFecha = LocalDate.parse(fechaUno, formatter1);
             LocalDate segundaFecha = LocalDate.parse(fechaDos, formatter1);
+            ListaMedicos lista = new ListaMedicos();
+            String userDir = System.getProperty("user.dir");
+            lista.leer(userDir + "\\Archivos\\Medicos.txt");
             String resultado = RegistroMedico.calcularMedMasPacPorFecha(primeraFecha,
                     segundaFecha);
-            mostrar.setText(resultado);
+            Medico medico = lista.getPorDni(Integer.parseInt(resultado));
+            mostrar.setText(medico.toString());
         } else {
             //Si las fechas no cumplen con el formato esperado, mostrar un mensaje de error.
             JOptionPane.showMessageDialog(this,

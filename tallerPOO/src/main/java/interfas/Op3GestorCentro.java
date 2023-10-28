@@ -5,6 +5,7 @@
 package Interfas;
 
 import com.mycompany.tallerpoo.ListaPacientes;
+import com.mycompany.tallerpoo.Paciente;
 import com.mycompany.tallerpoo.RegistroMedico;
 import static com.mycompany.tallerpoo.RegistroMedico.calcularMasConsPorFecha;
 import java.awt.event.MouseAdapter;
@@ -45,7 +46,7 @@ public class Op3GestorCentro extends javax.swing.JFrame {
      */
     public Op3GestorCentro() {
         initComponents();
-        String[] titulo = new String[]{"DNI"};
+        String[] titulo = new String[]{"Pacientes atendidos en el rango de fechas"};
         tabla.setColumnIdentifiers(titulo);
         jTableListaPacientes.setModel(tabla);
         jTableListaPacientes.addMouseListener(new MouseAdapter() {
@@ -56,7 +57,8 @@ public class Op3GestorCentro extends javax.swing.JFrame {
                 if (fila > -1) {
                     pacienteUpdate = (String) jTableListaPacientes.getValueAt(
                             fila, columna);
-                    
+                    //ListaPacientes registroMedico = new ListaPacientes();
+                    //registroMedico.setVisible(true);
                 }
             }
         }
@@ -70,7 +72,7 @@ public class Op3GestorCentro extends javax.swing.JFrame {
      * @param paciente Un ArrayList de String que contiene información del
      * paciente.
      */
-    private void agregar(ArrayList<String> paciente) {
+    private void agregar(ArrayList<Paciente> paciente) {
         try {
             if (paciente.size() > 0) {
                 Object[] fila = new Object[paciente.size()]; // Crear un arreglo de objetos para la fila
@@ -95,12 +97,21 @@ public class Op3GestorCentro extends javax.swing.JFrame {
      */
     private void llamar(LocalDate a, LocalDate b) throws IOException {
         RegistroMedico lista = new RegistroMedico();
+        ListaPacientes listaPacientes = new ListaPacientes();
+        String userDir = System.getProperty("user.dir");
+        listaPacientes.leer(userDir + "\\Archivos\\Pacientes.txt");
         ArrayList<String> pacientes = lista.calcularMasConsPorFecha(a, b);
+        Paciente objeto = new Paciente();
+        ArrayList<Paciente> array = new ArrayList<Paciente>();
+        int dni;
+        for (int i = 0; i < pacientes.size(); i++) {
+            dni = Integer.parseInt(pacientes.get(i));
+            objeto = listaPacientes.getPorDni(dni);
+            array.add(objeto);
+        }
 
         try {
-
-            agregar(pacientes);
-
+            agregar(array);
         } catch (Exception e) {
             System.out.println("Error" + e);
         }
@@ -139,16 +150,9 @@ public class Op3GestorCentro extends javax.swing.JFrame {
                 "Lista de pacientes"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.String.class
-            };
             boolean[] canEdit = new boolean [] {
                 false
             };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -297,4 +301,6 @@ public class Op3GestorCentro extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableListaPacientes;
     // End of variables declaration//GEN-END:variables
+
+    
 }
