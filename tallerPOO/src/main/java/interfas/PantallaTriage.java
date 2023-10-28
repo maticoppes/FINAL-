@@ -14,8 +14,8 @@ import logica.ColorTriage;
  *
  * @author Alumno
  */
-public class PantalllaTriage extends javax.swing.JFrame {
-    public PantalllaTriage() {
+public class PantallaTriage extends javax.swing.JFrame {
+    public PantallaTriage() {
         initComponents();
         
         

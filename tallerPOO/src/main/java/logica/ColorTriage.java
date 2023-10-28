@@ -2,7 +2,7 @@ package logica;
 
 
 import com.mycompany.taller.Triage;
-import interfas.PantalllaTriage;
+import interfas.PantallaTriage;
 
 public class ColorTriage {
 
@@ -128,7 +128,7 @@ public class ColorTriage {
       String a = obt.obtenerColorSugerido(res,pulso,estadoMen,concienciaa,lesionGrav,
               edadd,fiebree,vomitoss,dolorAb,shockk,lesionesLev,sangrado);
             System.out.println(a);
-      PantalllaTriage result = new PantalllaTriage();
+      PantallaTriage result = new PantallaTriage();
       result.cargar(a); 
       
       
