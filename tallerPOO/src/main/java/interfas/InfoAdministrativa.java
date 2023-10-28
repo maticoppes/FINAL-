@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package InterfazUsuario;
+package interfas;
 
 /**
  * Esta clase representa la interfaz de información administrativa en la aplicación.
@@ -116,7 +116,7 @@ public class InfoAdministrativa extends javax.swing.JFrame {
      * @param evt El evento de acción del botón.
      */
     private void jButtonAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnteriorActionPerformed
-        MenuAdminSistemas atras = new MenuAdminSistemas();
+        PantallaAdminSist atras = new PantallaAdminSist();
         atras.setVisible(true);
         atras.setLocationRelativeTo(null);
         dispose();

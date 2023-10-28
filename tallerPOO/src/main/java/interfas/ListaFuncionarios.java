@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package InterfazUsuario;
+package interfas;
 
 /**
  * Esta clase representa una interfaz que muestra una lista de funcionarios en la aplicación.

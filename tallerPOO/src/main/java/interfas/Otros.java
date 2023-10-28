@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package InterfazUsuario;
+package Interfas;
 
 /**
  * Esta clase representa una interfaz que muestra información adicional o "otros" datos en el sistema.
