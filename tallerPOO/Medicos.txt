@@ -1,1 +1,3 @@
 44210180;Valentin Delfin,,2002/05/27,calle,123124,12312321,soltero,familia,1234,Medico,,Sector,1234
+444210180;Valentin Delfin,,2002/05/02,calle,123123,213123,soltero,familia,1234,Medico,,Guardia,1234
+44210180;Valentin Delfin,,2002/05/02,calle,123123,222131231,soltero,famillia,1234,Medico,,Casa,1234

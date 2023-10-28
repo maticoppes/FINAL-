@@ -20,8 +20,7 @@ import persistencia.RegistrarDatosNuevoPaciente;
  */
 public class IngresoInfoFuncionario extends javax.swing.JPanel {
     String barra = File.separator;
-    String ubicacion= System.getProperty("user.dir")+barra+"Archivos"+barra+
-            "aaaaaaaaa.txt";
+    String ubicacion= System.getProperty("user.dir")+barra+"Archivos"+barra;
     String [] archivo = {"Medicos.txt","Enfermeros.txt", "GestorCentro.txt",
         "AdminSistemas.txt", "Sector.txt" }; 
     String lugar ="";
@@ -30,26 +29,26 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
     public IngresoInfoFuncionario() {
         initComponents();
     }
-     public void correcto(Component rootPane){
-    javax.swing.JOptionPane.showMessageDialog(rootPane, "Registro exitoso");
+     public void correcto(){
+    javax.swing.JOptionPane.showMessageDialog(this, "Registro exitoso");
     }
 
    public String direccion(String rol, String sector){
         
         if(rol.equals("Medico")){
-        lugar = archivo[0];
+        lugar = ubicacion+archivo[0];
         }else
             if(rol.equals( "Enfermero")){
-            lugar = archivo[1];
+            lugar = ubicacion+archivo[1];
             }else
                 if(rol.equals("GestorCentro")){
-                 lugar = archivo[2];
+                 lugar = ubicacion+archivo[2];
                 }else
                     if(rol.equals("AdministradorDeSistemas")){
-                        lugar = archivo[3];
+                        lugar = ubicacion+archivo[3];
                     }else{
                     if(sector.equals("Sector")){
-                        lugar=archivo[4];
+                        lugar=ubicacion+archivo[4];
                     }
                         
                     }
@@ -269,11 +268,6 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
 
     private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
 
-        /*ArrayList <FuncionarioGeneral> datos = txtNombre.getText()+","+ txtDni.getText()+","+
-        txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
-        txtTelCel.getText()+","+txtEstadoCivil.getText()+","+txtPersonaCont.getText()+","+
-        txtContrasenia.getText()+","+txtRol.getText()+","+txtContrasenia.getText()+ ","+txtSector.getText();
-        direccion(txtRol.getText(), txtSector.getText());*/
         String datos =  txtDni.getText()+";"+txtNombre.getText()+","+","+
         txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
         txtTelCel.getText()+","+txtEstadoCivil.getText()+","+txtPersonaCont.getText()+","+

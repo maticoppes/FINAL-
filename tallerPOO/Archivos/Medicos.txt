@@ -5,4 +5,6 @@
 39876234,Juan Rodriuez,28/03/1983,Av. Eva Peron 415,4212234,34568832,Soltero,juanito@email.com,72389,Medico,guardia,12
 41293478,Ana Lopez,02/09/2000,Urquiza 789,4304893,33467690,Soltera,analpz78@hotmail.com,51234,Medico,guardia,12
 22348901,Luis Perez,11/11/1982,Alem 456,4344434,4371222,Casado,luisperez@gmail.com,36789,Medico,guardia,12321
-45758007,Sabtiago Labriola,17/03/2004,Tavella 1303,0000001,soltero,
+45758007,Sabtiago Labriola,17/03/2004,Tavella 1303,0000001,soltero,44210180; 
+Valentin Delfin,,2002/05/02,calle,1231231,123123,soltero,famillia,1234,Medico,,Casa,1234
+dasdasd;dasddasdas,,dasdasdasddd/mm/aaaaa,dasdasdasdasda,asdasdas,sdad,asdasd,adsd,asdasd,Medico,,dasdasd,asdasd
