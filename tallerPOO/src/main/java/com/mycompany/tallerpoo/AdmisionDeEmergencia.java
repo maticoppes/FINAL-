@@ -191,6 +191,10 @@ public class AdmisionDeEmergencia {
         this.box = box;
     }
     
+    /**
+     * Concatena la informacion de la admision en un unico string.
+     * @return String con la informacion concatenada.
+     */
     @Override
     public String toString() {
         return "AdmisionDeEmergencia{" + "fecha=" + fecha + ", hora=" + hora + ", motivoDeConsulta=" + motivoDeConsulta + ", paciente=" + '}';
