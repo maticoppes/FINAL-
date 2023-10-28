@@ -68,11 +68,11 @@ public class TallerPOO {
         DatosTaller.setEnfermeros(listaenfermeros);
         
         
-        LocalTime hora=LocalTime.of(1, 2,3);
-        AdmisionDeEmergencia admi=new AdmisionDeEmergencia(fecha1, hora, "ahsdsa");
-        
-        //medi.hacerTriage(1, 1, 1, 1, 1, 1 ,1, 1, 1, 1, 1, 1,admi);
-        /////////////////////////////////////////////////////////////////////
+//        LocalTime hora=LocalTime.of(1, 2,3);
+//        AdmisionDeEmergencia admi=new AdmisionDeEmergencia(fecha1, hora, "ahsdsa");
+//        
+//        medi.hacerTriage(1, 1, 1, 1, 1, 1 ,1, 1, 1, 1, 1, 1,admi);
+//        /////////////////////////////////////////////////////////////////////
         /*
         DatosTaller.setTriages(prueba);
                 AdmisionDeEmergencia admision2 = new AdmisionDeEmergencia(

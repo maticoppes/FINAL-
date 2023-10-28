@@ -47,7 +47,8 @@ public class Op6GestorCentro extends javax.swing.JFrame {
                 int columna = 2; 
                 if (fila > -1){
                     pacienteUpdate = (String) jTableTriage.getValueAt(fila,columna);
-                    
+                    //PantallaTriage triage = new PantallaTriage();
+                    //triage.setVisible(true);
                 }
             }
         }
@@ -83,18 +84,16 @@ public class Op6GestorCentro extends javax.swing.JFrame {
      * @throws IOException Si ocurre un error de E/S al leer los datos de triage.
      */
     private void llamar(LocalDate a, LocalDate b) throws IOException {
-        ArrayList<String> triages = Triage.obtenerTriageCambiadosPorFecha( a ,
-                                                                            b);
-        
+        ArrayList<String> triages = Triage.obtenerTriageCambiadosPorFecha(a,
+                                b);
+
         try {
- 
-                agregar(triages);
-                   
+            agregar(triages);
         } catch (Exception e) {
             System.out.println("Error" + e);
         }
     }
-    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -108,6 +107,7 @@ public class Op6GestorCentro extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableTriage = new javax.swing.JTable();
         actualizar = new javax.swing.JButton();
+        anterior = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -128,20 +128,34 @@ public class Op6GestorCentro extends javax.swing.JFrame {
             }
         });
 
+        anterior.setText("<< Atrás");
+        anterior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                anteriorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(actualizar))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(anterior)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(anterior)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(actualizar))
         );
 
@@ -166,12 +180,26 @@ public class Op6GestorCentro extends javax.swing.JFrame {
     }//GEN-LAST:event_actualizarActionPerformed
 
     /**
+     * Maneja el evento cuando se hace clic en el botón "Atrás".
+     * Muestra la ventana anterior y cierra la actual.
+     *
+     * @param evt El evento de acción.
+     */
+    private void anteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anteriorActionPerformed
+        MenuGestorCentro atras = new MenuGestorCentro();
+        atras.setVisible(true);
+        atras.setLocationRelativeTo(null);
+        dispose();
+    }//GEN-LAST:event_anteriorActionPerformed
+
+    /**
      * @param args the command line arguments
      */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actualizar;
+    private javax.swing.JButton anterior;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableTriage;
     // End of variables declaration//GEN-END:variables
