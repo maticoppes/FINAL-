@@ -25,7 +25,9 @@ public class Mostrar {
     public void valido(String rol) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(ubicacion));
         String linea = reader.readLine();
-
+   
+        
+        
         while (linea != null) {
             String[] split = linea.split(",");             
             if (rol.equals("Medico")) {
