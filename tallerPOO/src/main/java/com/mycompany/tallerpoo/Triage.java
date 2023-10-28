@@ -27,7 +27,6 @@ public class Triage {
     private int pulso;
     private int estadoMental;
     private int consciencia;
-    private int dificultadRespiracion;
     private int lesionesGraves;
     private int edad;
     private int fiebre;
@@ -76,7 +75,6 @@ public class Triage {
         this.pulso = 0;
         this.estadoMental = 0;
         this.consciencia = 0;
-        this.dificultadRespiracion = 0;
         this.lesionesGraves = 0;
         this.edad = 0;
         this.fiebre = 0;
@@ -101,7 +99,6 @@ public class Triage {
      * @param pulso
      * @param estadoMental
      * @param consciencia
-     * @param dificultadRespiracion
      * @param lesionesGraves
      * @param edad
      * @param fiebre
@@ -116,14 +113,13 @@ public class Triage {
      * @param admision 
      */
     
-    public Triage(LocalDate Fecha, LocalTime hora, int respiracion, int pulso, int estadoMental, int consciencia, int dificultadRespiracion, int lesionesGraves, int edad, int fiebre, int vomitos, int dolorAbdominal, int signosShock, int lesionesLeves, int sangrado, String colorSugerido, String motivoCambio, String colorFinal, AdmisionDeEmergencia admision) {
+    public Triage(LocalDate Fecha, LocalTime hora, int respiracion, int pulso, int estadoMental, int consciencia, int lesionesGraves, int edad, int fiebre, int vomitos, int dolorAbdominal, int signosShock, int lesionesLeves, int sangrado, String colorSugerido, String motivoCambio, String colorFinal, AdmisionDeEmergencia admision) {
         this.Fecha = Fecha;
         this.hora = hora;
         this.respiracion = respiracion;
         this.pulso = pulso;
         this.estadoMental = estadoMental;
         this.consciencia = consciencia;
-        this.dificultadRespiracion = dificultadRespiracion;
         this.lesionesGraves = lesionesGraves;
         this.edad = edad;
         this.fiebre = fiebre;
@@ -147,7 +143,6 @@ public class Triage {
      * @param pulso
      * @param estadoMental
      * @param consciencia
-     * @param dificultadRespiracion
      * @param lesionesGraves
      * @param edad
      * @param fiebre
@@ -163,14 +158,13 @@ public class Triage {
      * @param admision 
      */
     
-    public Triage(LocalDate Fecha, LocalTime hora, int respiracion, int pulso, int estadoMental, int consciencia, int dificultadRespiracion, int lesionesGraves, int edad, int fiebre, int vomitos, int dolorAbdominal, int signosShock, int lesionesLeves, int sangrado, String colorSugerido, String motivoCambio, String colorFinal, Medico medico, AdmisionDeEmergencia admision) {
+    public Triage(LocalDate Fecha, LocalTime hora, int respiracion, int pulso, int estadoMental, int consciencia, int lesionesGraves, int edad, int fiebre, int vomitos, int dolorAbdominal, int signosShock, int lesionesLeves, int sangrado, String colorSugerido, String motivoCambio, String colorFinal, Medico medico, AdmisionDeEmergencia admision) {
         this.Fecha = Fecha;
         this.hora = hora;
         this.respiracion = respiracion;
         this.pulso = pulso;
         this.estadoMental = estadoMental;
         this.consciencia = consciencia;
-        this.dificultadRespiracion = dificultadRespiracion;
         this.lesionesGraves = lesionesGraves;
         this.edad = edad;
         this.fiebre = fiebre;
@@ -188,189 +182,334 @@ public class Triage {
     
     
     
+    /**
+     * Obtiene la fecha de registro del triaje.
+     * @return {@link LocalDate} - fecha de registro.
+     */
     public LocalDate getFecha() {
         return Fecha;
     }
 
+    /**
+     * Establece la fecha de registro del triaje.
+     * @param Fecha Fecha de registro.
+     */
     public void setFecha(LocalDate Fecha) {
         this.Fecha = Fecha;
     }
 
+    /**
+     * Obtiene la hora de registro del triaje.
+     * @return {@link LocalTime} - Hora de registro.
+     */
     public LocalTime getHora() {
         return hora;
     }
 
+    /**
+     * Establece la hora de registro del triaje .
+     * @param hora Hora de registro.
+     */
     public void setHora(LocalTime hora) {
         this.hora = hora;
     }
 
+    /**
+     * Obtiene el nivel de respiración del paciente.
+     * @return Nvel de respiración.
+     */
     public int getRespiracion() {
         return respiracion;
     }
 
+    /**
+     * Establece el nivel de respiración del paciente.
+     * @param respiracion Nivel de respiración.
+     */
     public void setRespiracion(int respiracion) {
-        if (respiracion>=0 && respiracion<=2){
-        this.respiracion = respiracion;}
+        if (respiracion >= 0 && respiracion <= 2) {
+            this.respiracion = respiracion;
+        }
     }
 
+    /**
+     * Obtiene el nivel de pulso del paciente.
+     * @return Nivel de pulso.
+     */
     public int getPulso() {
         return pulso;
     }
 
+    /**
+     * Establece el nivel de pulso del paciente.
+     * @param pulso Nivel de pulso.
+     */
     public void setPulso(int pulso) {
-        if (pulso>=0 && pulso<=1){
+        if (pulso >= 0 && pulso <= 1) {
             this.pulso = pulso;
         }
     }
 
+    /**
+     * Obtiene el estado mental del paciente.
+     * @return Estado mental del paciente.
+     */
     public int getEstadoMental() {
         return estadoMental;
     }
 
+    /**
+     * Establece el estado mental del paciente.
+     * @param estadoMental Estado mental del paciente.
+     */
     public void setEstadoMental(int estadoMental) {
-        if (estadoMental>=0 && estadoMental<=2){
+        if (estadoMental >= 0 && estadoMental <= 2) {
             this.estadoMental = estadoMental;
         }
     }
 
+    /**
+     * Obtiene el nivel de consciencia del paciente.
+     * @return Nivel de consciencia.
+     */
     public int getConsciencia() {
         return consciencia;
     }
 
+    /**
+     * Establece el nivel de consciencia del paciente.
+     * @param consciencia Nivel de consciencia.
+     */
     public void setConsciencia(int consciencia) {
-        if (consciencia>=0 && consciencia<=3){
+        if (consciencia >= 0 && consciencia <= 3) {
             this.consciencia = consciencia;
         }
     }
 
-    public int getDificultadRespiracion() {
-        return dificultadRespiracion;
-    }
-
-    public void setDificultadRespiracion(int dificultadRespiracion) {
-        if(dificultadRespiracion>=0 && dificultadRespiracion<=1){
-            this.dificultadRespiracion = dificultadRespiracion;
-        }
-    }
-
+    /**
+     * Obtiene el nivel de lesiones graves del paciente.
+     * @return Nivel de lesiones graves.
+     */
     public int getLesionesGraves() {
         return lesionesGraves;
     }
 
+    /**
+     * Establece el nivel de lesiones graves del paciente.
+     * @param lesionesGraves Nivel de lesiones graves.
+     */
     public void setLesionesGraves(int lesionesGraves) {
-       if(lesionesGraves>=0 && lesionesGraves<=2){ 
-           this.lesionesGraves = lesionesGraves;
-       }
+        if (lesionesGraves >= 0 && lesionesGraves <= 2) {
+            this.lesionesGraves = lesionesGraves;
+        }
     }
 
+    /**
+     * Obtiene el nivel de edad del paciente.
+     * @return Nivel de edad.
+     */
     public int getEdad() {
         return edad;
     }
 
+    /**
+     * Establece el nivel de edad del paciente.
+     * @param edad Nivel de edad.
+     */
     public void setEdad(int edad) {
-        if(edad>= 0 && edad<=1){
+        if (edad >= 0 && edad <= 1) {
             this.edad = edad;
         }
     }
 
+    /**
+     * Obtiene el nivel de fiebre del paciente.
+     * @return Nvel de fiebre.
+     */
     public int getFiebre() {
         return fiebre;
     }
 
+    /**
+     * Establece el nivel de fiebre del paciente.
+     * @param fiebre Nivel de fiebre.
+     */
     public void setFiebre(int fiebre) {
-        if(fiebre>=0 && fiebre<=2){
+        if (fiebre >= 0 && fiebre <= 2) {
             this.fiebre = fiebre;
         }
     }
 
+    /**
+     * Obtiene el nivel de vómitos del paciente.
+     * @return Nivel de vómitos.
+     */
     public int getVomitos() {
         return vomitos;
     }
 
+    /**
+     * Establece el nivel de vómitos del paciente.
+     * @param vomitos Nivel de vómitos.
+     */
     public void setVomitos(int vomitos) {
-        if(vomitos>=0 && vomitos<=2 ){
+        if (vomitos >= 0 && vomitos <= 2) {
             this.vomitos = vomitos;
         }
     }
 
+    /**
+     * Obtiene el nivel de dolor abdominal del paciente.
+     * @return Nivel de dolor abdominal.
+     */
     public int getDolorAbdominal() {
         return dolorAbdominal;
     }
 
+    /**
+     * Establece el nivel de dolor abdominal del paciente.
+     * @param dolorAbdominal Nivel de dolor abdominal.
+     */
     public void setDolorAbdominal(int dolorAbdominal) {
-        if(dolorAbdominal>=0 && dolorAbdominal<=2 ){
-            this.dolorAbdominal = dolorAbdominal;}
+        if (dolorAbdominal >= 0 && dolorAbdominal <= 2) {
+            this.dolorAbdominal = dolorAbdominal;
+        }
     }
 
+    /**
+     * Obtiene el nivel de signos de shock del paciente.
+     * @return Nivel de signos de shock.
+     */
     public int getSignosShock() {
         return signosShock;
     }
 
+    /**
+     * Establece el nivel de signos de shock del paciente.
+     * @param signosShock Nivel de signos de shock.
+     */
     public void setSignosShock(int signosShock) {
-        if(signosShock>=0 && signosShock<=3){
+        if (signosShock >= 0 && signosShock <= 3) {
             this.signosShock = signosShock;
         }
     }
 
+    /**
+     * Obtiene el nivel de lesiones leves del paciente.
+     * @return Nivel de lesiones leves.
+     */
     public int getLesionesLeves() {
         return lesionesLeves;
     }
 
+    /**
+     * Establece el nivel de lesiones leves del paciente.
+     * @param lesionesLeves Nivel de lesiones leves.
+     */
     public void setLesionesLeves(int lesionesLeves) {
-        if (lesionesLeves>=0 && lesionesLeves<=1){
+        if (lesionesLeves >= 0 && lesionesLeves <= 1) {
             this.lesionesLeves = lesionesLeves;
         }
     }
 
+    /**
+     * Obtiene el nivel de sangrado del paciente.
+     * @return Nivel de sangrado.
+     */
     public int getSangrado() {
         return sangrado;
     }
 
+    /**
+     * Establece el nivel de sangrado del paciente.
+     * @param sangrado Nivel de sangrado.
+     */
     public void setSangrado(int sangrado) {
-        if(sangrado>=0 && sangrado <=2){
+        if (sangrado >= 0 && sangrado <= 2) {
             this.sangrado = sangrado;
         }
     }
 
+    /**
+     * Obtiene el color sugerido para el registro de triaje
+     * @return Color sugerido.
+     */
     public String getColorSugerido() {
         return colorSugerido;
     }
 
+    /**
+     * Establece el color sugerido para el registro de triaje.
+     * @param colorSugerido Color sugerido.
+     */
     public void setColorSugerido(String colorSugerido) {
         this.colorSugerido = colorSugerido;
     }
 
+    /**
+     * Obtiene el motivo de cambio en el registro de triaje.
+     * @return Motivo de cambio.
+     */
     public String getMotivoCambio() {
         return motivoCambio;
     }
 
+    /**
+     * Establece el motivo de cambio en el registro de triaje.
+     * @param motivoCambio Motivo de cambio.
+     */
     public void setMotivoCambio(String motivoCambio) {
         this.motivoCambio = motivoCambio;
     }
 
+    /**
+     * Obtiene el color final del registro de triaje.
+     * @return Color final.
+     */
     public String getColorFinal() {
         return colorFinal;
     }
 
+    /**
+     * Establece el color final del registro de triaje.
+     * @param colorFinal Color final.
+     */
     public void setColorFinal(String colorFinal) {
         this.colorFinal = colorFinal;
     }
 
+    /**
+     * Obtiene la admisión de emergencia asociada al registro de triaje.
+     * @return Admisión de emergencia.
+     */
     public AdmisionDeEmergencia getAdmision() {
         return admision;
     }
 
+    /**
+     * Obtiene el médico que realizó el registro de triaje.
+     * @return Medico que realizó el registro de triaje.
+     */
     public Medico getMedico() {
         return medico;
     }
 
+    /**
+     * Establece el médico que realizó el registro de triaje.
+     * @param medico Médico que realizó el registro de triaje.
+     */
     public void setMedico(Medico medico) {
         this.medico = medico;
     }
-    
+
+    /**
+     * Establece la admisión de emergencia asociada al registro de triaje.
+     * @param admision La admisión de emergencia.
+     */
     public void setAdmision(AdmisionDeEmergencia admision) {
         this.admision = admision;
     }
+
     //////////////////////////////////////////////////////////////////////
     
     /**
@@ -406,7 +545,6 @@ public class Triage {
      * @param pulso La puntuación de pulso.
      * @param estadoMental La puntuación del estado mental.
      * @param consciencia La puntuación de consciencia.
-     * @param dificultadRespiracion La puntuación de dificultad respiratoria.
      * @param lesionesGraves La puntuación de lesiones graves.
      * @param edad La puntuación de edad.
      * @param fiebre La puntuación de fiebre.
@@ -421,12 +559,11 @@ public class Triage {
     
       
     public  String  obtenerColorSugerido  (int respiracion, int pulso 
-        ,int estadoMental,int conciencia, int dificultadRespiracion,
-        int lesionesGraves, int edad, int fiebre, int vomito, 
-        int dolorAbdominal, int signosShock, int lesionesLeves,int sangrado){
+                                          ,int estadoMental,int conciencia, int lesionesGraves
+                                          ,int edad, int fiebre, int vomito, int dolorAbdominal
+                                          ,int signosShock, int lesionesLeves,int sangrado){
     
-        int suma = respiracion + pulso + estadoMental + conciencia + 
-            dificultadRespiracion + lesionesGraves + edad + fiebre + vomito + 
+        int suma = respiracion + pulso + estadoMental + conciencia + lesionesGraves + edad + fiebre + vomito + 
                 dolorAbdominal + signosShock + lesionesLeves + sangrado;
         String color;
 
