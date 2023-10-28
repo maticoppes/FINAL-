@@ -5,9 +5,9 @@
  */
 package interfas;
 
-import com.mycompany.taller.ListaPacientes;
+import com.mycompany.tallerpoo.ListaPacientes;
 import java.util.ArrayList;
-import com.mycompany.taller.Paciente;
+import com.mycompany.tallerpoo.Paciente;
 import java.io.File;
 import javax.swing.JOptionPane;
 
