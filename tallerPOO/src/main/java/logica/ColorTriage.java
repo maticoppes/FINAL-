@@ -1,7 +1,7 @@
 package logica;
 
 
-import com.mycompany.taller.Triage;
+import com.mycompany.tallerpoo.Triage;
 import interfas.PantallaTriage;
 
 public class ColorTriage {

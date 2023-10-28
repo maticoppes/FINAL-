@@ -5,6 +5,7 @@ package com.mycompany.tallerpoo;
  * @author 54345
  */
 
+import InterfazUsuario.BuscarEstFecha;
 import interfas.*;
 import static com.mycompany.tallerpoo.ManejoArchivos.*;
 import static com.mycompany.tallerpoo.RegistroMedico.CalcularPacPorEdadesyFechas;

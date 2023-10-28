@@ -56,8 +56,7 @@ public class Op3GestorCentro extends javax.swing.JFrame {
                 if (fila > -1) {
                     pacienteUpdate = (String) jTableListaPacientes.getValueAt(
                             fila, columna);
-                    TablaPacientes registroMedico = new TablaPacientes();
-                    registroMedico.setVisible(true);
+                    
                 }
             }
         }
