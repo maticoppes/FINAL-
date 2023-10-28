@@ -5,7 +5,7 @@
  */
 package interfas;
 
-import com.mycompany.taller.Triage;
+import com.mycompany.tallerpoo.Triage;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import logica.ColorTriage;

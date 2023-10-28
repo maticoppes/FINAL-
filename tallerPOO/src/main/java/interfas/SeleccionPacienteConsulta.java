@@ -5,11 +5,11 @@
  */
 package interfas;
 
-import com.mycompany.taller.ListaPacientes;
+import com.mycompany.tallerpoo.ListaPacientes;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
-import com.mycompany.taller.Paciente;
+import com.mycompany.tallerpoo.Paciente;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
@@ -49,7 +49,7 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
 
     private void agregar(Paciente a) {
         if (a != null) {
-            Object[] fila = {a.getNombre(), a.getMotivo()};
+            Object[] fila = {a.getNombre(), a.Paciente.getAdmisionDeEmergencia().getMotivoDeConsulta()};
             tabla.addRow(fila);
         }
     }

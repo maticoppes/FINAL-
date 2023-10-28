@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Interfas;
+package interfas;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -16,11 +16,11 @@ import javax.swing.table.DefaultTableModel;
  * 
  * @author Matías
  */
-public class ListaPacientes extends javax.swing.JFrame {
+public class TablaPacientes extends javax.swing.JFrame {
 
     public static String paciente_update = "";
     /**
-     * Creates new form ListaPacientes
+     * Creates new form TablaPacientes
      */
     DefaultTableModel tabla = new DefaultTableModel(); 
    
@@ -28,7 +28,7 @@ public class ListaPacientes extends javax.swing.JFrame {
      * Constructor de la clase `ListaPacientes`. Inicializa la interfaz gráfica 
      * de usuario y la tabla de pacientes.
      */
-    public ListaPacientes() {
+    public TablaPacientes() {
         initComponents();
         jTableListaPacientes.setModel(tabla);
         jTableListaPacientes.addMouseListener(new MouseAdapter(){
