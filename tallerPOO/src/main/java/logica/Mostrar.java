@@ -1,8 +1,8 @@
 package logica;
 
-import com.mycompany.taller.FuncionarioGeneral;
+import com.mycompany.tallerpoo.FuncionarioGeneral;
 import interfas.InterfazDoc;
-import Interfaz.PantallaAdminSist;
+import interfas.PantallaAdminSist;
 
 /**
  *

@@ -1,5 +1,5 @@
 package persistencia;
-import com.mycompany.taller.FuncionarioGeneral;
+import com.mycompany.tallerpoo.FuncionarioGeneral;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -59,7 +59,7 @@ public class LecturaDatosFuncionariosGenerales {
             while (linea!=null){
                 String[] split=linea.split(",");//splitea la linea
                 System.out.println(split);
-                String[] splitFecha=split[3].split("/");//splitea la fecha 
+                String[] splitFecha=split[2].split("/");//splitea la fecha 
                 //System.out.println(Arrays.toString(splitFecha));
                 FuncionarioGeneral paci=new FuncionarioGeneral();
                 
@@ -67,19 +67,18 @@ public class LecturaDatosFuncionariosGenerales {
                                                 Integer.parseInt(splitFecha[1]),
                                                 Integer.parseInt(splitFecha[2]));
                 
-                paci.setDocumento(Integer.parseInt(split[2]));
+                paci.setDocumento(Integer.parseInt(split[1]));
                 paci.setNombre(split[0]);
-                paci.setApellido(split[1]);
+               
                 paci.setFechaNacimiento(fechanac);
-                paci.setDomicilio(split[4]);
-                paci.setTelefoFijo(Integer.parseInt(split[5]));
-                paci.setTelefonoCelular(Integer.parseInt(split[6]));
-                paci.setEstadoCivil(split[7]);
-                paci.setPersonaDeContacto(split[8]);
-                paci.setCorreoElectronico(split[9]);
-                paci.setRol(split[10]);
-                paci.setContrasenia(split[11]);
-                paci.setSector(split[12]);
+                paci.setDomicilio(split[3]);
+                paci.setTelefoFijo(Integer.parseInt(split[4]));
+                paci.setTelefonoCelular(Integer.parseInt(split[5]));
+                paci.setEstadoCivil(split[6]);
+                paci.setCorreoElectronico(split[7]);
+                paci.setRol(split[8]);
+                paci.setContrasenia(split[9]);
+                paci.setSector(split[10]);
                 
                 this.agregar(paci);
                 
