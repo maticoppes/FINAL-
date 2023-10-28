@@ -5,8 +5,8 @@
  */
 package persistencia;
 
-import Interfaz.PantallaAdminSist;
-import com.mycompany.taller.FuncionarioGeneral;
+import interfas.PantallaAdminSist;
+import com.mycompany.tallerpoo.FuncionarioGeneral;
 import java.awt.Component;
 import java.io.File;
 import java.io.FileInputStream;

@@ -49,85 +49,157 @@ public abstract class Persona {
         this.estadoCivil = estadoCivil;
         this.correoElectronico = correoElectronico;
     }
-        
-    // A continuación se presentan los métodos getter y setter de los atributos de la clase.
 
-
+    /**
+     * Obtiene el nombre de la persona.
+     *
+     * @return nombre de la persona.
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     * Establece el nombre de la persona.
+     *
+     * @param nombre nombre de la persona a establecer.
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     * Obtiene la fecha de nacimiento de la persona.
+     *
+     * @return fecha de nacimiento de la persona.
+     */
     public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
+    /**
+     * Establece la fecha de nacimiento de la persona.
+     *
+     * @param fechaNacimiento La fecha de nacimiento a asignar.
+     */
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
+    /**
+     * Obtiene el domicilio de la persona.
+     *
+     * @return domicilio de la persona.
+     */
     public String getDomicilio() {
         return domicilio;
     }
 
+    /**
+     * Establece el domicilio de la persona.
+     *
+     * @param domicilio domicilio a asignar.
+     */
     public void setDomicilio(String domicilio) {
         this.domicilio = domicilio;
     }
 
+    /**
+     * Obtiene el número de documento de la persona.
+     *
+     * @return número de documento de la persona.
+     */
     public int getDocumento() {
         return documento;
     }
 
+    /**
+     * Establece el número de documento de la persona.
+     *
+     * @param documento número de documento a asignar.
+     */
     public void setDocumento(int documento) {
         this.documento = documento;
     }
 
+    /**
+     * Obtiene el número de teléfono fijo de la persona.
+     *
+     * @return Número de teléfono fijo de la persona.
+     */
     public int getTelefoFijo() {
         return telefoFijo;
     }
 
+    /**
+     * Establece el número de teléfono fijo de la persona.
+     *
+     * @param telefoFijo Número de teléfono fijo a asignar.
+     */
     public void setTelefoFijo(int telefoFijo) {
         this.telefoFijo = telefoFijo;
     }
 
+    /**
+     * Obtiene el número de teléfono celular de la persona.
+     *
+     * @return número de teléfono celular de la persona.
+     */
     public int getTelefonoCelular() {
         return telefonoCelular;
     }
 
+    /**
+     * Establece el número de teléfono celular de la persona.
+     *
+     * @param telefonoCelular Número de teléfono celular a asignar.
+     */
     public void setTelefonoCelular(int telefonoCelular) {
         this.telefonoCelular = telefonoCelular;
     }
 
+    /**
+     * Obtiene el estado civil de la persona.
+     *
+     * @return Estado civil de la persona.
+     */
     public String getEstadoCivil() {
         return estadoCivil;
     }
 
+    /**
+     * Establece el estado civil de la persona.
+     *
+     * @param estadoCivil Estado civil a asignar.
+     */
     public void setEstadoCivil(String estadoCivil) {
         this.estadoCivil = estadoCivil;
     }
 
+    /**
+     * Obtiene la dirección de correo electrónico de la persona.
+     *
+     * @return La dirección de correo electrónico de la persona.
+     */
     public String getCorreoElectronico() {
         return correoElectronico;
     }
 
+    /**
+     * Establece la dirección de correo electrónico de la persona.
+     *
+     * @param correoElectronico La dirección de correo electrónico de la persona a establecer.
+     */
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
     }
 
     /**
-     * Sobrescribe el método toString para obtener una representación en cadena de la
-     * instancia de la clase Persona.
-     * 
-     * @return Una cadena que representa los atributos de la persona.
-     */
-    
+    * Concatena toda la informacion de la persona en un string.
+    * @return String con todos los datos concatenados.
+    */
     @Override
     public String toString() {
         return "Persona{" + "nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", domicilio=" + domicilio + ", documento=" + documento + ", telefoFijo=" + telefoFijo + ", telefonoCelular=" + telefonoCelular + ", estadoCivil=" + estadoCivil + ", correoElectronico=" + correoElectronico + '}';
-    }
-    
-    
+    } 
 }

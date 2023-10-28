@@ -5,7 +5,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 /**
- * 
+ * Esta clase representa al personal que se encarga de recibir y admitir a los pacientes
+ * que llegan a consultarse.
  * @author Lucas
  */
 public class SectorAdmision extends FuncionarioGeneral{

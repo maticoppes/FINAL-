@@ -58,7 +58,7 @@ public class Enfermero extends Persona {
      * @see #modificarTriage(com.mycompany.tallerpoo.Triage, java.lang.String, java.lang.String) 
      * @see ListaTriage
      */
-    public Triage hacerTriage(LocalDate Fecha, LocalTime hora, int respiracion, int pulso, int estadoMental, int conciencia, int dificultadRespiracion, int lesionesGraves, int edad, int fiebre, int vomitos, int dolorAbdominal, int signosShock, int lesionesLeves, int sangrado, AdmisionDeEmergencia admision){
+    public Triage hacerTriage(LocalDate Fecha, LocalTime hora, int respiracion, int pulso, int estadoMental, int conciencia, int lesionesGraves, int edad, int fiebre, int vomitos, int dolorAbdominal, int signosShock, int lesionesLeves, int sangrado, AdmisionDeEmergencia admision){
         Triage triage=new Triage();
         
         triage.setFecha(LocalDate.now());
@@ -67,7 +67,6 @@ public class Enfermero extends Persona {
         triage.setPulso(pulso);
         triage.setEstadoMental(estadoMental);
         triage.setConsciencia(conciencia);
-        triage.setDificultadRespiracion(dificultadRespiracion);
         triage.setLesionesGraves(lesionesGraves);
         triage.setEdad(edad);
         triage.setFiebre(fiebre);
@@ -77,7 +76,7 @@ public class Enfermero extends Persona {
         triage.setLesionesLeves(lesionesLeves);
         triage.setSangrado(sangrado);
         
-        String color=triage.obtenerColorSugerido(respiracion, pulso, estadoMental, conciencia, dificultadRespiracion, lesionesGraves, edad, fiebre, vomitos, dolorAbdominal, signosShock, lesionesLeves, sangrado);
+        String color=triage.obtenerColorSugerido(respiracion, pulso, estadoMental, conciencia, lesionesGraves, edad, fiebre, vomitos, dolorAbdominal, signosShock, lesionesLeves, sangrado);
         
         triage.setColorSugerido(color);
         triage.setColorFinal(color);
