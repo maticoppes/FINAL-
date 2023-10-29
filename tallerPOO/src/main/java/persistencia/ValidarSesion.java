@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Properties;
 import javax.swing.JOptionPane;
 import logica.Mostrar;
-
+//
 /**
  *
  * @author Alumno
