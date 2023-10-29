@@ -1,5 +1,6 @@
 package logica;
 
+import Interfas.MenuGestorCentro;
 import com.mycompany.tallerpoo.FuncionarioGeneral;
 import com.mycompany.tallerpoo.Medico;
 import interfas.IngresoDNI;
@@ -57,6 +58,13 @@ public class Mostrar {
                             doc.setLocationRelativeTo(null);
                              System.out.println("d");
                             break;
+                        }else{
+                        if (rol.equals("Gestor")) {
+                            MenuGestorCentro doc = new MenuGestorCentro();
+                            doc.setVisible(true);
+                            doc.setLocationRelativeTo(null);
+                             System.out.println("d");
+                            break;
                         }
                         break;
 
@@ -65,4 +73,5 @@ public class Mostrar {
             }
         }
     }
+}
 }
