@@ -20,6 +20,7 @@ public class AdmisionDeEmergencia extends javax.swing.JFrame {
 
     /**
      * Creates new form AdmisionDeEmergencia
+     * @param d sd
      */
     public AdmisionDeEmergencia(String d) {
         initComponents();
