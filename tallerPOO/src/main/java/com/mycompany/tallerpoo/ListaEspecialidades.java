@@ -82,9 +82,7 @@ public class ListaEspecialidades {
     /**
      * Lee información de especialidades desde un archivo especificado y agrega las especialidades a la lista.
      *
-     * @param archivo El nombre del archivo del cual se leerá la información de las especialidades.
-     * @param listamed Una lista de médicos para relacionar con las especialidades leídas.
-     * @param listamedesp Una lista de asociaciones entre médicos y especialidades para actualizar.
+     * @param archivo El nombre del archivo del cual se leerá la información de las especialidades.     
      */
     
     public void leer(String archivo){
