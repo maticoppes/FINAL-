@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package interfas;
-
+//hjk
 import com.mycompany.tallerpoo.Triage;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
