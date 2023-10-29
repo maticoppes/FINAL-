@@ -1,5 +1,5 @@
 42218299,Pepito Sanchez,1928/04/12,San Lorenzo O. 328,36829292,42129292,Soltero,pepeee@gmail.com,45299,Medico,Guardia,1212
 22348901,Rosa chez,1983/01/14,San Lorenzo O. 328,36829292,42129292,Soltero,pepeee@gmail.com,45299,Gestor,Guardia,1212
 39876234,Roberto Yey,1985/04/01,San Lorenzo O. 328,36829292,42129292,Soltero,pepeee@gmail.com,45299,Administrador de Sistemas,Guardia,1212
-42218299,Laura Ferro,1999/05/12,San Lorenzo O. 328,36829292,42129292,Soltero,pepeee@gmail.com,45299,Sector,Guardia,1212
-22348901,Andrea Sancho,1950/01/12,San Lorenzo O. 328,36829292,42129292,Soltero,pepeee@gmail.com,45299,Enfermero,Guardia,1212
+42213499,Laura Ferro,1999/05/12,San Lorenzo O. 328,36829292,42129292,Soltero,pepeee@gmail.com,45299,Sector,Guardia,1212
+229998901,Andrea Sancho,1950/01/12,San Lorenzo O. 328,36829292,42129292,Soltero,pepeee@gmail.com,45299,Enfermero,Guardia,1212
