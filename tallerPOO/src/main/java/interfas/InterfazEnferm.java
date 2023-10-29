@@ -95,7 +95,7 @@ public class InterfazEnferm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        SeleccionPacienteConsulta triage = new SeleccionPacienteConsulta();
+        EnfermSeleccionPacienteConsulta1 triage = new EnfermSeleccionPacienteConsulta1();
         triage.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
