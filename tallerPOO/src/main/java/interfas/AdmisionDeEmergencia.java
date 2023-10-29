@@ -200,10 +200,11 @@ public class AdmisionDeEmergencia extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMotivoActionPerformed
 
     private void botonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasActionPerformed
+        dispose();
         IngresoDNI aja= new IngresoDNI();
         aja.setVisible(true);
         aja.setLocationRelativeTo(null);
-        dispose();
+        
     }//GEN-LAST:event_botonAtrasActionPerformed
 
     /**

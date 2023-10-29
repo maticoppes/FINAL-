@@ -30,7 +30,7 @@ public class ValidarSesion {
 
     String barra = File.separator;
     // Ruta relativa a la carpeta "TallerPoovvvv/Registro" dentro del proyecto
-    String Ubicacion = System.getProperty("user.dir") + barra + "Archivos" + barra + "Medicos.txt";
+    String Ubicacion = System.getProperty("user.dir") + barra + "Archivos" + barra + "Funcionario.txt";
     private Component rootPane;
 
     public void sesion(String usuario, String contrasenia) throws FileNotFoundException, IOException {

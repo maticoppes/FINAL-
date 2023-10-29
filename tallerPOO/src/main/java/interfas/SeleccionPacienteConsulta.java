@@ -191,6 +191,7 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
         dispose();
         InterfazDoc interfaz = new InterfazDoc();
         interfaz.setVisible(true);
+       
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
