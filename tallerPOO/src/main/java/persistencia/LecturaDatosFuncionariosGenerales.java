@@ -66,8 +66,8 @@ public class LecturaDatosFuncionariosGenerales {
                                                 Integer.parseInt(splitFecha[1]),
                                                 Integer.parseInt(splitFecha[2]));
                 
-                paci.setDocumento(Integer.parseInt(split[1]));
-                paci.setNombre(split[0]);
+                paci.setDocumento(Integer.parseInt(split[0]));
+                paci.setNombre(split[1]);
                
                 paci.setFechaNacimiento(fechanac);
                 paci.setDomicilio(split[3]);

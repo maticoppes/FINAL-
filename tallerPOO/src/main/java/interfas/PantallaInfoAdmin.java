@@ -112,7 +112,7 @@ public class PantallaInfoAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListFuncActionPerformed
-         ListaFuncionarios opcion2 = new ListaFuncionarios();
+         TablaFuncionarios opcion2 = new TablaFuncionarios();
         opcion2.setVisible(true);
         opcion2.setLocationRelativeTo(null);
         dispose();

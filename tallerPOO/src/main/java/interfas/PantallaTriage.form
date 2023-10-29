@@ -88,11 +88,11 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="lesionesLeves" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtColorSugerido" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                                       <Component id="Fecha" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtColorSugerido" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="Hora" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
@@ -132,7 +132,7 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="dolorPecho" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="fiebre" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                                                       <Component id="vomitos" min="-2" max="-2" attributes="0"/>
                                                       <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -171,7 +171,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="67" max="32767" attributes="0"/>
+                  <EmptySpace pref="42" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -205,7 +205,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lesionesGraves" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="edad" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="dolorPecho" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="fiebre" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="shock" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -239,10 +239,15 @@
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtColorFinal" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtColorSugerido" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                                  <Component id="txtColorFinal" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                  <Component id="txtColorSugerido" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -265,7 +270,7 @@
                           <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="55" max="32767" attributes="0"/>
+                  <EmptySpace pref="53" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -408,9 +413,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtColorSugerido">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
@@ -477,15 +479,20 @@
             <Property name="text" type="java.lang.String" value="Dolor en el pecho o Dificultad para respirar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="dolorPecho">
+        <Component class="javax.swing.JComboBox" name="fiebre">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="2">
-                <StringItem index="0" value="No presente"/>
-                <StringItem index="1" value="Presente"/>
+              <StringArray count="3">
+                <StringItem index="0" value="Sin fiebre"/>
+                <StringItem index="1" value="Fiebre moderada"/>
+                <StringItem index="2" value="Fiebre alta"/>
               </StringArray>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fiebreActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>

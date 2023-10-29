@@ -140,7 +140,7 @@ public class InfoAdministrativa extends javax.swing.JFrame {
      * @param evt El evento de acción del botón.
      */
     private void jButtonFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFuncionariosActionPerformed
-        ListaFuncionarios opcion2 = new ListaFuncionarios();
+        TablaFuncionarios opcion2 = new TablaFuncionarios();
         opcion2.setVisible(true);
         opcion2.setLocationRelativeTo(null);
         dispose();

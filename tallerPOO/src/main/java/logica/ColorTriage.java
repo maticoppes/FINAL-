@@ -1,6 +1,5 @@
 package logica;
 
-
 import com.mycompany.tallerpoo.Triage;
 import interfas.PantallaTriage;
 
@@ -23,143 +22,143 @@ public class ColorTriage {
     String triage;
 
     public void color(String[] obtener) {
-        if ("Normal".equals(obtener[0])) {
-            res = 0;
-        } else {
-            if ("Moderada".equals(obtener[0])) {
-                res = 1;
-            } else {
-                res = 2;
-            }
-        }
-        if ("Normal".equals(obtener[1])) {
-            pulso = 0;
-        } else {
-            pulso = 1;
-        }
-        if ("No presente".equals(obtener[9])) {
-            estadoMen = 0;
-        } else {
-            if ("Moderado".equals(obtener[9])) {
-                estadoMen = 1;
-            } else {
-                estadoMen = 2;
-            }
-        }
-        if ("No presente".equals(obtener[3])) {
-            dolorPe = 0;
-        } else {
-            dolorPe = 1;
-        }
-        if ("No presente".equals(obtener[4])) {
-            lesionGrav = 0;
-        } else {
-            lesionGrav = 2;
-        }
-        if ("Adulto".equals(obtener[5])) {
-            edadd = 0;
-        } else {
-            edadd = 1;
-        }
-        if (obtener[6].equals("Sin fiebre")) {
-            fiebree = 0;
-        } else {
-            if ("Moderada".equals(obtener[6])) {
-                fiebree = 1;
-            } else {
-                fiebree = 2;
-            }
-        }
-        if ("No presentes".equals(obtener[7])) {
-            shockk = 0;
-        } else {
-            shockk = 3;
-        }
-        if ("No presentes".equals(obtener[8])) {
-            lesionesLev = 0;
-        } else {
-            lesionesLev = 1;
-        }
-        if ("Normal".equals(obtener[9])) {
-            estadoMen = 0;
-        } else {
-            if ("Leve".equals(obtener[9])) {
-                estadoMen = 1;
-            } else {
-                estadoMen = 2;
-            }
-        }
-        if ("Conciente y alerta".equals(obtener[10])) {
-            concienciaa = 0;
-        } else {
-            concienciaa = 3;
-        }
-        if ("Sin vomitos".equals(obtener[11])) {
-            vomitoss = 0;
-        } else {
-            if ("Moderado".equals(obtener[11])) {
-                vomitoss = 1;
-            } else {
-                vomitoss = 2;
-            }
-              if(obtener[12].equals("No Presente")){   
-                    sangrado = 0;
-                    }else{
-                            if(obtener[12].equals("Sangrado moderado")){
-                            sangrado = 1;
-                            }else{
-                            sangrado = 2;
-                            
-                            }
-                            }
-              if("No presente".equals(obtener[2])){
-              dolorAb=0;
-              }else{
-                  if("Moderado".equals(obtener[2])){
-                      dolorAb=1;
-              }else{
-                      dolorAb=2;
-                      }
-            
-        }
-         resultado = 0;
-         resultado = res + pulso + dolorPe + lesionGrav + edadd
-         + fiebree + shockk + lesionesLev + estadoMen + concienciaa + vomitoss+sangrado;
-            System.out.println(resultado);
-            
-            PantallaTriage a = new PantallaTriage();
-            switch (resultado){
-                case 0:
-                    a.cargar("Azul");
-                    break;
-                case 1,2,3,4:
-                    a.cargar("Verde");
-                    break;
-                case 5,6,7,8,9:
-                    a.cargar("Amarillo");
-                    break;
-                case 10,11,12,13,14:
-                    a.cargar("Naranja");
-                    break;
-                default:
-                    a.cargar("Rojo");
-                    break;
-            }       
-        }
-           
-            
-        
-        
-        
-        
-        
-        
+        int res, pulso, dolorPe, lesionGrav, edadd, fiebree, shockk, lesionesLev, estadoMen, concienciaa, vomitoss, sangrado, dolorAb;
 
+        switch (obtener[0]) {
+            case "Normal":
+                res = 0;
+                break;
+            case "Moderada":
+                res = 1;
+                break;
+            default:
+                res = 2;
         }
+
+        switch (obtener[1]) {
+            case "Normal":
+                pulso = 0;
+                break;
+            default:
+                pulso = 1;
+        }
+
+        switch (obtener[9]) {
+            case "No presente":
+                estadoMen = 0;
+                break;
+            case "Moderado":
+                estadoMen = 1;
+                break;
+            default:
+                estadoMen = 2;
+        }
+
+        switch (obtener[3]) {
+            case "No presente":
+                dolorPe = 0;
+                break;
+            default:
+                dolorPe = 1;
+        }
+
+        switch (obtener[4]) {
+            case "No presente":
+                lesionGrav = 0;
+                break;
+            default:
+                lesionGrav = 2;
+        }
+
+        switch (obtener[5]) {
+            case "Adulto":
+                edadd = 0;
+                break;
+            default:
+                edadd = 1;
+        }
+
+        switch (obtener[6]) {
+            case "Sin fiebre":
+                fiebree = 0;
+                break;
+            case "Moderada":
+                fiebree = 1;
+                break;
+            default:
+                fiebree = 2;
+        }
+
+        switch (obtener[7]) {
+            case "No presentes":
+                shockk = 0;
+                break;
+            default:
+                shockk = 3;
+        }
+
+        switch (obtener[8]) {
+            case "No presentes":
+                lesionesLev = 0;
+                break;
+            default:
+                lesionesLev = 1;
+        }
+
+        switch (obtener[9]) {
+            case "Normal":
+                estadoMen = 0;
+                break;
+            case "Leve":
+                estadoMen = 1;
+                break;
+            default:
+                estadoMen = 2;
+        }
+
+        switch (obtener[10]) {
+            case "Conciente y alerta":
+                concienciaa = 0;
+                break;
+            default:
+                concienciaa = 3;
+        }
+
+        switch (obtener[11]) {
+            case "Sin vomitos":
+                vomitoss = 0;
+                break;
+            case "Moderado":
+                vomitoss = 1;
+                break;
+            default:
+                vomitoss = 2;
+        }
+
+        switch (obtener[12]) {
+            case "No Presente":
+                sangrado = 0;
+                break;
+            case "Sangrado moderado":
+                sangrado = 1;
+                break;
+            default:
+                sangrado = 2;
+        }
+
+        switch (obtener[2]) {
+            case "No presente":
+                dolorAb = 0;
+                break;
+            case "Moderado":
+                dolorAb = 1;
+                break;
+            default:
+                dolorAb = 2;
+        }
+
+        resultado = 0;
+        resultado = res + pulso + dolorPe + lesionGrav + edadd + fiebree + shockk + lesionesLev + estadoMen + concienciaa + vomitoss + sangrado + dolorAb;
     }
 
-
-
-
-        
-
+}

@@ -80,7 +80,6 @@ public class CargarDatosPacientesConsultasTabla {
     public ArrayList<Paciente> leer(String archivo) {
         try {
             try(BufferedReader reader = new BufferedReader(new FileReader(archivo))) {
-                System.out.println("ssss");
                 String linea;
                 while ((linea= reader.readLine()) != null) {
                     String[] split = linea.split(",");

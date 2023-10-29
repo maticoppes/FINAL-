@@ -6,7 +6,7 @@
 package interfas;
 
 import interfas.IngresoInfoFuncionario;
-import interfas.ListaFuncionarios;
+import interfas.TablaFuncionarios;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
@@ -148,7 +148,7 @@ public class PantallaAdminSist extends javax.swing.JFrame {
 
     private void btnVerInfoAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoAdminActionPerformed
         dispose();
-        ListaFuncionarios pantalla= new  ListaFuncionarios();
+        TablaFuncionarios pantalla= new  TablaFuncionarios();
         pantalla.setVisible(true);
         pantalla.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnVerInfoAdminActionPerformed
