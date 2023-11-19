@@ -48,7 +48,7 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
     }
 
     private void agregar(Paciente a) {
-            Object[] fila = {a.getNombre(), a.getMotivo()};
+            Object[] fila = {a.getDocumento(),a.getNombre(), a.getMotivo()};
             tabla.addRow(fila);
         }
     
