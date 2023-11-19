@@ -363,7 +363,7 @@ public class RegistroMedico {
                 String fecha=paci.getFechaNacimiento().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
                 
                 String []vector = fecha.split("/");
-                LocalDate fechaNac= LocalDate.of(Integer.parseInt(vector[0]),Integer.parseInt(vector[1]) , Integer.parseInt(vector[2]));
+                LocalDate fechaNac= LocalDate.of(Integer.parseInt(vector[2]),Integer.parseInt(vector[1]) , Integer.parseInt(vector[1]));
                 
                 
                 if (fechaConsulta.isAfter(fecha1) && fechaConsulta.isBefore(fecha2)) {

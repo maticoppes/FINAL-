@@ -203,7 +203,7 @@ public class Op4GestorCentro extends javax.swing.JFrame {
             String resultado = RegistroMedico.calcularMedMasPacPorFecha(primeraFecha,
                     segundaFecha);
             Medico medico = lista.getPorDni(Integer.parseInt(resultado));
-            mostrar.setText(medico.getNombre() + ", " + medico.getDocumento() + ", " + medico.getMatricula());
+            mostrar.setText("Nombre: " + medico.getNombre() + ", DNI: " + medico.getDocumento() + ", Matricula: " + medico.getMatricula());
         } else {
             //Si las fechas no cumplen con el formato esperado, mostrar un mensaje de error.
             JOptionPane.showMessageDialog(this,
