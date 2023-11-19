@@ -360,9 +360,10 @@ public class RegistroMedico {
                 
                 Paciente paci=DatosTaller.getPacientes().getPorDni(Integer.parseInt(array[3]));
                 
-                String fecha=paci.getFechaNacimiento().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+                String fecha=paci.getFechaNacimiento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
                 
                 String []vector = fecha.split("/");
+
                 LocalDate fechaNac= LocalDate.of(Integer.parseInt(vector[2]),Integer.parseInt(vector[1]) , Integer.parseInt(vector[0]));
                 
                 

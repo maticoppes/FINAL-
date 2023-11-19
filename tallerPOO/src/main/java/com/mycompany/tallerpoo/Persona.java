@@ -200,6 +200,10 @@ public abstract class Persona {
     */
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", domicilio=" + domicilio + ", documento=" + documento + ", telefoFijo=" + telefoFijo + ", telefonoCelular=" + telefonoCelular + ", estadoCivil=" + estadoCivil + ", correoElectronico=" + correoElectronico + '}';
+        return nombre + "," + fechaNacimiento + "," + domicilio + "," + documento + "," + telefoFijo + "," + telefonoCelular + "," + estadoCivil + "," + correoElectronico;
     } 
+//    @Override
+//    public String toString() {
+//        return "Persona{" + "nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", domicilio=" + domicilio + ", documento=" + documento + ", telefoFijo=" + telefoFijo + ", telefonoCelular=" + telefonoCelular + ", estadoCivil=" + estadoCivil + ", correoElectronico=" + correoElectronico + '}';
+//    } 
 }

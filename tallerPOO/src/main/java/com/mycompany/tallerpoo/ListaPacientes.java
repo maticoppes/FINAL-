@@ -79,7 +79,9 @@ public class ListaPacientes {
      * @return El paciente encontrado o null si no se encuentra ningún paciente con ese número de documento.
      */    
     public Paciente getPorDni(int dni){
+        
         for (Paciente paci : this.pacientes){
+           
            if (paci.getDocumento()==dni){
                 return paci;
             }        
