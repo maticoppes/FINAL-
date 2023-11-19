@@ -35,11 +35,11 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 int fila = Tabla.rowAtPoint(e.getPoint());
-                int columna = 1;
+                int columna = 0;
 
                 if (fila > -1) {
                     paciente_update = (String) Tabla.getValueAt(fila, columna);
-                    PantallaTriage informacion_paciente = new PantallaTriage();
+                    PantallaTriage informacion_paciente = new PantallaTriage(paciente_update);
                     informacion_paciente.setVisible(true);
                    
                 }

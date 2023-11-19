@@ -16,9 +16,9 @@ import logica.ColorTriage;
  * @author Alumno
  */
 public class PantallaTriage extends javax.swing.JFrame {
-    public PantallaTriage() {
+    public PantallaTriage(String paciente) {
         initComponents();
-        
+        jLabel1.setText("Triage de " + paciente);
         
     }
 
@@ -95,7 +95,7 @@ public class PantallaTriage extends javax.swing.JFrame {
         p.setPreferredSize(new java.awt.Dimension(700, 450));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setText("Triage");
+        jLabel1.setText(" ");
 
         jLabel3.setText("Respiracion");
 
@@ -448,7 +448,7 @@ public class PantallaTriage extends javax.swing.JFrame {
     }//GEN-LAST:event_dolorPechoActionPerformed
 
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
-        InterfazDoc objeto = new InterfazDoc();
+        SeleccionPacienteConsulta objeto = new SeleccionPacienteConsulta();
         objeto.setVisible(true);
         dispose();
     }//GEN-LAST:event_volverActionPerformed
