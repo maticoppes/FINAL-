@@ -84,6 +84,7 @@ public class Triage {
         this.signosShock = 0;
         this.lesionesLeves = 0;
         this.sangrado = 0;
+        this.dolorPe=0;
         this.colorSugerido = "";
         this.motivoCambio = "";
         this.colorFinal = "";
