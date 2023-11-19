@@ -227,6 +227,8 @@ public class Op5GestorCentro extends javax.swing.JFrame {
     private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
         String fechaUno = fecha1.getText();
         String fechaDos = fecha2.getText();
+        DefaultTableModel model= (DefaultTableModel) tablaTriage.getModel();
+        model.setRowCount(0);
         if (validarFormatoFecha(fechaUno) && validarFormatoFecha(fechaDos)) {
             DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
             LocalDate primeraFecha = LocalDate.parse(fechaUno, formatter1);
