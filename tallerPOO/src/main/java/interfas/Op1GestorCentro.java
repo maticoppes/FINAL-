@@ -58,7 +58,9 @@ public class Op1GestorCentro extends javax.swing.JFrame {
     }
 
     /**
-     * Agrega una fila a la tabla de médicos con los datos del médico especificado.
+     * Agrega una fila a la tabla de médicos con los datos del médico
+     * especificado.
+     *
      * @param medico El médico que se va a agregar a la tabla.
      */
     private void agregar(Paciente medico) {
@@ -247,31 +249,27 @@ public class Op1GestorCentro extends javax.swing.JFrame {
         String fecha1 = txtFecha1.getText();
         String fecha2 = txtFecha2.getText();
         String patron = "\\d{7,8}";
-        jButtonBuscar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String dni = txtMedico.getText();
-                try {
-                    if (dni != patron) {
-                        JOptionPane.showMessageDialog(null, "DNI no válido.");
-                    }
-                    DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-                    LocalDate fechaUno = LocalDate.parse(fecha1, formatter1);
-                    LocalDate fechaDos = LocalDate.parse(fecha2, formatter1);
-                    int resultado = RegistroMedico.calcularNumPacDeMedPorFecha(
-                            fechaUno, fechaDos, dni);
-                    // Llama al método para calcular el número de pacientes
-                    txtResultado.setText(String.valueOf(resultado));
-                } catch (IllegalArgumentException ex) {
-                    JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
-                } catch (DateTimeParseException ex) {
-                    JOptionPane.showMessageDialog(null, "Error al analizar la fecha: " + ex.getMessage());
-                }
+        String dni = txtMedico.getText();
+        try {
+            if (dni.matches(patron)) {
+                JOptionPane.showMessageDialog(null, "DNI no válido.");
+                return;
+            }
+            DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+            LocalDate fechaUno = LocalDate.parse(fecha1, formatter1);
+            LocalDate fechaDos = LocalDate.parse(fecha2, formatter1);
+            int resultado = RegistroMedico.calcularNumPacDeMedPorFecha(
+                    fechaUno, fechaDos, dni);
+            // Llama al método para calcular el número de pacientes
+            txtResultado.setText(String.valueOf(resultado));
+        } catch (IllegalArgumentException ex) {
+            JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+        } catch (DateTimeParseException ex) {
+            JOptionPane.showMessageDialog(null, "Error al analizar la fecha: " + ex.getMessage());
+        }
 
 
     }//GEN-LAST:event_jButtonBuscarActionPerformed
-        });
-    }
 
     /**
      * Maneja el evento de acción cuando se hace clic en el botón "Atrás".
@@ -289,7 +287,7 @@ public class Op1GestorCentro extends javax.swing.JFrame {
      * información de médicos y mostrarla en la tabla.
      */
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        DefaultTableModel model= (DefaultTableModel) tablaMedicos.getModel();
+        DefaultTableModel model = (DefaultTableModel) tablaMedicos.getModel();
         model.setRowCount(0);
         llamar();
     }//GEN-LAST:event_btnActualizarActionPerformed

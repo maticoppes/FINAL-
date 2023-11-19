@@ -176,7 +176,7 @@ public class RegistroMedico {
     
     ArrayList<String> personasConMasConsultas = new ArrayList<>();
 
-    try (BufferedReader br = new BufferedReader(new FileReader("Archivos/Triage.txt"))) {
+    try (BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/Archivos/Triage.txt"))) {
         String linea = br.readLine();
         ArrayList<String> dnis = new ArrayList<>();
         ArrayList<LocalDate> fechas = new ArrayList<>();
@@ -241,7 +241,7 @@ public class RegistroMedico {
         String barra = File.separator;
         ArrayList<String> paciAtenMedi = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader("Archivos/Triage.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/Archivos/Triage.txt"))) {
             String linea = br.readLine();
 
             while (linea != null) {
@@ -288,7 +288,7 @@ public class RegistroMedico {
         String barra = File.separator;
         ArrayList<String> citas = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader("Archivos/Triage.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/Archivos/Triage.txt"))) {
             String linea = br.readLine();
 
             while (linea != null) {
@@ -349,7 +349,7 @@ public class RegistroMedico {
     int edad2Int = Integer.parseInt(edad2);
     int cont = 0;
 
-    try (BufferedReader br = new BufferedReader(new FileReader("Archivos/Triage.txt"))) {
+    try (BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/Archivos/Triage.txt"))) {
         String linea = br.readLine();
         LocalDate fechaActual = LocalDate.now();
         while (linea != null) {
