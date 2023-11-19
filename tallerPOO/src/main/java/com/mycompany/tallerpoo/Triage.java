@@ -35,6 +35,7 @@ public class Triage {
     private int signosShock;
     private int lesionesLeves;
     private int sangrado;
+    private int dolorPe;
     private String colorSugerido;
     private String motivoCambio;
     private String colorFinal;
@@ -89,8 +90,29 @@ public class Triage {
         this.admision=new AdmisionDeEmergencia();
         this.medico=new Medico();
     }
+
     
-    
+    /**
+    * Getter de Dolor de Pecho.
+    */
+    public int getDolorPe() {    
+        return dolorPe;
+    }
+
+    /**
+    * setter de Dolor de Pecho.
+    */
+    public void setDolorPe(int dolorPe) {
+        this.dolorPe = dolorPe;
+    }
+
+    /**
+     * Getter de enfermero.
+     */
+    public Enfermero getEnfermero() {
+        return enfermero;
+    }
+
     /**
      * Constructor de la clase Triage parametrizado .
      * @param Fecha
@@ -113,12 +135,20 @@ public class Triage {
      * @param admision 
      */
     
-    public Triage(LocalDate Fecha, LocalTime hora, int respiracion, int pulso, int estadoMental, int consciencia, int lesionesGraves, int edad, int fiebre, int vomitos, int dolorAbdominal, int signosShock, int lesionesLeves, int sangrado, String colorSugerido, String motivoCambio, String colorFinal, AdmisionDeEmergencia admision) {
+    /**
+    * Setter de enfermero.
+    */
+    public void setEnfermero(Enfermero enfermero) {
+        this.enfermero = enfermero;
+    }
+
+    public Triage(LocalDate Fecha, LocalTime hora, int respiracion, int pulso, int estadoMental, int dolorPe, int consciencia, int lesionesGraves, int edad, int fiebre, int vomitos, int dolorAbdominal, int signosShock, int lesionesLeves, int sangrado, String colorSugerido, String motivoCambio, String colorFinal, AdmisionDeEmergencia admision) {
         this.Fecha = Fecha;
         this.hora = hora;
         this.respiracion = respiracion;
         this.pulso = pulso;
         this.estadoMental = estadoMental;
+        this.dolorPe = dolorPe;
         this.consciencia = consciencia;
         this.lesionesGraves = lesionesGraves;
         this.edad = edad;
@@ -158,7 +188,7 @@ public class Triage {
      * @param admision 
      */
     
-    public Triage(LocalDate Fecha, LocalTime hora, int respiracion, int pulso, int estadoMental, int consciencia, int lesionesGraves, int edad, int fiebre, int vomitos, int dolorAbdominal, int signosShock, int lesionesLeves, int sangrado, String colorSugerido, String motivoCambio, String colorFinal, Medico medico, AdmisionDeEmergencia admision) {
+    public Triage(LocalDate Fecha, LocalTime hora, int respiracion, int pulso, int estadoMental,int dolorPe, int consciencia, int lesionesGraves, int edad, int fiebre, int vomitos, int dolorAbdominal, int signosShock, int lesionesLeves, int sangrado, String colorSugerido, String motivoCambio, String colorFinal, Medico medico, AdmisionDeEmergencia admision) {
         this.Fecha = Fecha;
         this.hora = hora;
         this.respiracion = respiracion;
@@ -178,6 +208,7 @@ public class Triage {
         this.colorFinal = colorFinal;
         this.medico = medico;
         this.admision = admision;
+        this.dolorPe = dolorPe;
     }
     
     
@@ -559,12 +590,12 @@ public class Triage {
     
       
     public  String  obtenerColorSugerido  (int respiracion, int pulso 
-                                          ,int estadoMental,int conciencia, int lesionesGraves
+                                          ,int estadoMental,int dolorPe,int conciencia, int lesionesGraves
                                           ,int edad, int fiebre, int vomito, int dolorAbdominal
                                           ,int signosShock, int lesionesLeves,int sangrado){
     
         int suma = respiracion + pulso + estadoMental + conciencia + lesionesGraves + edad + fiebre + vomito + 
-                dolorAbdominal + signosShock + lesionesLeves + sangrado;
+                dolorAbdominal + signosShock + lesionesLeves + sangrado + dolorPe;
         String color;
 
 

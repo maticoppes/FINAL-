@@ -139,7 +139,7 @@ public class Medico extends FuncionarioGeneral{
      * @see #modificarTriage(com.mycompany.tallerpoo.Triage, java.lang.String, java.lang.String) 
      * @see ListaTriage
      */
-    public Triage hacerTriage(int respiracion, int pulso, int estadoMental, int conciencia, int lesionesGraves, int edad, int fiebre, int vomitos, int dolorAbdominal, int signosShock, int lesionesLeves, int sangrado, AdmisionDeEmergencia admision){
+    public Triage hacerTriage(int respiracion, int pulso, int estadoMental,int dolorPe, int conciencia, int lesionesGraves, int edad, int fiebre, int vomitos, int dolorAbdominal, int signosShock, int lesionesLeves, int sangrado, AdmisionDeEmergencia admision){
         Triage triage=new Triage();
         
         triage.setFecha(LocalDate.now());
@@ -157,8 +157,9 @@ public class Medico extends FuncionarioGeneral{
         triage.setLesionesLeves(lesionesLeves);
         triage.setSangrado(sangrado);
         triage.setAdmision(admision);
+        triage.setDolorPe(dolorPe);
         
-        String color=triage.obtenerColorSugerido(respiracion, pulso, estadoMental, conciencia, lesionesGraves, edad, fiebre, vomitos, dolorAbdominal, signosShock, lesionesLeves, sangrado);
+        String color=triage.obtenerColorSugerido(respiracion, pulso, estadoMental,dolorPe, conciencia, lesionesGraves, edad, fiebre, vomitos, dolorAbdominal, signosShock, lesionesLeves, sangrado);
         
         triage.setColorSugerido(color);
         triage.setColorFinal(color);

@@ -21,8 +21,8 @@ public class ColorTriage {
     int dolorAb;
     String triage;
 
-    public void color(String[] obtener) {
-        int res, pulso, dolorPe, lesionGrav, edadd, fiebree, shockk, lesionesLev, estadoMen, concienciaa, vomitoss, sangrado, dolorAb;
+    public String color(String[] obtener) {
+        //int res, pulso, dolorPe, lesionGrav, edadd, fiebree, shockk, lesionesLev, estadoMen, concienciaa, vomitoss, sangrado, dolorAb;
 
         switch (obtener[0]) {
             case "Normal":
@@ -157,8 +157,14 @@ public class ColorTriage {
                 dolorAb = 2;
         }
 
-        resultado = 0;
-        resultado = res + pulso + dolorPe + lesionGrav + edadd + fiebree + shockk + lesionesLev + estadoMen + concienciaa + vomitoss + sangrado + dolorAb;
+        //resultado = 0;
+        //resultado = res + pulso + dolorPe + lesionGrav + edadd + fiebree + shockk + lesionesLev + estadoMen + concienciaa + vomitoss + sangrado + dolorAb;
+        Triage var = new Triage();
+        String devolver = var.obtenerColorSugerido  (res,pulso 
+                                          ,estadoMen,dolorPe,concienciaa, lesionGrav
+                                          ,edadd,fiebree,vomitoss,dolorAb
+                                          ,shockk,lesionesLev,sangrado);
+        return devolver;
     }
 
 }
