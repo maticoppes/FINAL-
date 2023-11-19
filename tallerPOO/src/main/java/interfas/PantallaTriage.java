@@ -83,7 +83,7 @@ public class PantallaTriage extends javax.swing.JFrame {
         horaEntrada = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         dolorPecho = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        volver = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
 
         jLabel2.setText("Respiracion");
@@ -195,7 +195,12 @@ public class PantallaTriage extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("volver");
+        volver.setText("volver");
+        volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverActionPerformed(evt);
+            }
+        });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sin fiebre", "Moderada", "Alta" }));
 
@@ -268,7 +273,7 @@ public class PantallaTriage extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(btnCarga)
                                         .addGap(32, 32, 32)
-                                        .addComponent(jButton1))
+                                        .addComponent(volver))
                                     .addComponent(txtMotivodeCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(pLayout.createSequentialGroup()
                                 .addGap(132, 132, 132)
@@ -356,7 +361,7 @@ public class PantallaTriage extends javax.swing.JFrame {
                         .addComponent(horaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnaceptar)
                         .addComponent(btnCarga)
-                        .addComponent(jButton1)))
+                        .addComponent(volver)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -419,8 +424,21 @@ public class PantallaTriage extends javax.swing.JFrame {
         String motivo=txtMotivodeCambio.getText();
         String fecha=fechaEntrada.getText();
         String hora =horaEntrada.getText();
-        
-        String [] triage = new String[]{colorSugerida, colorfinal, motivo, fecha, hora};
+        String res = respiracion.getSelectedItem().toString();
+        String pul = pulso.getSelectedItem().toString();
+        String dolorAb = dolorAbdomen.getSelectedItem().toString();
+        String dolorPe = dolorPecho.getSelectedItem().toString();
+        String lesionGrav = lesionesGraves.getSelectedItem().toString();
+        String edadd = edad.getSelectedItem().toString();
+        String fiebree = sangrado.getSelectedItem().toString();
+        String shockk = shock.getSelectedItem().toString();
+        String lesionesLev = lesionesLeves.getSelectedItem().toString();
+        String estadoMen = estadoMental.getSelectedItem().toString();
+        String concienciaa = conciencia.getSelectedItem().toString();
+        String vomitoss = vomitos.getSelectedItem().toString();
+        String sangra = sangrado.getSelectedItem().toString();
+        String [] triage = new String[]{res, pul,dolorAb, dolorPe,lesionGrav,edadd,fiebree,
+            shockk,lesionesLev,estadoMen,concienciaa,vomitoss,sangra,colorSugerida, colorfinal, motivo, fecha, hora};
         
         
     }//GEN-LAST:event_btnCargaActionPerformed
@@ -428,6 +446,12 @@ public class PantallaTriage extends javax.swing.JFrame {
     private void dolorPechoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dolorPechoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dolorPechoActionPerformed
+
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
+        InterfazDoc objeto = new InterfazDoc();
+        objeto.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_volverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -444,7 +468,6 @@ public class PantallaTriage extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> estadoMental;
     private javax.swing.JTextField fechaEntrada;
     private javax.swing.JTextField horaEntrada;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -477,6 +500,7 @@ public class PantallaTriage extends javax.swing.JFrame {
     private javax.swing.JTextField txtColorFinal;
     private javax.swing.JTextField txtColorSugerido;
     private javax.swing.JTextField txtMotivodeCambio;
+    private javax.swing.JButton volver;
     private javax.swing.JComboBox<String> vomitos;
     // End of variables declaration//GEN-END:variables
 }

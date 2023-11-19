@@ -141,7 +141,7 @@
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="btnCarga" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="volver" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="txtMotivodeCambio" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
                                   </Group>
@@ -257,7 +257,7 @@
                           <Component id="horaEntrada" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnaceptar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnCarga" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="volver" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="30" max="32767" attributes="0"/>
@@ -569,10 +569,13 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="volver">
           <Properties>
             <Property name="text" type="java.lang.String" value="volver"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="volverActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="jComboBox1">
           <Properties>

@@ -28,7 +28,7 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
     
     public SeleccionPacienteConsulta() {
         initComponents();
-        String[] titulo = new String[]{"Nombre", "Motivo"};
+        String[] titulo = new String[]{"DNI","Nombre", "Motivo"};
         tabla.setColumnIdentifiers(titulo);
         Tabla.setModel(tabla);
         Tabla.addMouseListener(new MouseAdapter() {

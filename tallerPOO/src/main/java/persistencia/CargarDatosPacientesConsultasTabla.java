@@ -85,7 +85,8 @@ public class CargarDatosPacientesConsultasTabla {
                     String[] split = linea.split(",");
                     if (split.length >= 4) { // Verifica que haya al menos 4 elementos en la línea
                         Paciente paci = new Paciente();
-                        paci.setNombre(split[0]);
+                        paci.setNombre(split[1]);
+                        paci.setDocumento(Integer.parseInt(split[0]));
                         paci.setMotivo(split[4]);
                         this.agregar(paci);
                     } else {
