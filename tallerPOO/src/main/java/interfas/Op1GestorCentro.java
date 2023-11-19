@@ -251,7 +251,7 @@ public class Op1GestorCentro extends javax.swing.JFrame {
         String patron = "\\d{7,8}";
         String dni = txtMedico.getText();
         try {
-            if (dni.matches(patron)) {
+            if (!dni.matches(patron)) {
                 JOptionPane.showMessageDialog(null, "DNI no válido.");
                 return;
             }

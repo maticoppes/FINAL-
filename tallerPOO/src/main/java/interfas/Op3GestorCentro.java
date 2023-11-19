@@ -99,7 +99,7 @@ public class Op3GestorCentro extends javax.swing.JFrame {
         RegistroMedico lista = new RegistroMedico();
         ListaPacientes listaPacientes = new ListaPacientes();
         String userDir = System.getProperty("user.dir");
-        listaPacientes.leer(userDir + "\\Archivos\\Pacientes.txt");
+        listaPacientes.leer(userDir + "/Archivos/Pacientes.txt");
         ArrayList<String> pacientes = lista.calcularMasConsPorFecha(a, b);
         Paciente objeto = new Paciente();
         ArrayList<Paciente> array = new ArrayList<Paciente>();

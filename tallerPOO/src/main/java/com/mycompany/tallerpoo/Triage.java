@@ -601,7 +601,7 @@ public class Triage {
         int azul = 0;
         Triage tri;
 
-        try (BufferedReader br = new BufferedReader(new FileReader("Archivos/Triage.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir") + "/" + "Archivos" + "/" +"Triage.txt"))) {
             String linea = br.readLine();
 
             while (linea != null) {

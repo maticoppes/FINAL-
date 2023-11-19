@@ -148,6 +148,7 @@ public class ListaPacientes {
                 
                 linea = reader.readLine();
             }
+            reader.close();
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {

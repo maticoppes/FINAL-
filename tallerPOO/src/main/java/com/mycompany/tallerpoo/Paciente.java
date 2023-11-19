@@ -213,7 +213,7 @@ public class Paciente extends Persona { //extender de persona
 
     @Override
     public String toString() {
-        return "Paciente{" + "personaContacto=" + personaContacto + ", estudios=" + estudios + ", admisiones=" + admisiones + ", motivo=" + motivo + '}';
+        return super.toString() + ", personaContacto=" + personaContacto + ", estudios=" + estudios + ", admisiones=" + admisiones + ", motivo=" + motivo + '}';
     }
 
 }
