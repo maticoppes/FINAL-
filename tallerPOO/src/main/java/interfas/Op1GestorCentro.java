@@ -4,7 +4,9 @@
  */
 package Interfas;
 
+import com.mycompany.tallerpoo.ListaMedicos;
 import com.mycompany.tallerpoo.ListaPacientes;
+import com.mycompany.tallerpoo.Medico;
 import com.mycompany.tallerpoo.Paciente;
 import com.mycompany.tallerpoo.RegistroMedico;
 import java.awt.event.ActionEvent;
@@ -46,11 +48,11 @@ public class Op1GestorCentro extends javax.swing.JFrame {
      * Llena la tabla de médicos con información leída desde un archivo.
      */
     private void llamar() {
-        ListaPacientes lista = new ListaPacientes();
-        ArrayList<Paciente> pacientes = lista.leer(ubicacion);
+        ListaMedicos lista = new ListaMedicos();
+        ArrayList<Medico> Medicos = lista.leer(ubicacion);
         try {
-            for (Paciente paciente : pacientes) {
-                agregar(paciente);
+            for (Medico medico : Medicos) {
+                agregar(medico);
             }
         } catch (Exception e) {
             System.out.println("Error" + e);
@@ -63,7 +65,7 @@ public class Op1GestorCentro extends javax.swing.JFrame {
      *
      * @param medico El médico que se va a agregar a la tabla.
      */
-    private void agregar(Paciente medico) {
+    private void agregar(Medico medico) {
         try {
             if (medico != null) {
                 Object[] fila = {medico.getDocumento(), medico.getNombre()};
