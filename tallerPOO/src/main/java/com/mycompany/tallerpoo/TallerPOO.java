@@ -21,17 +21,8 @@ import java.util.ArrayList;
 
 public class TallerPOO {
 
-    public static void main(String[] args) throws IOException { 
-        
-        String userDir=System.getProperty("user.dir");
-        ListaPacientes listapaci=new ListaPacientes();
-        listapaci.leer(userDir+"\\Archivos\\Pacientes.txt");
-        DatosTaller.setPacientes(listapaci);
-        
-        PantallaLogin abc=new PantallaLogin();
-        abc.setVisible(true);
-        abc.setLocationRelativeTo(null);
-        
+    public static void main(String[] args) throws IOException {      
+
         System.out.println("");
         //Medico medi=new Medico("Lucas Nuñez",LocalDate.of(2022,1,1),"Alegria 123",44092390,4438354,3454343,"Soltero","lucasmagiconunez@gmail.com",7827);
         LocalDate fecha1 = LocalDate.of(2000, 7, 15);
@@ -40,7 +31,7 @@ public class TallerPOO {
         String barra= File.separator;
         
         ListaBox listaBox=new ListaBox();
-        
+        ListaPacientes listapaci=new ListaPacientes();
         ListaResEstudios listaresu=new ListaResEstudios();
         ListaAdmisiones listaAdmisiones=new ListaAdmisiones();
         ListaMedicos listamedi=new ListaMedicos();
@@ -53,20 +44,22 @@ public class TallerPOO {
         ////////////////////////////////////////////////
 //        ListaPVarias listavarias=new ListaPVarias();
         
-        
+        String userDir=System.getProperty("user.dir");
         
         listaBox.leer(userDir+"\\Archivos\\Boxes.txt");
-        
+        listapaci.leer(userDir+"\\Archivos\\Pacientes.txt");
         listaresu.leer(userDir+"\\Archivos\\ResEstudios.txt");
         listaAdmisiones.leer(userDir+"\\Archivos\\Admisiones.txt",listapaci);
         listamedi.leer(userDir+"\\Archivos\\Medicos.txt");
         listaespe.leer(userDir+"\\Archivos\\Especialidades.txt",listamedi,listamedesp);
-        listaPaciSinTriage.leer(userDir+"\\Archivos\\EnEsperaAlTriage.txt");
-        listaPaciTriageados.leer(userDir+"\\Archivos\\EnEsperaPorAtender.txt");
+        listaPaciSinTriage.leerEnEspera(userDir+"\\Archivos\\EnEsperaAlTriage.txt");
+
+        
+        listaPaciTriageados.leerEnEspera(userDir+"\\Archivos\\EnEsperaPorAtender.txt");
         listaenfermeros.leer(userDir+"\\Archivos\\Enfermeros.txt");
         prueba.leer(userDir+"\\Archivos\\Triage.txt");
         
-        
+        DatosTaller.setPacientes(listapaci);
         DatosTaller.setMedicos(listamedi);
         DatosTaller.setResultados(listaresu);
         DatosTaller.setAdmisiones(listaAdmisiones);
@@ -77,6 +70,9 @@ public class TallerPOO {
         DatosTaller.setPacientesTriageados(listaPaciTriageados);
         DatosTaller.setEnfermeros(listaenfermeros);
         
+        PantallaLogin abc=new PantallaLogin();
+        abc.setVisible(true);
+        abc.setLocationRelativeTo(null);
         
 //        LocalTime hora=LocalTime.of(1, 2,3);
 //        AdmisionDeEmergencia admi=new AdmisionDeEmergencia(fecha1, hora, "ahsdsa");

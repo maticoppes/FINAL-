@@ -159,6 +159,28 @@ public class ListaPacientes {
         return pacientes;
     }
     
+    public ArrayList<Paciente> leerEnEspera(String archivo){
+        
+        try {
+            BufferedReader reader= new BufferedReader (new FileReader(archivo));
+            String linea = reader.readLine();
+            
+            while (linea!=null && !linea.trim().isEmpty()){
+                String[] split=linea.split(",");//splitea la linea
+                
+                this.agregar(DatosTaller.getPacientes().getPorDni(Integer.parseInt(split[0])));
+                
+                linea = reader.readLine();
+            }
+            reader.close();
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return pacientes;
+    }
+
     /**
      * Sobrescribe el método `toString()` de la clase `Object` para proporcionar una representación en forma de cadena
      * de la instancia de la clase `ListaPacientes`.
