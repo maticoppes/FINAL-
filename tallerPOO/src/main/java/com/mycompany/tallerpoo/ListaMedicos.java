@@ -138,9 +138,9 @@ public class ListaMedicos {
                 
                 Medico medi=new Medico();
                 
-                LocalDate fechanac= LocalDate.of(Integer.parseInt(splitFecha[2]),
+                LocalDate fechanac= LocalDate.of(Integer.parseInt(splitFecha[0]),
                                                 Integer.parseInt(splitFecha[1]),
-                                                Integer.parseInt(splitFecha[0]));
+                                                Integer.parseInt(splitFecha[2]));
                 
                 medi.setDocumento(Integer.parseInt(split[0]));
                 medi.setNombre(split[1]);
