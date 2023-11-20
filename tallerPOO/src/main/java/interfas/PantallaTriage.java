@@ -39,9 +39,7 @@ public class PantallaTriage extends javax.swing.JFrame {
    
    public String pasar(String [] array){
    ColorTriage pase = new ColorTriage();
-       System.out.println("arrayfinal" + array[0]+array[1]+array[2]+array[3]+array[4]+array[5]);
    String resultado = pase.color(array);
-       System.out.println("resultado"  + resultado);
    return resultado;
    }
     @SuppressWarnings("unchecked")
@@ -85,7 +83,7 @@ public class PantallaTriage extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         dolorPecho = new javax.swing.JComboBox<>();
         volver = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jFiebre = new javax.swing.JComboBox<>();
         jLabel22 = new javax.swing.JLabel();
 
         jLabel2.setText("Respiracion");
@@ -193,7 +191,7 @@ public class PantallaTriage extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sin fiebre", "Moderada", "Alta" }));
+        jFiebre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sin fiebre", "Moderada", "Alta" }));
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel22.setText("jLabel22");
@@ -242,7 +240,7 @@ public class PantallaTriage extends javax.swing.JFrame {
                                             .addComponent(jLabel12)
                                             .addComponent(vomitos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel14)
-                                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jFiebre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(48, 48, 48)
                                         .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel16)
@@ -303,7 +301,7 @@ public class PantallaTriage extends javax.swing.JFrame {
                     .addComponent(lesionesGraves, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(shock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jFiebre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
@@ -328,13 +326,12 @@ public class PantallaTriage extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel11))))
                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pLayout.createSequentialGroup()
-                            .addGap(2, 2, 2)
-                            .addComponent(txtColorFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(pLayout.createSequentialGroup()
-                            .addGap(4, 4, 4)
-                            .addComponent(txtColorSugerido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pLayout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(txtColorFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(txtColorSugerido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtMotivodeCambio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -386,7 +383,7 @@ public class PantallaTriage extends javax.swing.JFrame {
         String dolorPe = dolorPecho.getSelectedItem().toString();
         String lesionGrav = lesionesGraves.getSelectedItem().toString();
         String edadd = edad.getSelectedItem().toString();
-        String fiebree = sangrado.getSelectedItem().toString();
+        String fiebree = jFiebre.getSelectedItem().toString();
         String shockk = shock.getSelectedItem().toString();
         String lesionesLev = lesionesLeves.getSelectedItem().toString();
         String estadoMen = estadoMental.getSelectedItem().toString();
@@ -394,10 +391,9 @@ public class PantallaTriage extends javax.swing.JFrame {
         String vomitoss = vomitos.getSelectedItem().toString();
         String sangra = sangrado.getSelectedItem().toString();
         
-        String [] lista = {res, pul,dolorAb, dolorPe,lesionGrav,edadd,fiebree,
-            shockk,lesionesLev,estadoMen,concienciaa,vomitoss,sangra};
+        String lista [] = {res, pul, estadoMen, concienciaa,lesionGrav, edadd, 
+            fiebree, vomitoss, dolorAb,shockk, lesionesLev,sangra,dolorPe};
         
-        System.out.println("lista"+ lista);
         
         txtColorSugerido.setText(pasar(lista));
         
@@ -474,7 +470,7 @@ public class PantallaTriage extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> dolorPecho;
     private javax.swing.JComboBox<String> edad;
     private javax.swing.JComboBox<String> estadoMental;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jFiebre;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

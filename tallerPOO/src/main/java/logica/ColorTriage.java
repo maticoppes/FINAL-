@@ -62,7 +62,7 @@ public class ColorTriage {
         }
         
         switch (obtener[4]) {
-            case "No presente":
+            case "No presentes":
                 array[4] = 0;
                 break;
             default:
@@ -104,7 +104,8 @@ public class ColorTriage {
                 array[8] = 0;
                 break;
             case "Moderado":
-                array[8] = 1;    
+                array[8] = 1;   
+                break;
             default:
                 array[8] = 2;
         }
@@ -143,7 +144,6 @@ public class ColorTriage {
             default:
                 array[12] = 1;
         }
-         System.out.println("arraynumeroooos" + array[0]+array[1]+array[2]+array[3]+array[4]+array[5]+array[6]);
         return array;
     }
      
