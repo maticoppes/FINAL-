@@ -25,132 +25,131 @@ public class ColorTriage {
         int [] array = new int [obtener.length];
         switch (obtener[0]) {
             case "Normal":
-                res = 0;
+                array[0] = 0;
                 break;
             case "Moderada":
-                res = 1;
+                array[0] = 1;
                 break;
             default:
-                res = 2;
+                array[0] = 2;
         }
 
         switch (obtener[1]) {
             case "Normal":
-                pulso = 0;
+                array[1] = 0;
                 break;
             default:
-                pulso = 1;
+                array[1] = 1;
         }
 
         switch (obtener[2]) {
             case "Normal":
-                estadoMen = 0;
+                array[2] = 0;
                 break;
             case "Leve":
-                estadoMen = 1;
+                array[2] = 1;
                 break;
             default:
-                estadoMen = 2;
+                array[2] = 2;
         }
         
         switch (obtener[3]) {
             case "Conciente y alerta":
-                concienciaa = 0;
+                array[3] = 0;
                 break;
             default:
-                concienciaa = 3;
+                array[3] = 3;
         }
         
         switch (obtener[4]) {
             case "No presente":
-                lesionGrav = 0;
+                array[4] = 0;
                 break;
             default:
-                lesionGrav = 2;
+                array[4] = 2;
         }
 
         switch (obtener[5]) {
             case "Adulto":
-                edadd = 0;
+                array[5] = 0;
                 break;
             default:
-                edadd = 1;
+                array[5] = 1;
         }
 
         switch (obtener[6]) {
             case "Sin fiebre":
-                fiebree = 0;
+                array[6] = 0;
                 break;
             case "Moderada":
-                fiebree = 1;
+                array[6] = 1;
                 break;
             default:
-                fiebree = 2;
+                array[6] = 2;
         }
 
         switch (obtener[7]) {
             case "Sin vomitos":
-                vomitoss = 0;
+                array[7] = 0;
                 break;
             case "Moderado":
-                vomitoss = 1;
+                array[7] = 1;
                 break;
             default:
-                vomitoss = 2;
+                array[7] = 2;
         }
         
         switch (obtener[8]){
             case "Nopresente":
-                dolorAb = 0;
+                array[8] = 0;
                 break;
             case "Moderado":
-                dolorAb = 1;    
+                array[8] = 1;    
             default:
-                dolorAb = 2;
+                array[8] = 2;
         }
         
         switch (obtener[9]) {
             case "No presentes":
-                shockk = 0;
+                array[9] = 0;
                 break;
             default:
-                shockk = 3;
+                array[9] = 3;
         }
 
         switch (obtener[10]) {
             case "No presentes":
-                lesionesLev = 0;
+                array[10] = 0;
                 break;
             default:
-                lesionesLev = 1;
+                array[10] = 1;
         }
 
          switch (obtener[11]) {
             case "No Presente":
-                sangrado = 0;
+                array[11] = 0;
                 break;
             case "Sangrado moderado":
-                sangrado = 1;
+                array[11] = 1;
                 break;
             default:
-                sangrado = 2;
+                array[11] = 2;
         }
         
          switch (obtener[12]) {
             case "No presente":
-                dolorPe = 0;
+                array[12] = 0;
                 break;
             default:
-                dolorPe = 1;
+                array[12] = 1;
         }
-
+         System.out.println("arraynumeroooos" + array[0]+array[1]+array[2]+array[3]+array[4]+array[5]+array[6]);
         return array;
     }
      
     public String color(String[] obtener) {
         //int res, pulso, dolorPe, lesionGrav, edadd, fiebree, shockk, lesionesLev, estadoMen, concienciaa, vomitoss, sangrado, dolorAb;
         int [] array = this.numeros(obtener);
-       
 
         //resultado = 0;
         //resultado = res + pulso + dolorPe + lesionGrav + edadd + fiebree + shockk + lesionesLev + estadoMen + concienciaa + vomitoss + sangrado + dolorAb;

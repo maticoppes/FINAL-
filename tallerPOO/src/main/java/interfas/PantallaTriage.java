@@ -39,7 +39,9 @@ public class PantallaTriage extends javax.swing.JFrame {
    
    public String pasar(String [] array){
    ColorTriage pase = new ColorTriage();
+       System.out.println("arrayfinal" + array[0]+array[1]+array[2]+array[3]+array[4]+array[5]);
    String resultado = pase.color(array);
+       System.out.println("resultado"  + resultado);
    return resultado;
    }
     @SuppressWarnings("unchecked")
@@ -394,7 +396,9 @@ public class PantallaTriage extends javax.swing.JFrame {
         
         String [] lista = {res, pul,dolorAb, dolorPe,lesionGrav,edadd,fiebree,
             shockk,lesionesLev,estadoMen,concienciaa,vomitoss,sangra};
-    
+        
+        System.out.println("lista"+ lista);
+        
         txtColorSugerido.setText(pasar(lista));
         
        
