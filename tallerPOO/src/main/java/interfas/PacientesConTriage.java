@@ -41,7 +41,7 @@ public class PacientesConTriage extends javax.swing.JFrame {
                 int columna = 0;
 
                 if (fila > -1) {
-                    paciente_update = (String) Tabla.getValueAt(fila, columna);
+                    paciente_update = String.valueOf(Tabla.getValueAt(fila, columna));
                     TriagiadoPaciente informacion_paciente = new TriagiadoPaciente(Integer.parseInt(paciente_update));
                     informacion_paciente.setVisible(true);
                     dispose();
