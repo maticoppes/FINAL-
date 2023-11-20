@@ -405,19 +405,25 @@ public class PantallaTriage extends javax.swing.JFrame {
         String motivo=txtMotivodeCambio.getText();
         LocalDate fecha= LocalDate.now();
         LocalTime hora =LocalTime.now();
-        int res =Integer.parseInt(respiracion.getSelectedItem().toString());
-        int pul =Integer.parseInt(pulso.getSelectedItem().toString());
-        int dolorAb = Integer.parseInt(dolorAbdomen.getSelectedItem().toString());
-        int dolorPe = Integer.parseInt(dolorPecho.getSelectedItem().toString());
-        int lesionGrav = Integer.parseInt(lesionesGraves.getSelectedItem().toString());
-        int edadd = Integer.parseInt(edad.getSelectedItem().toString());
-        int fiebree = Integer.parseInt(sangrado.getSelectedItem().toString());
-        int shockk = Integer.parseInt(shock.getSelectedItem().toString());
-        int lesionesLev = Integer.parseInt(lesionesLeves.getSelectedItem().toString());
-        int estadoMen = Integer.parseInt(estadoMental.getSelectedItem().toString());
-        int concienciaa = Integer.parseInt(conciencia.getSelectedItem().toString());
-        int vomitoss = Integer.parseInt(vomitos.getSelectedItem().toString());
-        int sangra = Integer.parseInt(sangrado.getSelectedItem().toString());
+        String res = respiracion.getSelectedItem().toString();
+        String pul = pulso.getSelectedItem().toString();
+        String dolorAb = dolorAbdomen.getSelectedItem().toString();
+        String dolorPe = dolorPecho.getSelectedItem().toString();
+        String lesionGrav = lesionesGraves.getSelectedItem().toString();
+        String edadd = edad.getSelectedItem().toString();
+        String fiebree = sangrado.getSelectedItem().toString();
+        String shockk = shock.getSelectedItem().toString();
+        String lesionesLev = lesionesLeves.getSelectedItem().toString();
+        String estadoMen = estadoMental.getSelectedItem().toString();
+        String concienciaa = conciencia.getSelectedItem().toString();
+        String vomitoss = vomitos.getSelectedItem().toString();
+        String sangra = sangrado.getSelectedItem().toString();
+        //String [] listado = {res, pul,dolorAb, dolorPe,lesionGrav,edadd,fiebree,
+        //    shockk,lesionesLev,estadoMen,concienciaa,vomitoss,sangra};
+        String listado [] = {res, pul, estadoMen, dolorPe, concienciaa, lesionGrav, 
+            edadd, fiebree, vomitoss, dolorAb, shockk, lesionesLev};
+        int [] pasados = ColorTriage.numeros(listado);
+        
         //String [] triage = new String[]{res, pul,dolorAb, dolorPe,lesionGrav,edadd,fiebree,
             //shockk,lesionesLev,estadoMen,concienciaa,vomitoss,sangra,colorSugerida, colorfinal, motivo, fecha, hora};
         
@@ -428,9 +434,12 @@ public class PantallaTriage extends javax.swing.JFrame {
                 encontrado = admis;
             }
         }
-        Triage triage =  new Triage (fecha,hora,res,pul,estadoMen,dolorPe,concienciaa,lesionGrav,edadd,fiebree,vomitoss,dolorAb,shockk,lesionesLev,
-                                      sangra,colorSugerida,motivo,colorfinal,encontrado);
         
+        //Triage triage =  new Triage (fecha,hora,res,pul,estadoMen,dolorPe,concienciaa,lesionGrav,edadd,fiebree,vomitoss,dolorAb,shockk,lesionesLev,
+        //                              sangra,colorSugerida,motivo,colorfinal,encontrado);
+        
+         Triage triage = new Triage(fecha, hora,pasados[0],pasados[1],pasados[2],pasados[3],pasados[4],pasados[5],pasados[6],pasados[7],pasados[8],pasados[9],pasados[10],pasados[11],pasados[12],colorSugerida,motivo,colorfinal, encontrado);                             
+                                      
         String ubi=(System.getProperty("user.dir") + "/Archivos/Triage.txt");
         DatosTaller.getTriages().agregar(triage);
         DatosTaller.getTriages().agregarArchivo(ubi,triage);

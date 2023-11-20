@@ -20,7 +20,145 @@ public class ColorTriage {
     int resultado;
     int dolorAb;
     String triage;
+    
+    public static int [] numeros(String [] valores){
+        int [] array = new int [valores.length];
+        switch (valores[0]) {
+            case "Normal":
+                array[0] = 0;
+                break;
+            case "Moderada":
+                array[0] = 1;
+                break;
+            default:
+                array[0] = 2;
+        }
 
+        switch (valores[1]) {
+            case "Normal":
+                array[1] = 0;
+                break;
+            default:
+                array[1] = 1;
+        }
+        
+        switch (valores[2]) {
+            case "Normal":
+                array[2] = 0;
+                break;
+            case "Leve":
+                array[2] = 1;
+                break;
+            default:
+                array[2] = 2;
+        }
+
+        /*switch (valores[9]) {
+            case "No presente":
+                array[2] = 0;
+                break;
+            case "Moderado":
+                array[2] = 1;
+                break;
+            default:
+                array[2] = 2;
+        }
+*/
+        switch (valores[3]) {
+            case "No presente":
+                array[3] = 0;
+                break;
+            default:
+                array[3] = 1;
+        }
+
+        switch (valores[4]) {
+            case "No presente":
+                array[4] = 0;
+                break;
+            default:
+                array[4] = 2;
+        }
+
+        switch (valores[5]) {
+            case "Adulto":
+                array[5] = 0;
+                break;
+            default:
+                array[5] = 1;
+        }
+
+        switch (valores[6]) {
+            case "Sin fiebre":
+                array[6] = 0;
+                break;
+            case "Moderada":
+                array[6] = 1;
+                break;
+            default:
+                array[6] = 2;
+        }
+
+        switch (valores[7]) {
+            case "No presentes":
+                array[7] = 0;
+                break;
+            default:
+                array[7] = 3;
+        }
+
+        switch (valores[8]) {
+            case "No presentes":
+                array[8] = 0;
+                break;
+            default:
+                array[8] = 1;
+        }
+
+        switch (valores[9]) {
+             case "No presente":
+                array[9] = 0;
+                break;
+            case "Moderado":
+                array[9] = 1;
+                break;
+            default:
+                array[9] = 2;
+        }
+
+        switch (valores[10]) {
+            case "Conciente y alerta":
+                array[10] = 0;
+                break;
+            default:
+                array[10] = 3;
+        }
+
+        switch (valores[11]) {
+            case "Sin vomitos":
+                array[11] = 0;
+                break;
+            case "Moderado":
+                array[11] = 1;
+                break;
+            default:
+                array[11] = 2;
+        }
+
+        switch (valores[12]) {
+            case "No Presente":
+                array[12] = 0;
+                break;
+            case "Sangrado moderado":
+                array[12] = 1;
+                break;
+            default:
+                array[12] = 2;
+        }
+
+        return array;
+    }
+     
     public String color(String[] obtener) {
         //int res, pulso, dolorPe, lesionGrav, edadd, fiebree, shockk, lesionesLev, estadoMen, concienciaa, vomitoss, sangrado, dolorAb;
 
