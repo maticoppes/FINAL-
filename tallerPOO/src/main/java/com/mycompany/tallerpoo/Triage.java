@@ -614,7 +614,7 @@ public class Triage {
             return "Naranja";
         } else if (suma>= 5 && suma <= 9) {
             return "Amarillo";
-        } else if (suma >= 0 && suma <= 4) {
+        } else if (suma > 0 && suma <= 4) {
             return "Verde";
         } else {
             return "Azul";
