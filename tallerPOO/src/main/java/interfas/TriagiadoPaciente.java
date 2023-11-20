@@ -21,6 +21,7 @@ public class TriagiadoPaciente extends javax.swing.JFrame {
      */
     public TriagiadoPaciente(int dniPaciente) {
         initComponents();
+        jTitulo.setText("Triage de: " + DatosTaller.getPacientes().getPorDni(dniPaciente).getNombre());
         AdmisionDeEmergencia admi = DatosTaller.getAdmisiones().buscarAdmision(dniPaciente);
         Triage triage = admi.getTriage();
         String [] listado = triage.pasarAColor();
@@ -71,7 +72,7 @@ public class TriagiadoPaciente extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         volver = new javax.swing.JButton();
-        jLabel22 = new javax.swing.JLabel();
+        jTitulo = new javax.swing.JLabel();
         jRespiracion = new javax.swing.JTextField();
         jPulso = new javax.swing.JTextField();
         jColorFinal = new javax.swing.JTextField();
@@ -132,8 +133,8 @@ public class TriagiadoPaciente extends javax.swing.JFrame {
             }
         });
 
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel22.setText("jLabel22");
+        jTitulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jTitulo.setText("jLabel22");
 
         jPulso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,14 +225,14 @@ public class TriagiadoPaciente extends javax.swing.JFrame {
                         .addGap(60, 60, 60)
                         .addComponent(jLabel11))
                     .addComponent(jLabel9)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45))
         );
         pLayout.setVerticalGroup(
             pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel22)
+                .addComponent(jTitulo)
                 .addGap(32, 32, 32)
                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -329,7 +330,7 @@ public class TriagiadoPaciente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
-        SeleccionPacienteConsulta objeto = new SeleccionPacienteConsulta();
+        PacientesConTriage objeto = new PacientesConTriage();
         objeto.setVisible(true);
         dispose();
     }//GEN-LAST:event_volverActionPerformed
@@ -362,7 +363,6 @@ public class TriagiadoPaciente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -377,6 +377,7 @@ public class TriagiadoPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField jRespiracion;
     private javax.swing.JTextField jSangrado;
     private javax.swing.JTextField jSignosShock;
+    private javax.swing.JLabel jTitulo;
     private javax.swing.JTextField jVomitos;
     private javax.swing.JPanel p;
     private javax.swing.JButton volver;
