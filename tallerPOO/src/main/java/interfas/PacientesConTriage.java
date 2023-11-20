@@ -26,8 +26,8 @@ public class PacientesConTriage extends javax.swing.JFrame {
     public static String paciente_update = "";
     String barra = File.separator;
     DefaultTableModel tabla = new DefaultTableModel();
-    String Ubicacion = System.getProperty("user.dir") + barra + "BaseDatos"
-            + barra + "Consultas" + barra + "PacientesConConsultas.txt";
+    String Ubicacion = System.getProperty("user.dir") + barra + "Archivos"
+            + barra + "EnEsperaAlTriage.txt";
 
     public PacientesConTriage() {
         initComponents();
