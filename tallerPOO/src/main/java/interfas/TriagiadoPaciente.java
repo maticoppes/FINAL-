@@ -37,6 +37,10 @@ public class TriagiadoPaciente extends javax.swing.JFrame {
         jLesionesLeves.setText(listado[10]);
         jSangrado.setText(listado[11]);
         jDolorPe.setText(listado[12]);
+        jColorSugerido.setText(triage.getColorSugerido());
+        jColorFinal.setText(triage.getColorFinal());
+        jMotivoCambio.setText(triage.getMotivoCambio());
+                
     }
 
     /**

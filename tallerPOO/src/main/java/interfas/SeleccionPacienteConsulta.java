@@ -39,7 +39,7 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
 
                 if (fila > -1) {
                     paciente_update = String.valueOf(Tabla.getValueAt(fila, columna));
-                    PantallaTriage informacion_paciente = new PantallaTriage(paciente_update);
+                    TriagiadoPaciente informacion_paciente = new TriagiadoPaciente(Integer.parseInt(paciente_update));
                     informacion_paciente.setVisible(true);
                     dispose();
                 }
