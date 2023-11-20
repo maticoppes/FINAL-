@@ -421,7 +421,7 @@ public class PantallaTriage extends javax.swing.JFrame {
         //String [] listado = {res, pul,dolorAb, dolorPe,lesionGrav,edadd,fiebree,
         //    shockk,lesionesLev,estadoMen,concienciaa,vomitoss,sangra};
         String listado [] = {res, pul, estadoMen, dolorPe, concienciaa, lesionGrav, 
-            edadd, fiebree, vomitoss, dolorAb, shockk, lesionesLev};
+            edadd, fiebree, vomitoss, dolorAb, shockk, lesionesLev,sangra};
         int [] pasados = ColorTriage.numeros(listado);
         
         //String [] triage = new String[]{res, pul,dolorAb, dolorPe,lesionGrav,edadd,fiebree,
