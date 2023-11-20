@@ -27,7 +27,7 @@ public class IngresoDNI extends javax.swing.JFrame {
         String d = Integer.toString(a.getDocumento());
         System.out.println(d +","+ txtDNI.getText()); 
         if (txtDNI.getText().equals(d)) {
-            AdmisionDeEmergencia motivoDeConsulta = new AdmisionDeEmergencia(d);
+            AdmisionEmergencia motivoDeConsulta = new AdmisionEmergencia(d);
             motivoDeConsulta.setVisible(true);
             motivoDeConsulta.setLocationRelativeTo(null);
             esta = true;

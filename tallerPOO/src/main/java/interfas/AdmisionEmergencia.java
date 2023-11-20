@@ -5,6 +5,7 @@
  */
 package interfas;
 
+import com.mycompany.tallerpoo.AdmisionDeEmergencia;
 import com.mycompany.tallerpoo.ListaPacientes;
 import com.mycompany.tallerpoo.Paciente;
 import java.time.LocalDate;
@@ -16,13 +17,13 @@ import persistencia.RegistrarDatosNuevoPaciente;
  *
  * @author Alumno
  */
-public class AdmisionDeEmergencia extends javax.swing.JFrame {
+public class AdmisionEmergencia extends javax.swing.JFrame {
 
     /**
      * Creates new form AdmisionDeEmergencia
      * @param d sd
      */
-    public AdmisionDeEmergencia(String d) {
+    public AdmisionEmergencia(String d) {
         initComponents();
         txtDni.setText(d);;
     }
@@ -178,6 +179,7 @@ public class AdmisionDeEmergencia extends javax.swing.JFrame {
             RegistrarDatosNuevoPaciente cargar = new RegistrarDatosNuevoPaciente();
             cargar.Carga(ubicacion, datos);
 
+            AdmisionDeEmergencia admi = new AdmisionDeEmergencia(LocalDate.now(),LocalTime.now(),txtMotivo.getText());
             ubicacion = System.getProperty("user.dir") + "\\Archivos\\EnEsperaPorAtender.txt";
             datos=paci.getDocumento()+","+paci.getNombre()+","+LocalDate.now() +","+ LocalTime.now().format(DateTimeFormatter.ofPattern("hh:mm:ss"))+","+txtMotivo.getText();
 

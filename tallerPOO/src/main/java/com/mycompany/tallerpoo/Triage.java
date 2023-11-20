@@ -143,7 +143,12 @@ public class Triage {
         this.enfermero = enfermero;
     }
 
-    public Triage(LocalDate Fecha, LocalTime hora, int respiracion, int pulso, int estadoMental, int dolorPe, int consciencia, int lesionesGraves, int edad, int fiebre, int vomitos, int dolorAbdominal, int signosShock, int lesionesLeves, int sangrado, String colorSugerido, String motivoCambio, String colorFinal, AdmisionDeEmergencia admision) {
+    public Triage(LocalDate Fecha, LocalTime hora, int respiracion, int pulso,
+            int estadoMental, int dolorPe, int consciencia, int lesionesGraves,
+            int edad, int fiebre, int vomitos, int dolorAbdominal,
+            int signosShock, int lesionesLeves, int sangrado,
+            String colorSugerido, String motivoCambio, String colorFinal,
+            AdmisionDeEmergencia admision) {
         this.Fecha = Fecha;
         this.hora = hora;
         this.respiracion = respiracion;
