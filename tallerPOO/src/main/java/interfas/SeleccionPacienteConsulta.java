@@ -38,10 +38,10 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
                 int columna = 0;
 
                 if (fila > -1) {
-                    paciente_update = (String) Tabla.getValueAt(fila, columna);
+                    paciente_update = String.valueOf(Tabla.getValueAt(fila, columna));
                     PantallaTriage informacion_paciente = new PantallaTriage(paciente_update);
                     informacion_paciente.setVisible(true);
-                   
+                    dispose();
                 }
             }
         });
@@ -112,17 +112,17 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
 
         Tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2"
+                "Title 1", "Title 2", "Title 3"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

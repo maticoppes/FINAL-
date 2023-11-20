@@ -10,6 +10,9 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 import logica.ColorTriage;
+import com.mycompany.tallerpoo.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
  *
@@ -18,20 +21,17 @@ import logica.ColorTriage;
 public class PantallaTriage extends javax.swing.JFrame {
     public PantallaTriage(String paciente) {
         initComponents();
-        jLabel1.setText("Triage de " + paciente);
+        Paciente paci= DatosTaller.getPacientes().getPorDni(Integer.parseInt(paciente));
+        jLabel22.setText("Triage de " + paci.getNombre());
         
     }
+    
 
    private void mostrar (JPanel p){
             p.setSize(800, 300);
             p.setLocation(0,0);
         
         }
-   
-     public void cargar(String algo){
-       System.out.println(algo);
-       txtColorSugerido.setText(algo);
-   }    
    
    public String pasar(String [] array){
    ColorTriage pase = new ColorTriage();
@@ -45,7 +45,6 @@ public class PantallaTriage extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         p = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         respiracion = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
@@ -77,14 +76,11 @@ public class PantallaTriage extends javax.swing.JFrame {
         btnCarga = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         txtMotivodeCambio = new javax.swing.JTextField();
-        fechaEntrada = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        horaEntrada = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         dolorPecho = new javax.swing.JComboBox<>();
         volver = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel22 = new javax.swing.JLabel();
 
         jLabel2.setText("Respiracion");
 
@@ -93,9 +89,6 @@ public class PantallaTriage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         p.setPreferredSize(new java.awt.Dimension(700, 450));
-
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setText(" ");
 
         jLabel3.setText("Respiracion");
 
@@ -178,14 +171,6 @@ public class PantallaTriage extends javax.swing.JFrame {
 
         jLabel18.setText("Ingrese el motivo del cambio;");
 
-        fechaEntrada.setText("aaaa/mm/dd");
-
-        jLabel19.setText("Fecha");
-
-        jLabel20.setText("Hora");
-
-        horaEntrada.setText("hh:mm");
-
         jLabel21.setText("Sangrado");
 
         dolorPecho.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No presente", "Presente" }));
@@ -204,27 +189,26 @@ public class PantallaTriage extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sin fiebre", "Moderada", "Alta" }));
 
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel22.setText("jLabel22");
+
         javax.swing.GroupLayout pLayout = new javax.swing.GroupLayout(p);
         p.setLayout(pLayout);
         pLayout.setHorizontalGroup(
             pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pLayout.createSequentialGroup()
+                .addContainerGap(47, Short.MAX_VALUE)
                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pLayout.createSequentialGroup()
                         .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lesionesLeves, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
-                            .addComponent(fechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel19)
                             .addComponent(txtColorSugerido, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(37, 37, 37)
                         .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(horaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11)
                             .addComponent(estadoMental, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtColorFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel20)))
+                            .addComponent(txtColorFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pLayout.createSequentialGroup()
                         .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lesionesGraves, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -275,23 +259,22 @@ public class PantallaTriage extends javax.swing.JFrame {
                                         .addGap(32, 32, 32)
                                         .addComponent(volver))
                                     .addComponent(txtMotivodeCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(pulso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pLayout.createSequentialGroup()
                                 .addGap(132, 132, 132)
                                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(dolorAbdomen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel13)
-                                        .addComponent(jLabel1))))
-                            .addComponent(pulso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel9))
-                .addContainerGap(30, Short.MAX_VALUE))
+                                    .addComponent(jLabel13)))))
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28))
         );
         pLayout.setVerticalGroup(
             pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pLayout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(jLabel22)
+                .addGap(32, 32, 32)
                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel8)
@@ -339,30 +322,22 @@ public class PantallaTriage extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel11))))
                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pLayout.createSequentialGroup()
-                        .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pLayout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(txtColorFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pLayout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(txtColorSugerido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel20)))
+                    .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pLayout.createSequentialGroup()
+                            .addGap(2, 2, 2)
+                            .addComponent(txtColorFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pLayout.createSequentialGroup()
+                            .addGap(4, 4, 4)
+                            .addComponent(txtColorSugerido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtMotivodeCambio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(fechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(horaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnaceptar)
-                        .addComponent(btnCarga)
-                        .addComponent(volver)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnaceptar)
+                    .addComponent(btnCarga)
+                    .addComponent(volver))
+                .addGap(36, 36, 36))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -370,14 +345,16 @@ public class PantallaTriage extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(p, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(p, javax.swing.GroupLayout.PREFERRED_SIZE, 732, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(p, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(p, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -422,24 +399,26 @@ public class PantallaTriage extends javax.swing.JFrame {
         String colorSugerida=txtColorSugerido.getText();
         String colorfinal=txtColorFinal.getText();
         String motivo=txtMotivodeCambio.getText();
-        String fecha=fechaEntrada.getText();
-        String hora =horaEntrada.getText();
-        String res = respiracion.getSelectedItem().toString();
-        String pul = pulso.getSelectedItem().toString();
-        String dolorAb = dolorAbdomen.getSelectedItem().toString();
-        String dolorPe = dolorPecho.getSelectedItem().toString();
-        String lesionGrav = lesionesGraves.getSelectedItem().toString();
-        String edadd = edad.getSelectedItem().toString();
-        String fiebree = sangrado.getSelectedItem().toString();
-        String shockk = shock.getSelectedItem().toString();
-        String lesionesLev = lesionesLeves.getSelectedItem().toString();
-        String estadoMen = estadoMental.getSelectedItem().toString();
-        String concienciaa = conciencia.getSelectedItem().toString();
-        String vomitoss = vomitos.getSelectedItem().toString();
-        String sangra = sangrado.getSelectedItem().toString();
-        String [] triage = new String[]{res, pul,dolorAb, dolorPe,lesionGrav,edadd,fiebree,
-            shockk,lesionesLev,estadoMen,concienciaa,vomitoss,sangra,colorSugerida, colorfinal, motivo, fecha, hora};
-        
+        LocalDate fecha= LocalDate.now();
+        LocalTime hora =LocalTime.now();
+        int res =Integer.parseInt(respiracion.getSelectedItem().toString());
+        int pul =Integer.parseInt(pulso.getSelectedItem().toString());
+        int dolorAb = Integer.parseInt(dolorAbdomen.getSelectedItem().toString());
+        int dolorPe = Integer.parseInt(dolorPecho.getSelectedItem().toString());
+        int lesionGrav = Integer.parseInt(lesionesGraves.getSelectedItem().toString());
+        int edadd = Integer.parseInt(edad.getSelectedItem().toString());
+        int fiebree = Integer.parseInt(sangrado.getSelectedItem().toString());
+        int shockk = Integer.parseInt(shock.getSelectedItem().toString());
+        int lesionesLev = Integer.parseInt(lesionesLeves.getSelectedItem().toString());
+        int estadoMen = Integer.parseInt(estadoMental.getSelectedItem().toString());
+        int concienciaa = Integer.parseInt(conciencia.getSelectedItem().toString());
+        int vomitoss = Integer.parseInt(vomitos.getSelectedItem().toString());
+        int sangra = Integer.parseInt(sangrado.getSelectedItem().toString());
+        //String [] triage = new String[]{res, pul,dolorAb, dolorPe,lesionGrav,edadd,fiebree,
+            //shockk,lesionesLev,estadoMen,concienciaa,vomitoss,sangra,colorSugerida, colorfinal, motivo, fecha, hora};
+            
+        Triage triage =  new Triage (fecha,hora,res,pul,estadoMen,dolorPe,concienciaa,lesionGrav,edadd,fiebree,vomitoss,dolorAb,shockk,lesionesLev
+                                      sangra,colorSugerida,motivo,colorfinal);
         
     }//GEN-LAST:event_btnCargaActionPerformed
 
@@ -466,10 +445,7 @@ public class PantallaTriage extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> dolorPecho;
     private javax.swing.JComboBox<String> edad;
     private javax.swing.JComboBox<String> estadoMental;
-    private javax.swing.JTextField fechaEntrada;
-    private javax.swing.JTextField horaEntrada;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -479,10 +455,9 @@ public class PantallaTriage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
