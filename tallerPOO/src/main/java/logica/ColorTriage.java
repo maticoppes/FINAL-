@@ -65,11 +65,11 @@ public class ColorTriage {
         }
 */
         switch (valores[3]) {
-            case "No presente":
-                array[3] = 0;
+            case "Conciente y alerta":
+                array[10] = 0;
                 break;
             default:
-                array[3] = 1;
+                array[10] = 3;
         }
 
         switch (valores[4]) {
@@ -100,41 +100,6 @@ public class ColorTriage {
         }
 
         switch (valores[7]) {
-            case "No presentes":
-                array[7] = 0;
-                break;
-            default:
-                array[7] = 3;
-        }
-
-        switch (valores[8]) {
-            case "No presentes":
-                array[8] = 0;
-                break;
-            default:
-                array[8] = 1;
-        }
-
-        switch (valores[9]) {
-             case "No presente":
-                array[9] = 0;
-                break;
-            case "Moderado":
-                array[9] = 1;
-                break;
-            default:
-                array[9] = 2;
-        }
-
-        switch (valores[10]) {
-            case "Conciente y alerta":
-                array[10] = 0;
-                break;
-            default:
-                array[10] = 3;
-        }
-
-        switch (valores[11]) {
             case "Sin vomitos":
                 array[11] = 0;
                 break;
@@ -145,7 +110,34 @@ public class ColorTriage {
                 array[11] = 2;
         }
 
-        switch (valores[12]) {
+        switch (valores[8]) {
+            case "No presente":
+                array[9] = 0;
+                break;
+            case "Moderado":
+                array[9] = 1;
+                break;
+            default:
+                array[9] = 2;
+        }
+
+        switch (valores[9]) {
+            case "No presente":
+                array[4] = 0;
+                break;
+            default:
+                array[4] = 2;
+        }
+
+        switch (valores[10]) {
+            case "No presente":
+                array[4] = 0;
+                break;
+            default:
+                array[4] = 2;
+        }
+
+        switch (valores[11]) {
             case "No Presente":
                 array[12] = 0;
                 break;
@@ -154,6 +146,14 @@ public class ColorTriage {
                 break;
             default:
                 array[12] = 2;
+        }
+
+        switch (valores[12]) {
+            case "No presente":
+                array[4] = 0;
+                break;
+            default:
+                array[4] = 2;
         }
 
         return array;
