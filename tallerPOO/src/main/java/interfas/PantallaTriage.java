@@ -13,15 +13,19 @@ import logica.ColorTriage;
 import com.mycompany.tallerpoo.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+
 
 /**
  *
  * @author Alumno
  */
 public class PantallaTriage extends javax.swing.JFrame {
+
+    public static Paciente paci;
     public PantallaTriage(String paciente) {
         initComponents();
-        Paciente paci= DatosTaller.getPacientes().getPorDni(Integer.parseInt(paciente));
+        paci= DatosTaller.getPacientes().getPorDni(Integer.parseInt(paciente));
         jLabel22.setText("Triage de " + paci.getNombre());
         
     }
@@ -416,9 +420,20 @@ public class PantallaTriage extends javax.swing.JFrame {
         int sangra = Integer.parseInt(sangrado.getSelectedItem().toString());
         //String [] triage = new String[]{res, pul,dolorAb, dolorPe,lesionGrav,edadd,fiebree,
             //shockk,lesionesLev,estadoMen,concienciaa,vomitoss,sangra,colorSugerida, colorfinal, motivo, fecha, hora};
-            
-        Triage triage =  new Triage (fecha,hora,res,pul,estadoMen,dolorPe,concienciaa,lesionGrav,edadd,fiebree,vomitoss,dolorAb,shockk,lesionesLev
-                                      sangra,colorSugerida,motivo,colorfinal);
+        
+        ArrayList<AdmisionDeEmergencia>lista=DatosTaller.getAdmisiones().getAdmisiones();
+        AdmisionDeEmergencia encontrado=null;
+        for (AdmisionDeEmergencia admis : lista){
+            if(paci==admis.getPaciente()){
+                encontrado = admis;
+            }
+        }
+        Triage triage =  new Triage (fecha,hora,res,pul,estadoMen,dolorPe,concienciaa,lesionGrav,edadd,fiebree,vomitoss,dolorAb,shockk,lesionesLev,
+                                      sangra,colorSugerida,motivo,colorfinal,encontrado);
+        
+        String ubi=(System.getProperty("user.dir") + "/Archivos/Triage.txt");
+        DatosTaller.getTriages().agregar(triage);
+        DatosTaller.getTriages().agregarArchivo(ubi,triage);
         
     }//GEN-LAST:event_btnCargaActionPerformed
 

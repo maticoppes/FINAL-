@@ -6,6 +6,7 @@
 package interfas;
 
 import com.mycompany.tallerpoo.AdmisionDeEmergencia;
+import com.mycompany.tallerpoo.DatosTaller;
 import com.mycompany.tallerpoo.ListaPacientes;
 import com.mycompany.tallerpoo.Paciente;
 import java.time.LocalDate;
@@ -182,7 +183,8 @@ public class AdmisionEmergencia extends javax.swing.JFrame {
             AdmisionDeEmergencia admi = new AdmisionDeEmergencia(LocalDate.now(),LocalTime.now(),txtMotivo.getText());
             ubicacion = System.getProperty("user.dir") + "\\Archivos\\EnEsperaPorAtender.txt";
             datos=paci.getDocumento()+","+paci.getNombre()+","+LocalDate.now() +","+ LocalTime.now().format(DateTimeFormatter.ofPattern("hh:mm:ss"))+","+txtMotivo.getText();
-
+            DatosTaller.getAdmisiones().agregar(admi);
+            DatosTaller.getAdmisiones().agregarAlArchivo(ubicacion, admi);
             cargar.Carga(ubicacion, datos);
             this.dispose();
             
