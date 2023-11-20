@@ -268,7 +268,7 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -291,16 +291,7 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         }else{
             System.out.println("El rol es inadecuado");
         }
-        /*else{
-            String datos =  txtDni.getText()+";"+txtNombre.getText()+","+","+
-            txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
-            txtTelCel.getText()+","+txtEstadoCivil.getText()+","+txtPersonaCont.getText()+","+
-            txtContrasenia.getText()+","+txtRol.getText()+","+ ","+txtSector.getText()+","+txtContrasenia.getText();
-            direccion(txtRol.getText(), txtSector.getText());
-            
-            GuardarDatosNuevoPacientes cargar = new GuardarDatosNuevoPacientes();
-            cargar.Carga(lugar, datos);
-        }*/
+        
         
     }//GEN-LAST:event_btnCargarActionPerformed
 
