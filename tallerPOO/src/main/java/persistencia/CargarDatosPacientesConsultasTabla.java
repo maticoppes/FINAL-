@@ -1,5 +1,7 @@
 package persistencia;
 
+import com.mycompany.tallerpoo.AdmisionDeEmergencia;
+import com.mycompany.tallerpoo.DatosTaller;
 import com.mycompany.tallerpoo.Paciente;
 import com.mycompany.tallerpoo.Persona;
 import java.io.BufferedReader;
@@ -78,6 +80,7 @@ public class CargarDatosPacientesConsultasTabla {
      */    
     
     public ArrayList<Paciente> leer(String archivo) {
+
         try {
             try(BufferedReader reader = new BufferedReader(new FileReader(archivo))) {
                 String linea;

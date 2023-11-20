@@ -5,6 +5,8 @@
  */
 package interfas;
 
+import com.mycompany.tallerpoo.AdmisionDeEmergencia;
+import com.mycompany.tallerpoo.DatosTaller;
 import com.mycompany.tallerpoo.ListaPacientes;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -70,8 +72,11 @@ public class PacientesConTriage extends javax.swing.JFrame {
     }
 
     private void agregar(Paciente a) {
+        AdmisionDeEmergencia admi;
         if (a != null) {
-            Object[] fila = {a.getDocumento(),a.getNombre(), a.getAdmisiones()};
+            admi = DatosTaller.getAdmisiones().buscarAdmision(a.getDocumento());
+            
+            Object[] fila = {a.getDocumento(),a.getNombre(), admi.getMotivoDeConsulta(), admi.getTriage().getColorFinal()};
             tabla.addRow(fila);
         }
     }
