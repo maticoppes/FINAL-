@@ -198,5 +198,13 @@ public class ListaAdmisiones {
         }
 
     }
-
+    
+    public AdmisionDeEmergencia buscarAdmision(int dni){
+        AdmisionDeEmergencia admiEncontrada = new AdmisionDeEmergencia();
+        for(AdmisionDeEmergencia admi:this.admisiones){
+            if(admi.getPaciente().getDocumento() == dni)
+                admiEncontrada = admi;
+        }
+        return admiEncontrada;
+    } 
 }

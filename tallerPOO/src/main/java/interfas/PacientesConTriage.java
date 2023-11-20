@@ -29,19 +29,20 @@ public class PacientesConTriage extends javax.swing.JFrame {
 
     public PacientesConTriage() {
         initComponents();
-        String[] titulo = new String[]{"Nombre", "Motivo"};
+        String[] titulo = new String[]{"DNI","Nombre", "Motivo", "Color"};
         tabla.setColumnIdentifiers(titulo);
         Tabla.setModel(tabla);
         Tabla.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 int fila = Tabla.rowAtPoint(e.getPoint());
-                int columna = 1;
+                int columna = 0;
 
                 if (fila > -1) {
                     paciente_update = (String) Tabla.getValueAt(fila, columna);
-                    MotivoDeConsulta informacion_paciente = new MotivoDeConsulta();
+                    TriagiadoPaciente informacion_paciente = new TriagiadoPaciente(Integer.parseInt(paciente_update));
                     informacion_paciente.setVisible(true);
+                    dispose();
                 }
             }
         });
@@ -70,7 +71,7 @@ public class PacientesConTriage extends javax.swing.JFrame {
 
     private void agregar(Paciente a) {
         if (a != null) {
-            Object[] fila = {a.getNombre(), a.getAdmisiones()};
+            Object[] fila = {a.getDocumento(),a.getNombre(), a.getAdmisiones()};
             tabla.addRow(fila);
         }
     }

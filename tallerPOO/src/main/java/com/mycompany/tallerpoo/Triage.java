@@ -144,9 +144,9 @@ public class Triage {
     }
 
     public Triage(LocalDate Fecha, LocalTime hora, int respiracion, int pulso,
-            int estadoMental, int dolorPe, int consciencia, int lesionesGraves,
+            int estadoMental, int consciencia, int lesionesGraves,
             int edad, int fiebre, int vomitos, int dolorAbdominal,
-            int signosShock, int lesionesLeves, int sangrado,
+            int signosShock, int lesionesLeves, int sangrado, int dolorPe,
             String colorSugerido, String motivoCambio, String colorFinal,
             AdmisionDeEmergencia admision) {
         this.Fecha = Fecha;
@@ -178,6 +178,7 @@ public class Triage {
      * @param respiracion
      * @param pulso
      * @param estadoMental
+     * @param dolorPe
      * @param consciencia
      * @param lesionesGraves
      * @param edad
@@ -194,7 +195,7 @@ public class Triage {
      * @param admision 
      */
     
-    public Triage(LocalDate Fecha, LocalTime hora, int respiracion, int pulso, int estadoMental,int dolorPe, int consciencia, int lesionesGraves, int edad, int fiebre, int vomitos, int dolorAbdominal, int signosShock, int lesionesLeves, int sangrado, String colorSugerido, String motivoCambio, String colorFinal, Medico medico, AdmisionDeEmergencia admision) {
+    public Triage(LocalDate Fecha, LocalTime hora, int respiracion, int pulso, int estadoMental, int consciencia, int lesionesGraves, int edad, int fiebre, int vomitos, int dolorAbdominal, int signosShock, int lesionesLeves, int sangrado,int dolorPe, String colorSugerido, String motivoCambio, String colorFinal, Medico medico, AdmisionDeEmergencia admision) {
         this.Fecha = Fecha;
         this.hora = hora;
         this.respiracion = respiracion;
@@ -581,7 +582,8 @@ public class Triage {
      * @param respiracion La puntuación de respiración.
      * @param pulso La puntuación de pulso.
      * @param estadoMental La puntuación del estado mental.
-     * @param consciencia La puntuación de consciencia.
+     * @param dolorPe
+     * @param conciencia
      * @param lesionesGraves La puntuación de lesiones graves.
      * @param edad La puntuación de edad.
      * @param fiebre La puntuación de fiebre.
@@ -596,11 +598,11 @@ public class Triage {
     
       
     public  String  obtenerColorSugerido  (int respiracion, int pulso 
-                                          ,int estadoMental,int dolorPe,int conciencia, int lesionesGraves
+                                          ,int estadoMental,int consciencia, int lesionesGraves
                                           ,int edad, int fiebre, int vomito, int dolorAbdominal
-                                          ,int signosShock, int lesionesLeves,int sangrado){
+                                          ,int signosShock, int lesionesLeves,int sangrado,int dolorPe){
     
-        int suma = respiracion + pulso + estadoMental + conciencia + lesionesGraves + edad + fiebre + vomito + 
+        int suma = respiracion + pulso + estadoMental + consciencia + lesionesGraves + edad + fiebre + vomito + 
                 dolorAbdominal + signosShock + lesionesLeves + sangrado + dolorPe;
         String color;
 
@@ -728,6 +730,146 @@ public class Triage {
 
     return lista;
 }    
+    public String [] pasarAColor(){
+    String [] array = new String[13];
+    
+    switch (this.respiracion){
+        case 0: 
+            array[0]="Normal";
+            break;
+        case 1:
+            array[0]="Moderada";
+            break;
+        default:
+            array[0]="Grave";
+            break;
+    }
+    
+    switch (this.pulso){
+        case 0: 
+            array[1]="Normal";
+            break;
+        default:
+            array[1]="Anormal";
+            break;
+    }
+    
+    switch (this.estadoMental){
+        case 0: 
+            array[2]="Normal";
+            break;
+        case 1:
+            array[2]="Leve";
+            break;
+        default:
+            array[2]="Grave";
+            break;
+    }
+    
+    switch (this.consciencia){
+        case 0: 
+            array[3]="Consciente y alerta";
+            break;
+        default:
+            array[3]="Perdida de consciencia";
+            break;
+    }
+    
+    switch (this.lesionesGraves){
+        case 0: 
+            array[4]="No presente";
+            break;
+        default:
+            array[4]="Presente";
+            break;
+    }
+    
+    switch (this.edad){
+        case 0: 
+            array[5]="Adulto";
+            break;
+        default:
+            array[5]="Niño o anciano";
+            break;
+    }
+    
+    switch (this.fiebre){
+        case 0: 
+            array[6]="Sin fiebre";
+            break;
+        case 1:
+            array[6]="Moderada";
+            break;
+        default:
+            array[6]="Alta";
+            break;
+    }
+    
+    switch (this.vomitos){
+        case 0: 
+            array[7]="sin vomitos";
+            break;
+        case 1:
+            array[7]="Moderado";
+            break;
+        default:
+            array[7]="Intensos";
+            break;
+    }
+    
+    switch (this.dolorAbdominal){
+        case 0: 
+            array[8]="No presente";
+            break;
+        case 1: 
+            array[8]="Moderado";
+        default:
+            array[8]="Severo";
+            break;
+    }
+    
+        switch (this.signosShock){
+        case 0: 
+            array[9]="No presente";
+            break;
+        default:
+            array[9]="Presente";
+            break;
+    }
+    
+    switch (this.lesionesLeves){
+        case 0:
+            array[10] = "No presente";
+            break;
+        default:
+            array[10] = "Presente";
+            break;
+    }
+        
+    
+    switch (this.sangrado){
+        case 0: 
+            array[11]="No presente";
+            break;
+        case 1:
+            array[11] = "Sangrado moderado";
+            break;
+        default:
+            array[11]="Sangrado intenso";
+            break;
+    }
+    
+     switch (this.dolorPe){
+        case 0: 
+            array[12]="No presente";
+            break;
+        default:
+            array[12]="Presente";
+            break;
+    }
+    
+    return array;
+    } 
     
     /**
      * Devuelve una representación en forma de cadena de la instancia actual de Triage.

@@ -391,6 +391,7 @@ public class PantallaTriage extends javax.swing.JFrame {
         String concienciaa = conciencia.getSelectedItem().toString();
         String vomitoss = vomitos.getSelectedItem().toString();
         String sangra = sangrado.getSelectedItem().toString();
+        
         String [] lista = {res, pul,dolorAb, dolorPe,lesionGrav,edadd,fiebree,
             shockk,lesionesLev,estadoMen,concienciaa,vomitoss,sangra};
     
