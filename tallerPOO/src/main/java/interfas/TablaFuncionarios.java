@@ -29,20 +29,21 @@ public class TablaFuncionarios extends javax.swing.JFrame {
     
     public TablaFuncionarios() {
         initComponents();
-           String[] titulo = new String[]{"Nombre", "Rol", "Sector"};
+           String[] titulo = new String[]{"DNI","Nombre", "Rol", "Sector"};
         tabla.setColumnIdentifiers(titulo);
         Tabla.setModel(tabla);
         Tabla.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 int fila = Tabla.rowAtPoint(e.getPoint());
-                int columna = 1;
+                int columna = 0;
 
                 if (fila > -1) {
-                    paciente_update = (String) Tabla.getValueAt(fila, columna);
-                    PantallaTriage informacion_paciente = new PantallaTriage();
-                    informacion_paciente.setVisible(true);
-                   
+                    paciente_update = String.valueOf( Tabla.getValueAt(fila, columna));
+                    InfoFuncionario objeto = new InfoFuncionario(paciente_update);
+                    objeto.setVisible(true);
+                    objeto.setLocationRelativeTo(null);
+                    dispose();
                 }
             }
         });
@@ -68,7 +69,7 @@ public class TablaFuncionarios extends javax.swing.JFrame {
     }
     
      private void agregar(FuncionarioGeneral a) {
-            Object[] fila = {a.getNombre(), a.getRol(), a.getSector()};
+            Object[] fila = {a.getDocumento(),a.getNombre(), a.getRol(), a.getSector()};
             tabla.addRow(fila);
         }
 
