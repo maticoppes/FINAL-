@@ -108,7 +108,8 @@ public class InterfazDoc extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSelecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelecActionPerformed
-        SeleccionPacienteConsulta paciente = new SeleccionPacienteConsulta();
+        dispose();
+        PacientesConTriage paciente = new PacientesConTriage();
         paciente.setVisible(true);
         paciente.setLocationRelativeTo(null);
 
