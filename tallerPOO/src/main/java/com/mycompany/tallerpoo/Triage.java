@@ -582,6 +582,7 @@ public class Triage {
      * @param respiracion La puntuación de respiración.
      * @param pulso La puntuación de pulso.
      * @param estadoMental La puntuación del estado mental.
+     * @param consciencia
      * @param dolorPe
      * @param conciencia
      * @param lesionesGraves La puntuación de lesiones graves.

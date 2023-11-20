@@ -23,7 +23,20 @@ public class TriagiadoPaciente extends javax.swing.JFrame {
         initComponents();
         AdmisionDeEmergencia admi = DatosTaller.getAdmisiones().buscarAdmision(dniPaciente);
         Triage triage = admi.getTriage();
-        jRespiracion.setText(triage.);
+        String [] listado = triage.pasarAColor();
+        jRespiracion.setText(listado[0]);
+        jPulso.setText(listado[1]);
+        jEstadoMental.setText(listado[2]);
+        jConciencia.setText(listado[3]);
+        jLesionesGraves.setText(listado[4]);
+        jEdad.setText(listado[5]);
+        jFiebre.setText(listado[6]);
+        jVomitos.setText(listado[7]);
+        jDolorAb.setText(listado[8]);
+        jSignosShock.setText(listado[9]);
+        jLesionesLeves.setText(listado[10]);
+        jSangrado.setText(listado[11]);
+        jDolorPe.setText(listado[12]);
     }
 
     /**
