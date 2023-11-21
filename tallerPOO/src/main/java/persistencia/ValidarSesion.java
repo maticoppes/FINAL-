@@ -22,7 +22,9 @@ import java.util.Properties;
 import javax.swing.JOptionPane;
 import logica.Mostrar;
 //
+
 /**
+ * La clase ValidarSesion realiza la validación de la sesión de un usuario.
  *
  * @author Alumno
  */
@@ -33,6 +35,16 @@ public class ValidarSesion {
     String Ubicacion = System.getProperty("user.dir") + barra + "Archivos" + barra + "Funcionario.txt";
     private Component rootPane;
 
+    /**
+     * Valida la sesión del usuario comparando los datos ingresadas con los
+     * datos almacenados.
+     *
+     * @param usuario Nombre de usuario proporcionado.
+     * @param contrasenia Contraseña proporcionada.
+     * @throws FileNotFoundException Si el archivo con los datos no se
+     * encuentra.
+     * @throws IOException Si ocurre un error de lectura.
+     */
     public void sesion(String usuario, String contrasenia) throws FileNotFoundException, IOException {
         BufferedReader reader = new BufferedReader(new FileReader(Ubicacion));
         String linea = reader.readLine();
@@ -48,7 +60,7 @@ public class ValidarSesion {
                     FuncionarioGeneral funci = new FuncionarioGeneral();
                     funci.setDocumento(Integer.parseInt(split[0]));
                     funci.setContrasenia(split[10]);
-                     
+
                     if (funci.getDocumento() == (Integer.parseInt(usuario)) && funci.getContrasenia().equals(contrasenia)) {
                         System.out.println("aaaaasdaasdas");
                         Mostrar mostrar = new Mostrar();

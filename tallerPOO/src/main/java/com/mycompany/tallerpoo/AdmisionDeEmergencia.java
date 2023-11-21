@@ -1,89 +1,100 @@
-
 package com.mycompany.tallerpoo;
+
 import java.time.*;
-import java.util.*;
+
 /**
  * Clase que representan las admisiones de los pacientes.
+ *
  * @author Lucas
  * @see ListaAdmisiones
  */
 public class AdmisionDeEmergencia {
+
     private LocalDate fecha;
     private LocalTime hora;
     private String motivoDeConsulta;
     private Paciente paciente;
     /**
-     * Triage que es realizado luego de la admision. Se inicializa vacio hasta que
-     * un medico/enfermero decida realizar el triage.
+     * Triage que es realizado luego de la admision. Se inicializa vacio hasta
+     * que un medico/enfermero decida realizar el triage.
+     *
      * @see Triage
      */
     private Triage triage;
     /**
-     * Box que es asignado una vez que un medico decida atender al paciente vinculado
-     * a esta admision. Se inicializa vacio hasta que un medico decida realizar la atencion.
+     * Box que es asignado una vez que un medico decida atender al paciente
+     * vinculado a esta admision. Se inicializa vacio hasta que un medico decida
+     * realizar la atencion.
      */
     private Box box;
-    
+
     /**
      * Cnstructor por defecto de la claseo
      */
-    public AdmisionDeEmergencia(){
-        this.fecha=LocalDate.of(1,1,1);
-        this.hora=LocalTime.of(0, 0,0);
-        this.motivoDeConsulta="";
-        this.paciente=new Paciente();
-        this.triage=null;
-        this.box=new Box();
+    public AdmisionDeEmergencia() {
+        this.fecha = LocalDate.of(1, 1, 1);
+        this.hora = LocalTime.of(0, 0, 0);
+        this.motivoDeConsulta = "";
+        this.paciente = new Paciente();
+        this.triage = null;
+        this.box = new Box();
     }
+
     /**
      * Contructor parametrizado de la clase.
+     *
      * @param fecha Fecha pasada por parametros.
      * @param hora Hora pasada por parametros.
-     * @param motivoDeConsulta  Motivo por el cual se atiende pasada por parametros.
+     * @param motivoDeConsulta Motivo por el cual se atiende pasada por
+     * parametros.
      */
     public AdmisionDeEmergencia(LocalDate fecha, LocalTime hora, String motivoDeConsulta) {
         this.fecha = fecha;
         this.hora = hora;
         this.motivoDeConsulta = motivoDeConsulta;
-        this.paciente=new Paciente();
-        this.triage=null;
-        this.box=new Box();
+        this.paciente = new Paciente();
+        this.triage = null;
+        this.box = new Box();
     }
-    
+
     /**
      * Contructor parametrizado de la clase, con el paciente incluido.
+     *
      * @param fecha La fecha de la admisión.
      * @param hora La hora de la admisión.
      * @param motivoDeConsulta El motivo por el cual se atiende al paciente.
      * @param paciente El paciente relacionado con la admisión.
      */
-    public AdmisionDeEmergencia(LocalDate fecha, LocalTime hora, String motivoDeConsulta,Paciente paciente) {
+    public AdmisionDeEmergencia(LocalDate fecha, LocalTime hora, String motivoDeConsulta, Paciente paciente) {
         this.fecha = fecha;
         this.hora = hora;
         this.motivoDeConsulta = motivoDeConsulta;
-        this.paciente=paciente;
-        this.triage=null;
-        this.box=new Box();
+        this.paciente = paciente;
+        this.triage = null;
+        this.box = new Box();
     }
+
     /**
-     * Contructor parametrizado de la clase, con el triage y el paciente incluidos.
+     * Contructor parametrizado de la clase, con el triage y el paciente
+     * incluidos.
+     *
      * @param fecha La fecha de la admisión.
      * @param hora La hora de la admisión.
      * @param motivoDeConsulta El motivo por el cual se atiende al paciente.
      * @param paciente El paciente relacionado con la admisión.
      * @param triage El triage realizado después de la admisión.
      */
-    
+
     public AdmisionDeEmergencia(LocalDate fecha, LocalTime hora, String motivoDeConsulta, Paciente paciente, Triage triage) {
         this.fecha = fecha;
         this.hora = hora;
         this.motivoDeConsulta = motivoDeConsulta;
         this.paciente = paciente;
         this.triage = triage;
-        this.box=new Box();
-        
+        this.box = new Box();
+
     }
-    
+
     /**
      * Obtiene la fecha de la admision.
      *
@@ -191,14 +202,15 @@ public class AdmisionDeEmergencia {
     public void setBox(Box box) {
         this.box = box;
     }
-    
+
     /**
      * Concatena la informacion de la admision en un unico string.
+     *
      * @return String con la informacion concatenada.
      */
-    @Override
+     @Override
     public String toString() {
-        return "AdmisionDeEmergencia{" + "fecha=" + fecha + ", hora=" + hora + ", motivoDeConsulta=" + motivoDeConsulta + ", paciente=" + '}';
+        return "AdmisionDeEmergencia{" + "fecha=" + fecha + ", hora=" + hora + ", motivoDeConsulta=" + motivoDeConsulta + ", paciente=" + paciente + ", triage=" + triage + ", box=" + box + '}';
     }
-            
+
 }

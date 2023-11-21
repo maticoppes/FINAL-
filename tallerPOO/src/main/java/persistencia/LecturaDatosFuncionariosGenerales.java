@@ -10,38 +10,83 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- *
+ * La clase LecturaDatosFuncionariosGenerales se encarga de leer datos de funcionarios generales desde un archivo
+ * de texto y cargarlos en una lista de objetos FuncionarioGeneral.
+ * Además de la lectura de datos, la clase proporciona métodos para agregar, eliminar y buscar funcionarios generales
+ * en la lista.
+ * 
  * @author Usuario
  */
-
 public class LecturaDatosFuncionariosGenerales {
+    
+     /**
+     * Lista que almacena objetos de la clase FuncionarioGeneral.
+     */
     public ArrayList <FuncionarioGeneral> pacientes;
+    
+    /**
+     * Ruta del archivo que contiene los datos de los funcionarios generales.
+     */
     private String Ubicacion = System.getProperty("user.dir") + "/Archivos/Funcionario.txt";
     
+    /**
+     * Constructor por defecto que inicializa la lista de funcionarios generales.
+     */
     public LecturaDatosFuncionariosGenerales() {
         this.pacientes = new ArrayList<FuncionarioGeneral>();
     }
     
+     /**
+     * Constructor que permite inicializar la lista de funcionarios generales con una lista existente.
+     * 
+     * @param pacientes Lista de funcionarios generales.
+     */
     public LecturaDatosFuncionariosGenerales(ArrayList<FuncionarioGeneral> pacientes) {
         this.pacientes = pacientes;
     }
 
+    /**
+     * Obtiene la lista de funcionarios generales.
+     * 
+     * @return Lista de funcionarios generales.
+     */
     public ArrayList<FuncionarioGeneral> getPacientes() {
         return pacientes;
     }
 
+    /**
+     * Establece la lista de funcionarios generales.
+     * 
+     * @param pacientes Lista de funcionarios generales.
+     */
     public void setPacientes(ArrayList<FuncionarioGeneral> pacientes) {
         this.pacientes = pacientes;
     }
     
+    /**
+     * Agrega un funcionario general a la lista.
+     * 
+     * @param paci Funcionario general a agregar.
+     */
     public void agregar(FuncionarioGeneral paci){
         pacientes.add(paci);
     }
     
+    /**
+     * Elimina un funcionario general de la lista.
+     * 
+     * @param paci Funcionario general a eliminar.
+     */
     public void eliminar(FuncionarioGeneral paci){
         pacientes.remove(paci);
     }
     
+    /**
+     * Busca un funcionario general por su número de documento en la lista.
+     * 
+     * @param dni Número de documento del funcionario a buscar.
+     * @return Funcionario general encontrado o null si no se encuentra.
+     */
     public FuncionarioGeneral getPorDni(int dni){
         pacientes = this.leer(Ubicacion);
         for (FuncionarioGeneral paci : this.pacientes){
@@ -52,6 +97,12 @@ public class LecturaDatosFuncionariosGenerales {
         return null;
     }
     
+    /**
+     * Lee los datos de funcionarios generales desde un archivo y los almacena en la lista.
+     * 
+     * @param archivo Ruta del archivo que contiene los datos.
+     * @return Lista de funcionarios generales con los datos leídos.
+     */
     public ArrayList<FuncionarioGeneral> leer(String archivo){
         String barra  = File.separator;
         
@@ -96,6 +147,11 @@ public class LecturaDatosFuncionariosGenerales {
              
      }
 
+    /**
+     * Devuelve una representación en cadena de la lista de funcionarios generales.
+     * 
+     * @return Representación en cadena de la lista de funcionarios generales.
+     */
     @Override
     public String toString() {
         return "ListaPacientes{" + "pacientes=" + pacientes + '}';

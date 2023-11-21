@@ -1,27 +1,29 @@
-
 package com.mycompany.tallerpoo;
-
 
 /**
  * Esta clase representa un box, el cual tiene un numero y puede estar ocupado o
- * desocupado. Un medico puede asignar un box a un paciente a la hora de atenderlo.
+ * desocupado. Un medico puede asignar un box a un paciente a la hora de
+ * atenderlo.
+ *
  * @author Lucas
  * @see Medico
  * @see AdmisionDeEmergencia
  * @see Paciente
  */
 public class Box {
+
     private int numero;
     private boolean ocupado;
 
     /**
      * Constructor por defecto de la clase.
      */
-    public Box() {      
+    public Box() {
     }
-    
+
     /**
      * Constructor parametrizado de la clase.
+     *
      * @param numero numero de box
      * @param ocupado establece si esta ocupado o no.
      */
@@ -29,9 +31,11 @@ public class Box {
         this.numero = numero;
         this.ocupado = ocupado;
     }
-    
+
     /**
-     * Constructor parametrizado de la clase. Se establece el box como desocupado.
+     * Constructor parametrizado de la clase. Se establece el box como
+     * desocupado.
+     *
      * @param numero numero de box
      *
      */
@@ -70,11 +74,21 @@ public class Box {
     /**
      * Establece el estado del box (ocupado o no).
      *
-     * @param ocupado "true" para asignarlo como ocupado, "false" para caso contrario.
+     * @param ocupado "true" para asignarlo como ocupado, "false" para caso
+     * contrario.
      */
     public void setOcupado(boolean ocupado) {
         this.ocupado = ocupado;
     }
 
+    /**
+    * Devuelve una representación de cadena de la instancia actual de la clase Box.
+    * @return Una cadena que representa la instancia actual de Box.
+    */
+    @Override
+    public String toString() {
+        return "Box{" + "numero=" + numero + ", ocupado=" + ocupado + '}';
+    }
 
+    
 }

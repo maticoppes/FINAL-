@@ -1,12 +1,14 @@
-
 package com.mycompany.tallerpoo;
+
 import java.time.*;
-        
+
 /**
  * Esta clase representa la relacion que hay entre un box y una admision.
+ *
  * @author Lucas
  */
 public class AsignacionBox {
+
     /**
      * Fecha a la que se asignó el box.
      */
@@ -19,19 +21,21 @@ public class AsignacionBox {
     private AdmisionDeEmergencia admision;
 
     /**
-     * Constructor parametrizado de la clase. 
+     * Constructor parametrizado de la clase.
+     *
      * @param fecha fecha de la asignacion.
      * @param hora hora de la asignacion
      */
     public AsignacionBox(LocalDate fecha, LocalTime hora) {
         this.fecha = fecha;
         this.hora = hora;
-        this.box=new Box();
-        this.admision=new AdmisionDeEmergencia();
+        this.box = new Box();
+        this.admision = new AdmisionDeEmergencia();
     }
-    
+
     /**
      * Constructor parametrizado de la clase.
+     *
      * @param fecha fecha de la asignacion.
      * @param hora hora de la asignacion
      * @param box box
@@ -43,7 +47,7 @@ public class AsignacionBox {
         this.box = box;
         this.admision = admision;
     }
-        
+
     /**
      * Obtiene la fecha de asignacion.
      *
@@ -115,5 +119,15 @@ public class AsignacionBox {
     public void setAdmision(AdmisionDeEmergencia admision) {
         this.admision = admision;
     }
+
+    /**
+    * Devuelve una representación de cadena de la instancia actual de la clase AsignacionBox.
+    * @return Una cadena que representa la instancia actual de AsignacionBox.
+    */
+    @Override
+    public String toString() {
+        return "AsignacionBox{" + "fecha=" + fecha + ", hora=" + hora + ", box=" + box + ", admision=" + admision + '}';
+    }
+    
 
 }
