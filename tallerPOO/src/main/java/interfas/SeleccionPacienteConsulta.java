@@ -21,7 +21,6 @@ import persistencia.CargarDatosPacientesConsultasTabla;
  */
 public class SeleccionPacienteConsulta extends javax.swing.JFrame {
 
-    public static String box_update = "";
     public static String paciente_update = "";
     String barra = File.separator;
     DefaultTableModel tabla = new DefaultTableModel();
@@ -29,7 +28,7 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
     
     public SeleccionPacienteConsulta() {
         initComponents();
-        String[] titulo = new String[]{"DNI","Nombre", "Motivo", "Box"};
+        String[] titulo = new String[]{"DNI","Nombre", "Motivo"};
         tabla.setColumnIdentifiers(titulo);
         Tabla.setModel(tabla);
         Tabla.addMouseListener(new MouseAdapter() {
@@ -40,8 +39,6 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
 
                 if (fila > -1) {
                     paciente_update = String.valueOf(Tabla.getValueAt(fila, columna));
-                    box_update = String.valueOf(Tabla.getValueAt(fila, 3));
-                    DatosTaller.getBoxes().getPorNumero(Integer.parseInt(box_update)).setOcupado(false);
                     PantallaTriage informacion_paciente = new PantallaTriage(paciente_update);
                     informacion_paciente.setVisible(true);
                     dispose();
@@ -51,11 +48,8 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
     }
 
     private void agregar(Paciente a) {
-            AdmisionDeEmergencia encontrado = null;
-            for(AdmisionDeEmergencia admi : a.getAdmisiones()){
-                encontrado = admi;
-            }
-            Object[] fila = {a.getDocumento(),a.getNombre(), a.getMotivo(), encontrado.getBox().getNumero()};
+            
+            Object[] fila = {a.getDocumento(),a.getNombre(), a.getMotivo()};
             tabla.addRow(fila);
         }
     

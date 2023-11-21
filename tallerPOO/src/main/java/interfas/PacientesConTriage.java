@@ -23,6 +23,7 @@ import persistencia.CargarDatosPacientesConsultasTabla;
  */
 public class PacientesConTriage extends javax.swing.JFrame {
 
+    public static String box_update = "";
     public static String paciente_update = "";
     String barra = File.separator;
     DefaultTableModel tabla = new DefaultTableModel();
@@ -31,7 +32,7 @@ public class PacientesConTriage extends javax.swing.JFrame {
 
     public PacientesConTriage() {
         initComponents();
-        String[] titulo = new String[]{"DNI","Nombre", "Motivo", "Color"};
+        String[] titulo = new String[]{"DNI","Nombre", "Motivo", "Color", "Box"};
         tabla.setColumnIdentifiers(titulo);
         Tabla.setModel(tabla);
         Tabla.addMouseListener(new MouseAdapter() {
@@ -42,6 +43,8 @@ public class PacientesConTriage extends javax.swing.JFrame {
 
                 if (fila > -1) {
                     paciente_update = String.valueOf(Tabla.getValueAt(fila, columna));
+                    box_update = String.valueOf(Tabla.getValueAt(fila, 4));
+                    DatosTaller.getBoxes().getPorNumero(Integer.parseInt(box_update)).setOcupado(false);
                     TriagiadoPaciente informacion_paciente = new TriagiadoPaciente(Integer.parseInt(paciente_update));
                     informacion_paciente.setVisible(true);
                     dispose();
@@ -72,11 +75,13 @@ public class PacientesConTriage extends javax.swing.JFrame {
     }
 
     private void agregar(Paciente a) {
-        AdmisionDeEmergencia admi;
-        if (a != null) {
-            admi = DatosTaller.getAdmisiones().buscarAdmision(a.getDocumento());
+        AdmisionDeEmergencia encontrado = null;
+        if (a != null) {  
+            for(AdmisionDeEmergencia admi : a.getAdmisiones()){
+                encontrado = admi;
+            }
             
-            Object[] fila = {a.getDocumento(),a.getNombre(), admi.getMotivoDeConsulta(), admi.getTriage().getColorFinal()};
+            Object[] fila = {a.getDocumento(),a.getNombre(), encontrado.getMotivoDeConsulta(), encontrado.getTriage().getColorFinal(),encontrado.getBox().getNumero()};
             tabla.addRow(fila);
         }
     }
