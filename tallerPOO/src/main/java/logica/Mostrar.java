@@ -56,19 +56,15 @@ public class Mostrar {
 
                         break;
                     } else {
-                        if (rol.equals("Sector")) {
-                            IngresoDNI doc = new IngresoDNI();
+                        if (rol.equals("Gestor")) {
+                            MenuGestorCentro doc = new MenuGestorCentro();
                             doc.setVisible(true);
                             doc.setLocationRelativeTo(null);
-
                             break;
                         } else {
-                            if (rol.equals("Gestor")) {
-                                MenuGestorCentro doc = new MenuGestorCentro();
+                                IngresoDNI doc = new IngresoDNI();
                                 doc.setVisible(true);
                                 doc.setLocationRelativeTo(null);
-
-                                break;
                             }
                             break;
 
@@ -78,4 +74,3 @@ public class Mostrar {
             }
         }
     }
-}
