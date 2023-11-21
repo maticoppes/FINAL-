@@ -79,8 +79,8 @@ public class LecturaDatosFuncionariosGenerales {
                 paci.setEstadoCivil(split[6]);
                 paci.setCorreoElectronico(split[7]);
                 paci.setRol(split[8]);
-                paci.setContrasenia(split[9]);
-                paci.setSector(split[10]);
+                paci.setContrasenia(split[10]);
+                paci.setSector(split[9]);
                 
                 this.agregar(paci);
                 

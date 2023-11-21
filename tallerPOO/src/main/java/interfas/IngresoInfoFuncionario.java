@@ -62,7 +62,7 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         txtPersonaCont = new javax.swing.JTextField();
         btnCargar = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
-        txtCorreoElec1 = new javax.swing.JTextField();
+        txtCorreoElec = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
         txtMatricula = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -161,7 +161,7 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel14)
-                                    .addComponent(txtCorreoElec1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(txtCorreoElec, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -201,7 +201,7 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTelCel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCorreoElec1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCorreoElec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -218,7 +218,7 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
                     .addComponent(btnCargar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -267,12 +267,13 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         if(variable == true){
             String datos =  txtDni.getText()+","+txtNombre.getText()+","
             +txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
-            txtTelCel.getText()+","+txtEstadoCivil.getText()+","+txtPersonaCont.getText()+","+
-            txtContrasenia.getText()+","+txtRol.getText()+","+txtSector.getText()+","+txtContrasenia.getText();
+            txtTelCel.getText()+","+txtEstadoCivil.getText()+","+
+            txtCorreoElec.getText()+","+txtRol.getText()+","+txtSector.getText()+","+txtContrasenia.getText();
             
             GuardarDatosNuevoPacientes cargar = new GuardarDatosNuevoPacientes();
             cargar.Carga(ubicacion, datos);
             if(txtRol.getText().equals("Medico")){
+                datos += ","+txtMatricula.getText();
                 cargar.Carga(archivoMedico, datos);
             }
                 
@@ -303,7 +304,7 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtContrasenia;
-    private javax.swing.JTextField txtCorreoElec1;
+    private javax.swing.JTextField txtCorreoElec;
     private javax.swing.JTextField txtDni;
     private javax.swing.JTextField txtDomicilio;
     private javax.swing.JTextField txtEstadoCivil;
