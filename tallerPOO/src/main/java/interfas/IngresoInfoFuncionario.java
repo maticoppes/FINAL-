@@ -273,10 +273,10 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
             GuardarDatosNuevoPacientes cargar = new GuardarDatosNuevoPacientes();
             cargar.Carga(ubicacion, datos);
             if(txtRol.getText().equals("Medico")){
-                datos += ","+txtMatricula.getText();
+                datos += "," +txtMatricula.getText();
                 cargar.Carga(archivoMedico, datos);
             }
-                
+            cargar.Carga(ubicacion, datos);
         }else{
             javax.swing.JOptionPane.showMessageDialog(this, "Datos incorrectos");
         }
