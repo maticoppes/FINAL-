@@ -46,6 +46,7 @@ public class Mostrar {
                     break;
                 } else {
                     if (rol.equals("Administrador de Sistemas")) {
+                        System.out.println("eeeeee");
                         PantallaAdminSist doc = new PantallaAdminSist();
                         doc.setVisible(true);
                         doc.setLocationRelativeTo(null);

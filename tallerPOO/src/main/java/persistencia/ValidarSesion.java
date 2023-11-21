@@ -47,11 +47,12 @@ public class ValidarSesion {
                     String[] split = linea.split(",");
                     FuncionarioGeneral funci = new FuncionarioGeneral();
                     funci.setDocumento(Integer.parseInt(split[0]));
-                    funci.setContrasenia(split[11]);
-
+                    funci.setContrasenia(split[10]);
+                     
                     if (funci.getDocumento() == (Integer.parseInt(usuario)) && funci.getContrasenia().equals(contrasenia)) {
+                        System.out.println("aaaaasdaasdas");
                         Mostrar mostrar = new Mostrar();
-                        mostrar.valido(split[9]);
+                        mostrar.valido(split[8]);
                         break;
                     } else {
                         linea = reader.readLine();
