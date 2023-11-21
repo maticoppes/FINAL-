@@ -57,23 +57,24 @@ public class IngresoInfoPaciente extends javax.swing.JFrame {
         if(!txtCorreoElec.getText().matches(patronCorreo)){
             variable = true;
         }
-        
-        try {
-        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        LocalDate fecha = LocalDate.parse(txtNacimiento.getText(), formatter1);
-        }catch (DateTimeParseException ex) {
-            javax.swing.JOptionPane.showMessageDialog(null, "Error al analizar la fecha: " + ex.getMessage());
-        }
+        LocalDate fecha = null;
         
         if(!variable){
-        String datos =  txtDni.getText()+","+txtNombre.getText()+","
-        +String.valueOf(fecha)+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
-        txtTelCel.getText()+","+txtEstadoCivil.getText()+","+
-        txtCorreoElec.getText();
-        GuardarDatosNuevoPacientes cargar = new GuardarDatosNuevoPacientes();
-        cargar.Carga(ubicacion, datos);
+            try{
+            DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+            fecha = LocalDate.parse(txtNacimiento.getText(), formatter1);
+                
+            String datos =  txtDni.getText()+","+txtNombre.getText()+","
+            +fecha.format(formatter1)+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
+            txtTelCel.getText()+","+txtEstadoCivil.getText()+","+
+            txtCorreoElec.getText();
+            GuardarDatosNuevoPacientes cargar = new GuardarDatosNuevoPacientes();
+            cargar.Carga(ubicacion, datos);
+            
+            }catch (DateTimeParseException ex) {
+            javax.swing.JOptionPane.showMessageDialog(null, "Error al analizar la fecha: " + ex.getMessage());
         }
-        else{
+        }else{
             javax.swing.JOptionPane.showMessageDialog(this, "Datos incorrecto");
         }
     }           

@@ -9,8 +9,13 @@ import com.mycompany.tallerpoo.AdmisionDeEmergencia;
 import com.mycompany.tallerpoo.AsignacionBox;
 import com.mycompany.tallerpoo.Box;
 import com.mycompany.tallerpoo.DatosTaller;
+import com.mycompany.tallerpoo.Paciente;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -25,7 +30,8 @@ public class BoxDisponibles extends javax.swing.JFrame {
     /**
      * Creates new form BoxDisponibles
      */
-    private static String box_update;
+    
+    static String box_update;
     DefaultTableModel tabla = new DefaultTableModel(); 
     
     public BoxDisponibles(AdmisionDeEmergencia admi) {
@@ -40,9 +46,12 @@ public class BoxDisponibles extends javax.swing.JFrame {
                 int columna = 0;
                 if (fila >= 0){
                     box_update = String.valueOf(tablaBox.getValueAt(fila, columna));
+                    System.out.println("abueno"+String.valueOf(tablaBox.getValueAt(fila, columna)));
                     DatosTaller.getBoxes().getPorNumero(Integer.parseInt(box_update)).setOcupado(true);
                     admi.setBox(DatosTaller.getBoxes().getPorNumero(Integer.parseInt(box_update)));
+                    System.out.println("a"+admi.getBox());
                     AsignacionBox asignacion = new AsignacionBox(LocalDate.now(),LocalTime.now(),DatosTaller.getBoxes().getPorNumero(Integer.parseInt(box_update)),admi);
+                    DatosTaller.getAsignaciones().agregar(asignacion);
                     dispose();
                 }
             }
@@ -59,11 +68,11 @@ public class BoxDisponibles extends javax.swing.JFrame {
         ArrayList<Box> boxes = DatosTaller.getBoxes().getBoxes();
         for(Box box : boxes){
             if(!box.isOcupado()){
-            agregar(box);
+                agregar(box);
             }
         }
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

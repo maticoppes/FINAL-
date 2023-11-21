@@ -15,8 +15,8 @@ public abstract class Persona {
     private LocalDate fechaNacimiento;
     private String domicilio;
     private int documento;
-    private int telefoFijo;
-    private int telefonoCelular;
+    private long telefoFijo;
+    private long telefonoCelular;
     private String  estadoCivil;
     private String correoElectronico;
 
@@ -127,7 +127,7 @@ public abstract class Persona {
      *
      * @return Número de teléfono fijo de la persona.
      */
-    public int getTelefoFijo() {
+    public long getTelefoFijo() {
         return telefoFijo;
     }
 
@@ -136,7 +136,7 @@ public abstract class Persona {
      *
      * @param telefoFijo Número de teléfono fijo a asignar.
      */
-    public void setTelefoFijo(int telefoFijo) {
+    public void setTelefoFijo(long telefoFijo) {
         this.telefoFijo = telefoFijo;
     }
 
@@ -145,7 +145,7 @@ public abstract class Persona {
      *
      * @return número de teléfono celular de la persona.
      */
-    public int getTelefonoCelular() {
+    public long getTelefonoCelular() {
         return telefonoCelular;
     }
 
@@ -154,7 +154,7 @@ public abstract class Persona {
      *
      * @param telefonoCelular Número de teléfono celular a asignar.
      */
-    public void setTelefonoCelular(int telefonoCelular) {
+    public void setTelefonoCelular(long telefonoCelular) {
         this.telefonoCelular = telefonoCelular;
     }
 

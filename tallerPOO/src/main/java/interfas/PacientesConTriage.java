@@ -29,7 +29,7 @@ public class PacientesConTriage extends javax.swing.JFrame {
 
     public PacientesConTriage() {
         initComponents();
-        String[] titulo = new String[]{"DNI","Nombre", "Motivo", "Color", "Box"};
+        String[] titulo = new String[]{"DNI","Nombre", "Motivo"};
         tabla.setColumnIdentifiers(titulo);
         Tabla.setModel(tabla);
         Tabla.addMouseListener(new MouseAdapter() {
@@ -40,7 +40,7 @@ public class PacientesConTriage extends javax.swing.JFrame {
 
                 if (fila > -1) {
                     paciente_update = String.valueOf(Tabla.getValueAt(fila, columna));
-                    box_update = String.valueOf(Tabla.getValueAt(fila, 4));
+                    box_update = String.valueOf(Tabla.getValueAt(fila, 2));
                     TriagiadoPaciente informacion_paciente = new TriagiadoPaciente(Integer.parseInt(paciente_update),box_update);
                     informacion_paciente.setVisible(true);
                     dispose();
@@ -77,7 +77,7 @@ public class PacientesConTriage extends javax.swing.JFrame {
                 encontrado = admi;
             }
             
-            Object[] fila = {a.getDocumento(),a.getNombre(), encontrado.getMotivoDeConsulta(), encontrado.getTriage().getColorFinal(),encontrado.getBox().getNumero()};
+            Object[] fila = {a.getDocumento(),a.getNombre(), a.getMotivo()};
             tabla.addRow(fila);
         }
     }
@@ -147,7 +147,7 @@ public class PacientesConTriage extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("jButton1");
+        jButton1.setText("<< Atras");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

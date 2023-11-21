@@ -12,7 +12,9 @@ import javax.swing.JPanel;
 import logica.ColorTriage;
 import com.mycompany.tallerpoo.*;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -435,7 +437,7 @@ public class PantallaTriage extends javax.swing.JFrame {
             //shockk,lesionesLev,estadoMen,concienciaa,vomitoss,sangra,colorSugerida, colorfinal, motivo, fecha, hora};
         
         ArrayList<AdmisionDeEmergencia>lista=DatosTaller.getAdmisiones().getAdmisiones();
-        AdmisionDeEmergencia encontrado=null;
+        AdmisionDeEmergencia encontrado=new AdmisionDeEmergencia();
         for (AdmisionDeEmergencia admis : lista){
             if(paci==admis.getPaciente()){
                 encontrado = admis;
@@ -454,8 +456,6 @@ public class PantallaTriage extends javax.swing.JFrame {
         DatosTaller.getTriages().agregarArchivo(ubi,triage);
         
         
-        
-        
         String barra = File.separator;
         
         String Ubicacion = System.getProperty("user.dir") + barra + "Archivos"+barra+"EnEsperaPorAtender.txt";
@@ -464,7 +464,9 @@ public class PantallaTriage extends javax.swing.JFrame {
         } catch (IOException ex) {
             System.out.println("error");
         }
-        
+        ubi=(System.getProperty("user.dir") + "/Archivos/EnEsperaAlTriage.txt");
+
+        agregar(ubi,paci,encontrado.getBox());
     }//GEN-LAST:event_btnCargaActionPerformed
 
     private void dolorPechoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dolorPechoActionPerformed
@@ -476,7 +478,19 @@ public class PantallaTriage extends javax.swing.JFrame {
         objeto.setVisible(true);
         dispose();
     }//GEN-LAST:event_volverActionPerformed
-
+    private void agregar(String archivoNombre, Paciente paciente, Box box){
+        PrintWriter salida= null;
+        try {
+            File archivo= new File(archivoNombre);
+            salida = new PrintWriter(new FileWriter(archivo, true ));            
+                       
+            salida.println(paciente.getDocumento()+","+paciente.getNombre()+","+LocalDate.now()+
+                    ","+LocalTime.now()+","+paciente.getMotivo()+","+box.getNumero());
+            
+        } catch (IOException ex) {
+            
+        }
+    }
     /**
      * @param args the command line arguments
      */

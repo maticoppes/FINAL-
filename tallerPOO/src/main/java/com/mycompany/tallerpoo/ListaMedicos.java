@@ -146,8 +146,8 @@ public class ListaMedicos {
                 medi.setNombre(split[1]);
                 medi.setFechaNacimiento(fechanac);
                 medi.setDomicilio(split[3]);
-                medi.setTelefoFijo(Integer.parseInt(split[4]));
-                medi.setTelefonoCelular(Integer.parseInt(split[5]));
+                medi.setTelefoFijo( Long.parseLong(split[4]));
+                medi.setTelefonoCelular(Long.parseLong(split[5]));
                 medi.setEstadoCivil(split[6]);
                 medi.setCorreoElectronico(split[7]);
                 medi.setMatricula(Integer.parseInt(split[11]));
