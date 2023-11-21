@@ -19,9 +19,8 @@ import persistencia.RegistrarDatosNuevoPaciente;
  */
 public class IngresoInfoFuncionario extends javax.swing.JPanel {
     String barra = File.separator;
-    String ubicacion= System.getProperty("user.dir")+barra+"Archivos"+barra;
-    String [] archivo = {"Medicos.txt","Enfermeros.txt", "GestorCentro.txt",
-        "AdminSistemas.txt", "Sector.txt" }; 
+    String ubicacion= System.getProperty("user.dir")+barra+"Archivos"+barra + "Funcionario.txt";
+    String archivoMedico = System.getProperty("user.dir")+barra+"Archivos"+barra +"Medicos.txt";
     String lugar ="";
     
     
@@ -32,27 +31,6 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
     javax.swing.JOptionPane.showMessageDialog(this, "Registro exitoso");
     }
 
-   public String direccion(String rol, String sector){
-        
-        if(rol.equals("Medico")){
-        lugar = ubicacion+archivo[0];
-        }else
-            if(rol.equals( "Enfermero")){
-            lugar = ubicacion+archivo[1];
-            }else
-                if(rol.equals("GestorCentro")){
-                 lugar = ubicacion+archivo[2];
-                }else
-                    if(rol.equals("AdministradorDeSistemas")){
-                        lugar = ubicacion+archivo[3];
-                    }else{
-                    if(sector.equals("Sector")){
-                        lugar=ubicacion+archivo[4];
-                    }
-                        
-                    }
-    return lugar;
-            }
           
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -283,18 +261,23 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
             if(txtRol.getText().equals("Medico")){
                 variable = true;
             }
+           
         }
         
         if(variable == true){
-            String datos =  txtDni.getText()+";"+txtNombre.getText()+","+","+
-            txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
+            String datos =  txtDni.getText()+","+txtNombre.getText()+","
+            +txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
             txtTelCel.getText()+","+txtEstadoCivil.getText()+","+txtPersonaCont.getText()+","+
-            txtContrasenia.getText()+","+txtRol.getText()+","+ ","+txtSector.getText()+","+txtContrasenia.getText();
-            direccion(txtRol.getText(), txtSector.getText());
+            txtContrasenia.getText()+","+txtRol.getText()+","+txtSector.getText()+","+txtContrasenia.getText();
+            
             GuardarDatosNuevoPacientes cargar = new GuardarDatosNuevoPacientes();
-            cargar.Carga(lugar, datos);
+            cargar.Carga(ubicacion, datos);
+            if(txtRol.getText().equals("Medico")){
+                cargar.Carga(archivoMedico, datos);
+            }
+                
         }else{
-            System.out.println("El rol es inadecuado");
+            javax.swing.JOptionPane.showMessageDialog(this, "Datos incorrectos");
         }
         
         

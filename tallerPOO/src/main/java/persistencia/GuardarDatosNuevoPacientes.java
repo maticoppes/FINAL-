@@ -24,7 +24,6 @@ public class GuardarDatosNuevoPacientes {
      * @param datos     Los datos a guardar en el archivo.
      */
     public void Carga(String Ubicacion, String datos) {
-        System.out.println(Ubicacion);
         File archivo = new File(Ubicacion);
               IngresoInfoFuncionario a = new IngresoInfoFuncionario();
 
