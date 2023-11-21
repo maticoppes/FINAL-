@@ -1,12 +1,17 @@
 package com.mycompany.tallerpoo;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -213,4 +218,39 @@ public class ListaAdmisiones {
         }
         return admiEncontrada;
     }
+    
+    public void eliminarDelArchivoPorDni(String archivo, int dniEliminar) throws IOException{
+        String userDir=System.getProperty("user.dir");
+        String temp=(archivo+"_temp");
+        File inputFile = new File(archivo);
+        File tempFile = new File(temp);
+        
+        System.out.println(tempFile);
+        System.out.println(inputFile);
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+            System.out.println("1");
+            BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
+            System.out.println("2");
+            String linea;
+            
+            while((linea = reader.readLine()) != null) {
+                String []split= linea.split(",");
+                if (Integer.parseInt(split[0])!= dniEliminar){
+                    writer.write(linea + System.getProperty("line.separator"));
+                }
+            }
+            writer.close(); 
+            reader.close(); 
+            
+            Path tempPath = Paths.get(temp);
+            Path originalPath = Paths.get(archivo);
+            Files.move(tempPath, originalPath, StandardCopyOption.REPLACE_EXISTING);
+
+        } catch (FileNotFoundException ex) {
+            System.out.println("error");
+        }
+    }
+
 }

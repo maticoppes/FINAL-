@@ -23,6 +23,7 @@ public class TallerPOO {
 
     public static void main(String[] args) throws IOException {      
 
+        
         System.out.println("");
         //Medico medi=new Medico("Lucas Nuñez",LocalDate.of(2022,1,1),"Alegria 123",44092390,4438354,3454343,"Soltero","lucasmagiconunez@gmail.com",7827);
         LocalDate fecha1 = LocalDate.of(2000, 7, 15);
@@ -41,6 +42,7 @@ public class TallerPOO {
         ListaPacientes listaPaciTriageados=new ListaPacientes();
         ListaTriage prueba = new ListaTriage();
         ListaEnfermeros listaenfermeros=new ListaEnfermeros();
+        
         ////////////////////////////////////////////////
 //        ListaPVarias listavarias=new ListaPVarias();
         
@@ -93,7 +95,7 @@ public class TallerPOO {
         
         
         for (AdmisionDeEmergencia paciente : adm.getAdmisiones()) {
-            System.out.println("Fecha de admision: " + paciente.getFecha());
+            //System.out.println("Fecha de admision: " + paciente.getFecha());
         }
         
         
@@ -110,14 +112,15 @@ public class TallerPOO {
                 if (i==0){colour="Rojo";}if (i==1){colour="Naranja";}
                 if (i==2){colour="Amarillo";}if (i==3){colour="Verde";}
                 if (i==4){colour="Azul";}
-                System.out.println
-        ("Recuento de categoría " + colour + ": " + resultado.get(i));}
+                //System.out.println("Recuento de categoría " + colour + ": " + resultado.get(i));
+        }
         
         
         
         ArrayList<String> res=opa.obtenerTriageCambiadosPorFecha(fecha1,fecha2);
         for( int i=0; i<res.size() ;i++){
-            System.out.println( res.get(i));}                
+           // System.out.println( res.get(i));
+        }                
         
        
        ////////////////////////////////////////////////////////////////////
