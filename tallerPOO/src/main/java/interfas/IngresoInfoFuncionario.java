@@ -267,6 +267,40 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
             variable=true;
         }
         
+        String patronStr = "[a-zA-Z]+";   
+        String patronCorreo = "[a-zA-Z]+@[a-zA-Z]+\\.[a-zA-Z]+";
+        String patronNumero = "\\d{10}";      
+        String patronDni = "\\d{7,8}";
+         String patronFecha ="\\d{4}/\\d{2}/\\d{2}";
+         
+        if(!txtDni.getText().matches(patronDni)){
+            variable = true;
+        }
+        if(txtNombre.getText().matches(patronStr)){
+            variable=true;
+        }
+        if(!txtNacimiento.getText().matches(patronFecha)){
+            variable = true;
+        }
+        if(!txtTelFijo.getText().matches(patronNumero)){
+            variable = true;
+        }    
+        if(!txtTelCel.getText().matches(patronNumero)){
+            variable = true;
+        }
+        if(!txtEstadoCivil.getText().matches(patronStr)){
+            variable = true;
+        }
+        if(!txtCorreoElec.getText().matches(patronCorreo)){
+            variable = true;
+        }
+        if(txtRol.getText().matches(patronStr)){
+            variable=true;
+        }
+        if(txtSector.getText().matches(patronStr)){
+            variable=true;
+        }
+        
         if(variable == false){
             String datos =  txtDni.getText()+","+txtNombre.getText()+","
             +txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+

@@ -454,6 +454,8 @@ public class PantallaTriage extends javax.swing.JFrame {
         DatosTaller.getTriages().agregarArchivo(ubi,triage);
         
         
+        
+        
         String barra = File.separator;
         
         String Ubicacion = System.getProperty("user.dir") + barra + "Archivos"+barra+"EnEsperaPorAtender.txt";

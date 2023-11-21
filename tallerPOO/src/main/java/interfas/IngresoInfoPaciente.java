@@ -5,6 +5,10 @@
  */
 package interfas;
 
+import java.io.File;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import persistencia.GuardarDatosNuevoPacientes;
 import persistencia.RegistrarDatosNuevoPaciente;
 
 /**
@@ -13,12 +17,58 @@ import persistencia.RegistrarDatosNuevoPaciente;
  */
 public class IngresoInfoPaciente extends javax.swing.JFrame {
 
-    /**
-     * Creates new form IngresoInfoPaciente
-     */
+     String barra = File.separator;
+    String ubicacion= System.getProperty("user.dir")+barra+"Archivos"+barra + "Pacientes.txt";
     public IngresoInfoPaciente() {
         initComponents();
     }
+    public void correcto(){
+    javax.swing.JOptionPane.showMessageDialog(this, "Registro exitoso");
+    }
+    
+    private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        
+        boolean variable = false;
+        String patronStr = "[a-zA-Z]+";   
+        String patronCorreo = "[a-zA-Z]+@[a-zA-Z]+\\.[a-zA-Z]+";
+        String patronNumero = "\\d{10}";      
+        String patronDni = "\\d{7,8}";
+        String patronFecha ="\\d{4}/\\d{2}/\\d{2}";
+        
+        if(!txtDni.getText().matches(patronDni)){
+            variable = true;
+        }
+        if(txtNombre.getText().matches(patronStr)){
+            variable=true;
+        }
+        if(!txtNacimiento.getText().matches(patronFecha)){
+            variable = true;
+        }
+        if(!txtTelFijo.getText().matches(patronNumero)){
+            variable = true;
+        }    
+        if(!txtTelCel.getText().matches(patronNumero)){
+            variable = true;
+        }
+        if(!txtEstadoCivil.getText().matches(patronStr)){
+            variable = true;
+        }
+        if(!txtCorreoElec.getText().matches(patronCorreo)){
+            variable = true;
+        }
+        
+        if(!variable){
+        String datos =  txtDni.getText()+","+txtNombre.getText()+","
+        +txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
+        txtTelCel.getText()+","+txtEstadoCivil.getText()+","+
+        txtCorreoElec.getText();
+        GuardarDatosNuevoPacientes cargar = new GuardarDatosNuevoPacientes();
+        cargar.Carga(ubicacion, datos);
+        }
+        else{
+            javax.swing.JOptionPane.showMessageDialog(this, "Datos incorrecto");
+        }
+    }           
 
     
     @SuppressWarnings("unchecked")
@@ -349,7 +399,7 @@ public class IngresoInfoPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCorreoElecActionPerformed
 
     private void btnGuardadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardadoActionPerformed
-        
+       
         
     }//GEN-LAST:event_btnGuardadoActionPerformed
 
