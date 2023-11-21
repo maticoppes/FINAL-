@@ -1,4 +1,1 @@
-44708275,Lucas Nunez,11/09/2008,14:25:02,Vomitos intensivos
-44282919,Matias Coppes,10/05/2023,0:30:03,Sangrado
-4438350,Santiago Labriola,10/05/2023,11:15:03,Tos
-44708275,Lucas Nunez,2023-10-28,09:56:53,Le duele la panza
+44383507,Santiago Labriola,10-05-2023,11:15:03,Tos
