@@ -9,6 +9,7 @@ import com.mycompany.tallerpoo.AdmisionDeEmergencia;
 import com.mycompany.tallerpoo.DatosTaller;
 import com.mycompany.tallerpoo.Paciente;
 import com.mycompany.tallerpoo.Triage;
+import static interfas.PacientesConTriage.box_update;
 
 /**
  *
@@ -19,7 +20,7 @@ public class TriagiadoPaciente extends javax.swing.JFrame {
     /**
      * Creates new form TriagiadoPaciente
      */
-    public TriagiadoPaciente(int dniPaciente) {
+    public TriagiadoPaciente(int dniPaciente, String box) {
         initComponents();
         jTitulo.setText("Triage de: " + DatosTaller.getPacientes().getPorDni(dniPaciente).getNombre());
         AdmisionDeEmergencia admi = DatosTaller.getAdmisiones().buscarAdmision(dniPaciente);
