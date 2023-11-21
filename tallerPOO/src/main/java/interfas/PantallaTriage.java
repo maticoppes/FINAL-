@@ -441,8 +441,12 @@ public class PantallaTriage extends javax.swing.JFrame {
                 encontrado = admis;
             }
         }
-
-         Triage triage = new Triage(fecha, hora,pasados[0],pasados[1],pasados[2],pasados[3],pasados[4],pasados[5],pasados[6],pasados[7],pasados[8],pasados[9],pasados[10],pasados[11],pasados[12],colorSugerida,motivo,colorfinal, encontrado);                             
+        
+        BoxDisponibles box = new BoxDisponibles(encontrado);
+        box.setVisible(true);
+        box.setLocationRelativeTo(null);
+        
+        Triage triage = new Triage(fecha, hora,pasados[0],pasados[1],pasados[2],pasados[3],pasados[4],pasados[5],pasados[6],pasados[7],pasados[8],pasados[9],pasados[10],pasados[11],pasados[12],colorSugerida,motivo,colorfinal, encontrado);                             
             
         encontrado.setTriage(triage);
         String ubi=(System.getProperty("user.dir") + "/Archivos/Triage.txt");

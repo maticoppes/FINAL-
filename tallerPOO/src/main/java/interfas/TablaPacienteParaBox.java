@@ -26,7 +26,7 @@ public class TablaPacienteParaBox extends javax.swing.JFrame {
 
     public TablaPacienteParaBox() {
         initComponents();
-        String[] titulo = new String[]{"Nombre", "Motivo"};
+        String[] titulo = new String[]{"DNI","Nombre", "Motivo"};
         tabla.setColumnIdentifiers(titulo);
         Tabla.setModel(tabla);
         Tabla.addMouseListener(new MouseAdapter() {
@@ -37,8 +37,8 @@ public class TablaPacienteParaBox extends javax.swing.JFrame {
 
                 if (fila > -1) {
                     paciente_update = (String) Tabla.getValueAt(fila, columna);
-                    PantallaTriage informacion_paciente = new PantallaTriage();
-                    informacion_paciente.setVisible(true);
+                   // PantallaTriage informacion_paciente = new PantallaTriage();
+                    //informacion_paciente.setVisible(true);
 
                 }
             }
@@ -46,7 +46,7 @@ public class TablaPacienteParaBox extends javax.swing.JFrame {
     }
 
     private void agregar(Paciente a) {
-        Object[] fila = {a.getNombre(), a.getMotivo()};
+        Object[] fila = {a.getDocumento(),a.getNombre(), a.getMotivo()};
         tabla.addRow(fila);
     }
 

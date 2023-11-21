@@ -7,6 +7,11 @@ import java.io.FileInputStream;
 import java.util.Properties;
 import javax.swing.JOptionPane;
 
+/**
+ * La clase Sesion gestiona el proceso de inicio de sesión de usuarios.
+ *
+ * @author Alumno
+ */
 public class Sesion {
 
     String barra = File.separator;
@@ -15,6 +20,12 @@ public class Sesion {
     private Component rootPane;
     String patron = "\\d{7,8}";
 
+    /**
+     * Realiza el proceso de inicio de sesión.
+     *
+     * @param usuario     El nombre de usuario ingresado.
+     * @param contrasenia La contraseña ingresada.
+     */
     public void sesion(String usuario, String contrasenia) {
 
         //obtengo el nombre del usuario dentro del archivo
