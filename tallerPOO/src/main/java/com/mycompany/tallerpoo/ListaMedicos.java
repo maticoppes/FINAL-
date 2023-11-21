@@ -150,10 +150,10 @@ public class ListaMedicos {
                 medi.setTelefonoCelular(Integer.parseInt(split[5]));
                 medi.setEstadoCivil(split[6]);
                 medi.setCorreoElectronico(split[7]);
-                medi.setMatricula(Integer.parseInt(split[8]));
-                medi.setRol(split[9]);
-                medi.setSector(split[10]);
-                medi.setContrasenia(split[11]);
+                medi.setMatricula(Integer.parseInt(split[11]));
+                medi.setRol(split[8]);
+                medi.setSector(split[9]);
+                medi.setContrasenia(split[10]);
                 
                 this.agregar(medi);
                 

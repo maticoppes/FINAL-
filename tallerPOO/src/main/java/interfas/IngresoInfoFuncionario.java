@@ -257,28 +257,30 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
 
     private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
         boolean variable = false;
-        if(txtMatricula.getText() != null){
+        if(txtMatricula.getText() != null && !txtMatricula.getText().isBlank()){
+            System.out.println("entro");
             if(txtRol.getText().equals("Medico")){
                 variable = true;
+            }else{
+            javax.swing.JOptionPane.showMessageDialog(this, "Datos incorrectos");
             }
            
         }
         
-        if(variable == true){
+        if(variable == false){
             String datos =  txtDni.getText()+","+txtNombre.getText()+","
             +txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
             txtTelCel.getText()+","+txtEstadoCivil.getText()+","+
             txtCorreoElec.getText()+","+txtRol.getText()+","+txtSector.getText()+","+txtContrasenia.getText();
             
             GuardarDatosNuevoPacientes cargar = new GuardarDatosNuevoPacientes();
-            cargar.Carga(ubicacion, datos);
+
             if(txtRol.getText().equals("Medico")){
                 datos += "," +txtMatricula.getText();
                 cargar.Carga(archivoMedico, datos);
+                
             }
             cargar.Carga(ubicacion, datos);
-        }else{
-            javax.swing.JOptionPane.showMessageDialog(this, "Datos incorrectos");
         }
         
         

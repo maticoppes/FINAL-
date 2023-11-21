@@ -23,6 +23,7 @@ public class InfoFuncionario extends javax.swing.JFrame {
         initComponents();
         int dniFuncionario = Integer.parseInt(dni);
         LecturaDatosFuncionariosGenerales buscar = new LecturaDatosFuncionariosGenerales();
+        System.out.println(dniFuncionario);
         FuncionarioGeneral persona =  buscar.getPorDni(dniFuncionario);
         jNombre.setText(persona.getNombre());
         jDni.setText(String.valueOf(persona.getDocumento()));
@@ -107,6 +108,11 @@ public class InfoFuncionario extends javax.swing.JFrame {
         jLabel13.setText("Matricula");
 
         jAtras.setText("<< Atras");
+        jAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAtrasActionPerformed(evt);
+            }
+        });
 
         jNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -258,6 +264,13 @@ public class InfoFuncionario extends javax.swing.JFrame {
     private void jPersonaContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPersonaContactoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPersonaContactoActionPerformed
+
+    private void jAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAtrasActionPerformed
+        TablaFuncionarios tabla= new TablaFuncionarios();
+        tabla.setVisible(true);
+        tabla.setLocationRelativeTo(null);
+        dispose();
+    }//GEN-LAST:event_jAtrasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

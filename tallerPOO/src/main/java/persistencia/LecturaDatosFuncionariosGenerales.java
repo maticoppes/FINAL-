@@ -16,7 +16,7 @@ import java.util.Arrays;
 
 public class LecturaDatosFuncionariosGenerales {
     public ArrayList <FuncionarioGeneral> pacientes;
-    private String Ubicacion = System.getProperty("user.dir") + "/Archivo/Funcionario.txt";
+    private String Ubicacion = System.getProperty("user.dir") + "/Archivos/Funcionario.txt";
     
     public LecturaDatosFuncionariosGenerales() {
         this.pacientes = new ArrayList<FuncionarioGeneral>();
