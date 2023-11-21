@@ -21,7 +21,7 @@ import persistencia.LecturaDatosFuncionariosGenerales;
 public class Mostrar {
 
     String barra = File.separator;
-    String ubicacion = System.getProperty("user.dir") + barra + "Archivos" + barra + "Medicos.txt";
+    String ubicacion = System.getProperty("user.dir") + barra + "Archivos" + barra + "Funcionario.txt";
 
     public void valido(String rol) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(ubicacion));
