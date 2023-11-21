@@ -8,6 +8,7 @@ package interfas;
 import java.io.File;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import persistencia.GuardarDatosNuevoPacientes;
 import persistencia.RegistrarDatosNuevoPaciente;
 
@@ -57,9 +58,16 @@ public class IngresoInfoPaciente extends javax.swing.JFrame {
             variable = true;
         }
         
+        try {
+        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        LocalDate fecha = LocalDate.parse(txtNacimiento.getText(), formatter1);
+        }catch (DateTimeParseException ex) {
+            javax.swing.JOptionPane.showMessageDialog(null, "Error al analizar la fecha: " + ex.getMessage());
+        }
+        
         if(!variable){
         String datos =  txtDni.getText()+","+txtNombre.getText()+","
-        +txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
+        +String.valueOf(fecha)+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
         txtTelCel.getText()+","+txtEstadoCivil.getText()+","+
         txtCorreoElec.getText();
         GuardarDatosNuevoPacientes cargar = new GuardarDatosNuevoPacientes();

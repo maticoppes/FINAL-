@@ -8,6 +8,9 @@ package interfas;
 import com.mycompany.tallerpoo.FuncionarioGeneral;
 import java.awt.Component;
 import java.io.File;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import persistencia.GuardarDatosNuevoPacientes;
@@ -300,10 +303,17 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         if(!txtSector.getText().matches(patronStr)){
             variable=true;
         }
+        try {
+        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        LocalDate fecha = LocalDate.parse(txtNacimiento.getText(), formatter1);
+        }catch (DateTimeParseException ex) {
+            javax.swing.JOptionPane.showMessageDialog(null, "Error al analizar la fecha: " + ex.getMessage());
+        }
+        
         
         if(variable == false){
             String datos =  txtDni.getText()+","+txtNombre.getText()+","
-            +txtNacimiento.getText()+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
+            +String.valueOf(fecha)+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
             txtTelCel.getText()+","+txtEstadoCivil.getText()+","+
             txtCorreoElec.getText()+","+txtRol.getText()+","+txtSector.getText()+","+txtContrasenia.getText();
             
