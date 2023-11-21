@@ -38,7 +38,7 @@ public class IngresoInfoPaciente extends javax.swing.JFrame {
         if(!txtDni.getText().matches(patronDni)){
             variable = true;
         }
-        if(txtNombre.getText().matches(patronStr)){
+        if(!txtNombre.getText().matches(patronStr)){
             variable=true;
         }
         if(!txtNacimiento.getText().matches(patronFecha)){

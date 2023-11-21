@@ -276,7 +276,7 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         if(!txtDni.getText().matches(patronDni)){
             variable = true;
         }
-        if(txtNombre.getText().matches(patronStr)){
+        if(!txtNombre.getText().matches(patronStr)){
             variable=true;
         }
         if(!txtNacimiento.getText().matches(patronFecha)){
@@ -294,10 +294,10 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         if(!txtCorreoElec.getText().matches(patronCorreo)){
             variable = true;
         }
-        if(txtRol.getText().matches(patronStr)){
+        if(!txtRol.getText().matches(patronStr)){
             variable=true;
         }
-        if(txtSector.getText().matches(patronStr)){
+        if(!txtSector.getText().matches(patronStr)){
             variable=true;
         }
         
