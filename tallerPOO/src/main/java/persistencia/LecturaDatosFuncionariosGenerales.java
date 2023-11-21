@@ -13,8 +13,10 @@ import java.util.Arrays;
  *
  * @author Usuario
  */
+
 public class LecturaDatosFuncionariosGenerales {
     public ArrayList <FuncionarioGeneral> pacientes;
+    private String Ubicacion = System.getProperty("user.dir") + "/Archivo/Funcionario.txt";
     
     public LecturaDatosFuncionariosGenerales() {
         this.pacientes = new ArrayList<FuncionarioGeneral>();
@@ -41,6 +43,7 @@ public class LecturaDatosFuncionariosGenerales {
     }
     
     public FuncionarioGeneral getPorDni(int dni){
+        pacientes = this.leer(Ubicacion);
         for (FuncionarioGeneral paci : this.pacientes){
            if (paci.getDocumento()==dni){
                 return paci;
