@@ -29,7 +29,7 @@ public class TablaFuncionarios extends javax.swing.JFrame {
     
     public TablaFuncionarios() {
         initComponents();
-           String[] titulo = new String[]{"DNI","Nombre", "Rol", "Sector"};
+        String[] titulo = new String[]{"DNI","Nombre", "Rol", "Sector"};
         tabla.setColumnIdentifiers(titulo);
         Tabla.setModel(tabla);
         Tabla.addMouseListener(new MouseAdapter() {

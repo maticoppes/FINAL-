@@ -4,8 +4,11 @@
  */
 package interfas;
 
+import com.mycompany.tallerpoo.DatosTaller;
+import com.mycompany.tallerpoo.Paciente;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -30,18 +33,36 @@ public class TablaPacientes extends javax.swing.JFrame {
      */
     public TablaPacientes() {
         initComponents();
+        String[] titulo = new String[]{"DNI","Nombre", "Rol", "Sector"};
+        tabla.setColumnIdentifiers(titulo);
         jTableListaPacientes.setModel(tabla);
         jTableListaPacientes.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e){
                 int fila = jTableListaPacientes.rowAtPoint(e.getPoint());
-                int columna = 2;
+                int columna = 0;
                 if (fila >= 0){
-                    paciente_update = (String) jTableListaPacientes.getValueAt(fila, columna);
+                    paciente_update = String.valueOf(jTableListaPacientes.getValueAt(fila, columna));
+                    InfoPaciente objeto = new InfoPaciente(paciente_update);
+                    objeto.setVisible(true);
+                    objeto.setLocationRelativeTo(null);
+                    dispose();
                 }
             }
         }
         );        
+    }
+    
+    private void agregar(Paciente paciente){
+        Object[] fila = {paciente.getDocumento(),paciente.getNombre()};
+        tabla.addRow(fila);
+    }
+    
+    private void llamar(){
+        ArrayList<Paciente> pacientes = DatosTaller.getPacientes().getPacientes();
+        for(Paciente paciente : pacientes){
+            agregar(paciente);
+        }
     }
 
     /**
@@ -57,6 +78,7 @@ public class TablaPacientes extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableListaPacientes = new javax.swing.JTable();
+        actualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,7 +115,7 @@ public class TablaPacientes extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,17 +126,30 @@ public class TablaPacientes extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE))
         );
 
+        actualizar.setText("Actualizar");
+        actualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(actualizar)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(actualizar)
+                .addContainerGap())
         );
 
         pack();
@@ -132,8 +167,13 @@ public class TablaPacientes extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
+        llamar();
+    }//GEN-LAST:event_actualizarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton actualizar;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
