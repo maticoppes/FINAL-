@@ -12,9 +12,12 @@ import javax.swing.JPanel;
 import logica.ColorTriage;
 import com.mycompany.tallerpoo.*;
 import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -448,9 +451,13 @@ public class PantallaTriage extends javax.swing.JFrame {
         
         
         String barra = File.separator;
+        
         String Ubicacion = System.getProperty("user.dir") + barra + "Archivos"+barra+"EnEsperaPorAtender.txt";
-        
-        
+        try {
+            DatosTaller.getAdmisiones().eliminarDelArchivoPorDni(Ubicacion, encontrado.getPaciente().getDocumento());
+        } catch (IOException ex) {
+            System.out.println("error");
+        }
         
     }//GEN-LAST:event_btnCargaActionPerformed
 
