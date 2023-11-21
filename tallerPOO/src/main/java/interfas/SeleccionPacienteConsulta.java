@@ -62,7 +62,6 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
             
             for (Paciente paciente : pacientes) {
                 agregar(paciente);
-                System.out.println("b");
             }
            
 

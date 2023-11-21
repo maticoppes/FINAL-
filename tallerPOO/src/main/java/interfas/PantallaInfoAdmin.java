@@ -117,14 +117,14 @@ public class PantallaInfoAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListFuncActionPerformed
-         TablaFuncionarios opcion2 = new TablaFuncionarios();
+        TablaFuncionarios opcion2 = new TablaFuncionarios();
         opcion2.setVisible(true);
         opcion2.setLocationRelativeTo(null);
         dispose();
     }//GEN-LAST:event_btnListFuncActionPerformed
 
     private void btnListPacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListPacActionPerformed
-           TablaPacientes opcion1 = new TablaPacientes();
+        TablaPacientes opcion1 = new TablaPacientes();
         opcion1.setVisible(true);
         opcion1.setLocationRelativeTo(null);
         dispose();

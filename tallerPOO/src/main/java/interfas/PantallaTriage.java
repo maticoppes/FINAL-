@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 import logica.ColorTriage;
 import com.mycompany.tallerpoo.*;
+import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -444,6 +445,12 @@ public class PantallaTriage extends javax.swing.JFrame {
         String ubi=(System.getProperty("user.dir") + "/Archivos/Triage.txt");
         DatosTaller.getTriages().agregar(triage);
         DatosTaller.getTriages().agregarArchivo(ubi,triage);
+        
+        
+        String barra = File.separator;
+        String Ubicacion = System.getProperty("user.dir") + barra + "Archivos"+barra+"EnEsperaPorAtender.txt";
+        
+        
         
     }//GEN-LAST:event_btnCargaActionPerformed
 

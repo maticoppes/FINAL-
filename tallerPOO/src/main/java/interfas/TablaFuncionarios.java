@@ -172,6 +172,8 @@ public class TablaFuncionarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) Tabla.getModel();
+        model.setRowCount(0);
         llamar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -179,6 +181,7 @@ public class TablaFuncionarios extends javax.swing.JFrame {
         PantallaAdminSist admin = new PantallaAdminSist();
         admin.setVisible(true);
         admin.setLocationRelativeTo(null);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

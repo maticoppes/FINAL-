@@ -151,7 +151,7 @@ public class PantallaAdminSist extends javax.swing.JFrame {
 
     private void btnVerInfoAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoAdminActionPerformed
         dispose();
-        TablaFuncionarios pantalla= new  TablaFuncionarios();
+        PantallaInfoAdmin pantalla= new PantallaInfoAdmin();
         pantalla.setVisible(true);
         pantalla.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnVerInfoAdminActionPerformed
