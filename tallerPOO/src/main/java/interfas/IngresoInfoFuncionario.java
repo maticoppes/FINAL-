@@ -257,14 +257,14 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
 
     private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
         boolean variable = false;
-        if(txtMatricula.getText() != null && !txtMatricula.getText().isBlank()){
-            System.out.println("entro");
-            if(txtRol.getText().equals("Medico")){
-                variable = true;
-            }else{
-            javax.swing.JOptionPane.showMessageDialog(this, "Datos incorrectos");
-            }
-           
+        if(txtMatricula.getText().isBlank() && txtRol.getText().equals("Medico")){
+            variable=true;
+        }else{
+            System.out.println("mal");
+        }
+       
+        if(!txtMatricula.getText().isBlank() && !txtRol.getText().equals("Medico")){
+            variable=true;
         }
         
         if(variable == false){
@@ -281,6 +281,8 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
                 
             }
             cargar.Carga(ubicacion, datos);
+        }else{
+            javax.swing.JOptionPane.showMessageDialog(this, "Datos incorrecto");
         }
         
         
