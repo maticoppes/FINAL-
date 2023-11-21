@@ -5,12 +5,12 @@
  */
 package interfas;
 
-import com.mycompany.tallerpoo.ListaPacientes;
+import com.mycompany.tallerpoo.AdmisionDeEmergencia;
+import com.mycompany.tallerpoo.DatosTaller;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import com.mycompany.tallerpoo.Paciente;
-import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import persistencia.CargarDatosPacientesConsultasTabla;
@@ -21,6 +21,7 @@ import persistencia.CargarDatosPacientesConsultasTabla;
  */
 public class SeleccionPacienteConsulta extends javax.swing.JFrame {
 
+    public static String box_update = "";
     public static String paciente_update = "";
     String barra = File.separator;
     DefaultTableModel tabla = new DefaultTableModel();
@@ -28,7 +29,7 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
     
     public SeleccionPacienteConsulta() {
         initComponents();
-        String[] titulo = new String[]{"DNI","Nombre", "Motivo"};
+        String[] titulo = new String[]{"DNI","Nombre", "Motivo", "Box"};
         tabla.setColumnIdentifiers(titulo);
         Tabla.setModel(tabla);
         Tabla.addMouseListener(new MouseAdapter() {
@@ -39,6 +40,8 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
 
                 if (fila > -1) {
                     paciente_update = String.valueOf(Tabla.getValueAt(fila, columna));
+                    box_update = String.valueOf(Tabla.getValueAt(fila, 3));
+                    DatosTaller.getBoxes().getPorNumero(Integer.parseInt(box_update)).setOcupado(false);
                     PantallaTriage informacion_paciente = new PantallaTriage(paciente_update);
                     informacion_paciente.setVisible(true);
                     dispose();
@@ -48,7 +51,11 @@ public class SeleccionPacienteConsulta extends javax.swing.JFrame {
     }
 
     private void agregar(Paciente a) {
-            Object[] fila = {a.getDocumento(),a.getNombre(), a.getMotivo()};
+            AdmisionDeEmergencia encontrado = null;
+            for(AdmisionDeEmergencia admi : a.getAdmisiones()){
+                encontrado = admi;
+            }
+            Object[] fila = {a.getDocumento(),a.getNombre(), a.getMotivo(), encontrado.getBox().getNumero()};
             tabla.addRow(fila);
         }
     
