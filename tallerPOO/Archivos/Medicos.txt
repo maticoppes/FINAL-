@@ -3,3 +3,4 @@
 39876234,Roberto Yey,1985/04/01,San Lorenzo O. 328,36829292,42129292,Soltero,pepeee@gmail.com,Enfermero,Guardia,1212,45299
 42218299,Laura Ferro,1999/05/12,San Lorenzo O. 328,36829292,42129292,Soltero,pepeee@gmail.com,Medico,Guardia,1212,45299
 22348901,Andrea Sancho,1950/01/12,San Lorenzo O. 328,36829292,42129292,Soltero,pepeee@gmail.com,Medico,Guardia,1212,45299
+12345678,Pepe Argento,1990/02/03,ad 12,9786543210,9786543210,Casado,pepe@gmail.com,Medico,Enfereria,pepito,123456
