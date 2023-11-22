@@ -47,7 +47,6 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         txtNacimiento = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtRol = new javax.swing.JTextField();
         txtTelFijo = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -58,7 +57,6 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         txtTelCel = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         txtContrasenia = new javax.swing.JTextField();
-        txtEstadoCivil = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         btnCargar = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
@@ -66,6 +64,8 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         txtNombre = new javax.swing.JTextField();
         txtMatricula = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        estadoCivil = new javax.swing.JComboBox<>();
+        rol = new javax.swing.JComboBox<>();
 
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 700));
 
@@ -112,60 +112,68 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
 
         jLabel6.setText("Matricula:");
 
+        estadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Soltero", "Casado" }));
+
+        rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enfermero", "Medico", "Administrador de sistemas", "Sector", "Gestor" }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2)
-                    .addComponent(txtNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtDomicilio)
-                    .addComponent(jLabel5)
-                    .addComponent(txtRol)
-                    .addComponent(jLabel3)
-                    .addComponent(txtNombre))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel2)
+                                .addComponent(txtNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                .addComponent(jLabel4)
+                                .addComponent(txtDomicilio)
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel3)
+                                .addComponent(txtNombre))
+                            .addComponent(rol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(txtEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel13))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(estadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtTelFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel9))
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel13))))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(txtCorreoElec, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel14)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtTelCel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel10))
+                                    .addComponent(txtSector, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtMatricula)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel6)
+                                            .addComponent(txtContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE))))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTelFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(txtCorreoElec, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14)))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnCargar)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtTelCel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10))
-                                .addComponent(txtSector, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtMatricula)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel6)
-                                        .addComponent(txtContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(0, 0, Short.MAX_VALUE))))))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnCargar)))
                 .addContainerGap(84, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -178,10 +186,10 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(estadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -210,8 +218,8 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
                             .addComponent(jLabel10))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtSector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -260,17 +268,17 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
 
     private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
         boolean variable = false;
-        if(txtMatricula.getText().isBlank() && txtRol.getText().equals("Medico")){
+        if(txtMatricula.getText().isBlank() && rol.getSelectedItem().toString().equals("Medico")){
             variable=true;
         }else{
             System.out.println("mal");
         }
        
-        if(!txtMatricula.getText().isBlank() && !txtRol.getText().equals("Medico")){
+        if(!txtMatricula.getText().isBlank() && !rol.getSelectedItem().toString().equals("Medico")){
             variable=true;
         }
         
-        String patronStr = "[a-zA-Z]+";   
+        String patronStr = "^[a-zA-Z\\s]+$";   
         String patronCorreo = "[a-zA-Z]+@[a-zA-Z]+\\.[a-zA-Z]+";
         String patronNumero = "\\d{10}";      
         String patronDni = "\\d{7,8}";
@@ -297,15 +305,11 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         if(!txtTelCel.getText().matches(patronNumero)){
             variable = true;
         }
-        if(!txtEstadoCivil.getText().matches(patronStr)){
-            variable = true;
-        }
+        
         if(!txtCorreoElec.getText().matches(patronCorreo)){
             variable = true;
         }
-        if(!txtRol.getText().matches(patronStr)){
-            variable=true;
-        }
+        
         if(!txtSector.getText().matches(patronStr)){
             variable=true;
         }
@@ -319,12 +323,12 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
                 fecha = LocalDate.parse(txtNacimiento.getText(), formatter1);
                 String datos =  txtDni.getText()+","+txtNombre.getText()+","
                 +fecha.format(formatter1)+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
-                txtTelCel.getText()+","+txtEstadoCivil.getText()+","+
-                txtCorreoElec.getText()+","+txtRol.getText()+","+txtSector.getText()+","+txtContrasenia.getText();
+                txtTelCel.getText()+","+estadoCivil.getSelectedItem().toString()+","+
+                txtCorreoElec.getText()+","+rol.getSelectedItem().toString()+","+txtSector.getText()+","+txtContrasenia.getText();
 
                 GuardarDatosNuevoPacientes cargar = new GuardarDatosNuevoPacientes();
 
-                if(txtRol.getText().equals("Medico")){
+                if(rol.getSelectedItem().toString().equals("Medico")){
                     datos += "," +txtMatricula.getText();
                     cargar.Carga(archivoMedico, datos);
                     
@@ -348,6 +352,7 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCargar;
+    private javax.swing.JComboBox<String> estadoCivil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -363,15 +368,14 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JComboBox<String> rol;
     private javax.swing.JTextField txtContrasenia;
     private javax.swing.JTextField txtCorreoElec;
     private javax.swing.JTextField txtDni;
     private javax.swing.JTextField txtDomicilio;
-    private javax.swing.JTextField txtEstadoCivil;
     private javax.swing.JTextField txtMatricula;
     private javax.swing.JTextField txtNacimiento;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtRol;
     private javax.swing.JTextField txtSector;
     private javax.swing.JTextField txtTelCel;
     private javax.swing.JTextField txtTelFijo;

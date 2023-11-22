@@ -28,19 +28,21 @@ public class EnfermSeleccionPacienteConsulta1 extends javax.swing.JFrame {
     
     public EnfermSeleccionPacienteConsulta1() {
         initComponents();
-        String[] titulo = new String[]{"Nombre", "Motivo"};
+        String[] titulo = new String[]{"DNI","Nombre", "Motivo"};
         tabla.setColumnIdentifiers(titulo);
         Tabla.setModel(tabla);
         Tabla.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 int fila = Tabla.rowAtPoint(e.getPoint());
-                int columna = 1;
+                int columna = 0;
 
                 if (fila > -1) {
-                    paciente_update = (String) Tabla.getValueAt(fila, columna);
+                    paciente_update = String.valueOf( Tabla.getValueAt(fila, columna));
                     PantallaTriage informacion_paciente = new PantallaTriage(paciente_update);
                     informacion_paciente.setVisible(true);
+                    informacion_paciente.setLocationRelativeTo(null);
+                    dispose();
                    
                 }
             }
@@ -48,7 +50,7 @@ public class EnfermSeleccionPacienteConsulta1 extends javax.swing.JFrame {
     }
 
     private void agregar(Paciente a) {
-            Object[] fila = {a.getNombre(), a.getMotivo()};
+            Object[] fila = {a.getDocumento(),a.getNombre(), a.getMotivo()};
             tabla.addRow(fila);
         }
     
@@ -62,7 +64,6 @@ public class EnfermSeleccionPacienteConsulta1 extends javax.swing.JFrame {
             
             for (Paciente paciente : pacientes) {
                 agregar(paciente);
-                System.out.println("b");
             }
            
 
@@ -188,10 +189,11 @@ public class EnfermSeleccionPacienteConsulta1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jScrollPane1MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        dispose();
+        
         InterfazEnferm interfaz = new InterfazEnferm();
         interfaz.setVisible(true);
-        
+        interfaz.setLocationRelativeTo(null);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
