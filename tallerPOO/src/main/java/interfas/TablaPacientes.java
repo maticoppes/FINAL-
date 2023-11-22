@@ -33,7 +33,7 @@ public class TablaPacientes extends javax.swing.JFrame {
      */
     public TablaPacientes() {
         initComponents();
-        String[] titulo = new String[]{"DNI","Nombre"};
+        String[] titulo = new String[]{"DNI","Nombre y apellido"};
         tabla.setColumnIdentifiers(titulo);
         jTableListaPacientes.setModel(tabla);
         jTableListaPacientes.addMouseListener(new MouseAdapter(){

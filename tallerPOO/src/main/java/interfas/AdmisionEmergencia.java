@@ -184,7 +184,7 @@ public class AdmisionEmergencia extends javax.swing.JFrame {
             ubicacion = System.getProperty("user.dir") + "\\Archivos\\EnEsperaPorAtender.txt";
             datos=paci.getDocumento()+","+paci.getNombre()+","+LocalDate.now() +","+ LocalTime.now().format(DateTimeFormatter.ofPattern("hh:mm:ss"))+","+txtMotivo.getText();
             DatosTaller.getAdmisiones().agregar(admi);
-            DatosTaller.getAdmisiones().agregarAlArchivo(ubicacion, admi);
+            //DatosTaller.getAdmisiones().agregarAlArchivo(ubicacion, admi);
             cargar.Carga(ubicacion, datos);
             this.dispose();
             

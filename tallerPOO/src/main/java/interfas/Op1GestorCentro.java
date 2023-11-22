@@ -69,7 +69,6 @@ public class Op1GestorCentro extends javax.swing.JFrame {
         try {
             if (medico != null) {
                 Object[] fila = {medico.getDocumento(), medico.getNombre()};
-                System.out.println(Arrays.toString(fila));
                 tabla.addRow(fila);
             }
         } catch (Exception e) {
@@ -264,9 +263,8 @@ public class Op1GestorCentro extends javax.swing.JFrame {
                     fechaUno, fechaDos, dni);
             // Llama al método para calcular el número de pacientes
             txtResultado.setText(String.valueOf(resultado));
-        } catch (IllegalArgumentException ex) {
-            JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
-        } catch (DateTimeParseException ex) {
+        } 
+        catch (DateTimeParseException ex) {
             JOptionPane.showMessageDialog(null, "Error al analizar la fecha: " + ex.getMessage());
         }
 

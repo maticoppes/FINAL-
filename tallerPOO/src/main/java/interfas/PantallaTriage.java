@@ -17,9 +17,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import persistencia.RegistrarDatosNuevoPaciente;
 
 
 /**
@@ -402,6 +404,8 @@ public class PantallaTriage extends javax.swing.JFrame {
         
         
         txtColorSugerido.setText(pasar(lista));
+        txtColorFinal.setText(txtColorSugerido.getText());
+        
         
        
     }//GEN-LAST:event_btnaceptarActionPerformed
@@ -457,8 +461,25 @@ public class PantallaTriage extends javax.swing.JFrame {
         
         
         String barra = File.separator;
+        String Ubicacion = System.getProperty("user.dir") + barra + "Archivos"+barra+"EnEsperaAlTriage.txt";
         
-        String Ubicacion = System.getProperty("user.dir") + barra + "Archivos"+barra+"EnEsperaPorAtender.txt";
+        PrintWriter salida= null;
+        
+        try {
+            File archivo= new File(Ubicacion);
+            salida = new PrintWriter(new FileWriter(archivo, true )); 
+            
+            RegistrarDatosNuevoPaciente cargar = new RegistrarDatosNuevoPaciente();
+            String datos=encontrado.getPaciente().getDocumento()+","+encontrado.getPaciente().getNombre()+","+LocalDate.now() +","+ LocalTime.now().format(DateTimeFormatter.ofPattern("hh:mm:ss"))+","+encontrado.getMotivoDeConsulta();
+            cargar.Carga(Ubicacion, datos);
+            
+        } catch (IOException ex) {
+            
+        } finally {
+            salida.close();
+        } 
+        
+        Ubicacion = System.getProperty("user.dir") + barra + "Archivos"+barra+"EnEsperaPorAtender.txt";
         try {
             DatosTaller.getAdmisiones().eliminarDelArchivoPorDni(Ubicacion, encontrado.getPaciente().getDocumento());
         } catch (IOException ex) {

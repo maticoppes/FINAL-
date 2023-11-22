@@ -7,9 +7,13 @@ package interfas;
 
 import com.mycompany.tallerpoo.AdmisionDeEmergencia;
 import com.mycompany.tallerpoo.DatosTaller;
+import com.mycompany.tallerpoo.ListaAdmisiones;
 import com.mycompany.tallerpoo.Paciente;
 import com.mycompany.tallerpoo.Triage;
 import static interfas.PacientesConTriage.box_update;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -20,8 +24,11 @@ public class TriagiadoPaciente extends javax.swing.JFrame {
     /**
      * Creates new form TriagiadoPaciente
      */
-    public TriagiadoPaciente(int dniPaciente, String box) {
+    
+    private static int dni;
+    public TriagiadoPaciente(int dniPaciente) {
         initComponents();
+        dni = dniPaciente;
         jTitulo.setText("Triage de: " + DatosTaller.getPacientes().getPorDni(dniPaciente).getNombre());
         AdmisionDeEmergencia admi = DatosTaller.getAdmisiones().buscarAdmision(dniPaciente);
         Triage triage = admi.getTriage();
@@ -90,6 +97,7 @@ public class TriagiadoPaciente extends javax.swing.JFrame {
         jColorSugerido = new javax.swing.JTextField();
         jMotivoCambio = new javax.swing.JTextField();
         jDolorPe = new javax.swing.JTextField();
+        jAtender = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -149,12 +157,19 @@ public class TriagiadoPaciente extends javax.swing.JFrame {
             }
         });
 
+        jAtender.setText("Atender");
+        jAtender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAtenderActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pLayout = new javax.swing.GroupLayout(p);
         p.setLayout(pLayout);
         pLayout.setHorizontalGroup(
             pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pLayout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pLayout.createSequentialGroup()
                         .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,7 +212,9 @@ public class TriagiadoPaciente extends javax.swing.JFrame {
                                             .addComponent(jLabel18)
                                             .addGroup(pLayout.createSequentialGroup()
                                                 .addGap(194, 194, 194)
-                                                .addComponent(volver))
+                                                .addComponent(volver)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jAtender))
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pLayout.createSequentialGroup()
                                                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                     .addGroup(pLayout.createSequentialGroup()
@@ -279,7 +296,9 @@ public class TriagiadoPaciente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jMotivoCambio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
-                        .addComponent(volver))
+                        .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(volver)
+                            .addComponent(jAtender)))
                     .addGroup(pLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -344,8 +363,19 @@ public class TriagiadoPaciente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jDolorPeActionPerformed
 
+    private void jAtenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAtenderActionPerformed
+        String ubicacion = System.getProperty("user.dir")+"/Archivos/EnEsperaAlTriage.txt";
+        ListaAdmisiones lista = new ListaAdmisiones();
+        try {
+            lista.eliminarDelArchivoPorDni(ubicacion, dni);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_jAtenderActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jAtender;
     private javax.swing.JTextField jColorFinal;
     private javax.swing.JTextField jColorSugerido;
     private javax.swing.JTextField jConciencia;

@@ -752,7 +752,10 @@ public class Triage {
                     tri.setColorFinal(array[2]);
 
                     if (date.isAfter(fecha1) && date.isBefore(fecha2)) {
-                        color = "Color sugerido: " + tri.getColorSugerido() + "," + " Color final: " + tri.getColorFinal();
+                        color = "Color sugerido: " + tri.getColorSugerido() 
+                                + ", " + " Color final: " + tri.getColorFinal()
+                                +", Paciente: "+ DatosTaller.getPacientes().getPorDni(Integer.parseInt(array[3])).getNombre() 
+                                + ", DNI: " + array[3];
                         lista.add(color);
                     }
                 }
