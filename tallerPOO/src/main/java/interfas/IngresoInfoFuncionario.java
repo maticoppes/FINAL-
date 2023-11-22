@@ -13,8 +13,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import persistencia.GuardarDatosNuevoPacientes;
-import persistencia.RegistrarDatosNuevoPaciente;
+import persistencia.*;
 
 /**
  *
@@ -81,7 +80,7 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
 
         jLabel4.setText("Domicilio:");
 
-        txtNacimiento.setText("dd/mm/aaaaa");
+        txtNacimiento.setText("aaaa/mm/dd");
         txtNacimiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNacimientoActionPerformed(evt);
@@ -280,6 +279,12 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         if(!txtDni.getText().matches(patronDni)){
             variable = true;
         }
+        
+        LecturaDatosFuncionariosGenerales funcionario = new LecturaDatosFuncionariosGenerales();
+        funcionario.getPorDni(Integer.parseInt(txtDni.getText()));
+        if(funcionario.getPorDni(Integer.parseInt(txtDni.getText()))!=null){
+            variable = true;        
+        }
         if(!txtNombre.getText().matches(patronStr)){
             variable=true;
         }
@@ -310,20 +315,20 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
         
         if(variable == false){
             try{
-                 DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        fecha = LocalDate.parse(txtNacimiento.getText(), formatter1);
-            String datos =  txtDni.getText()+","+txtNombre.getText()+","
-            +fecha.format(formatter1)+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
-            txtTelCel.getText()+","+txtEstadoCivil.getText()+","+
-            txtCorreoElec.getText()+","+txtRol.getText()+","+txtSector.getText()+","+txtContrasenia.getText();
-            
-            GuardarDatosNuevoPacientes cargar = new GuardarDatosNuevoPacientes();
+                DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+                fecha = LocalDate.parse(txtNacimiento.getText(), formatter1);
+                String datos =  txtDni.getText()+","+txtNombre.getText()+","
+                +fecha.format(formatter1)+","+txtDomicilio.getText()+","+txtTelFijo.getText()+","+
+                txtTelCel.getText()+","+txtEstadoCivil.getText()+","+
+                txtCorreoElec.getText()+","+txtRol.getText()+","+txtSector.getText()+","+txtContrasenia.getText();
 
-            if(txtRol.getText().equals("Medico")){
-                datos += "," +txtMatricula.getText();
-                cargar.Carga(archivoMedico, datos);
-                
-            }
+                GuardarDatosNuevoPacientes cargar = new GuardarDatosNuevoPacientes();
+
+                if(txtRol.getText().equals("Medico")){
+                    datos += "," +txtMatricula.getText();
+                    cargar.Carga(archivoMedico, datos);
+                    
+                }
             cargar.Carga(ubicacion, datos);
             }
             catch(DateTimeParseException ex){
@@ -337,7 +342,7 @@ public class IngresoInfoFuncionario extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCargarActionPerformed
 
     private void txtNacimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNacimientoActionPerformed
-        // TODO add your handling code here:
+       //SI
     }//GEN-LAST:event_txtNacimientoActionPerformed
 
 

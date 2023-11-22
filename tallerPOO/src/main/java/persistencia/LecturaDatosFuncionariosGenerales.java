@@ -125,8 +125,8 @@ public class LecturaDatosFuncionariosGenerales {
                
                 paci.setFechaNacimiento(fechanac);
                 paci.setDomicilio(split[3]);
-                paci.setTelefoFijo(Integer.parseInt(split[4]));
-                paci.setTelefonoCelular(Integer.parseInt(split[5]));
+                paci.setTelefoFijo(Long.parseLong(split[4]));
+                paci.setTelefonoCelular(Long.parseLong(split[5]));
                 paci.setEstadoCivil(split[6]);
                 paci.setCorreoElectronico(split[7]);
                 paci.setRol(split[8]);

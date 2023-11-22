@@ -104,7 +104,7 @@ public class CargarDatosPacientesConsultasTabla {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        System.out.println(pacientes.size());
+        
         return pacientes;
     }
     

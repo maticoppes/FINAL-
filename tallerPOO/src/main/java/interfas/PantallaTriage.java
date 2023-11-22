@@ -464,9 +464,6 @@ public class PantallaTriage extends javax.swing.JFrame {
         } catch (IOException ex) {
             System.out.println("error");
         }
-        ubi=(System.getProperty("user.dir") + "/Archivos/EnEsperaAlTriage.txt");
-
-        agregar(ubi,paci,encontrado.getBox());
     }//GEN-LAST:event_btnCargaActionPerformed
 
     private void dolorPechoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dolorPechoActionPerformed

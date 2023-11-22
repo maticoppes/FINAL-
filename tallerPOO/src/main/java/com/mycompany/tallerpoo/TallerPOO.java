@@ -76,21 +76,7 @@ public class TallerPOO {
         abc.setVisible(true);
         abc.setLocationRelativeTo(null);
         
-//        LocalTime hora=LocalTime.of(1, 2,3);
-//        AdmisionDeEmergencia admi=new AdmisionDeEmergencia(fecha1, hora, "ahsdsa");
-//        
-//        medi.hacerTriage(1, 1, 1, 1, 1, 1 ,1, 1, 1, 1, 1, 1,admi);
-//        /////////////////////////////////////////////////////////////////////
-        
-        /*DatosTaller.setTriages(prueba);
-                AdmisionDeEmergencia admision2 = new AdmisionDeEmergencia(
-            LocalDate.of(2023, 10, 26),
-            LocalTime.of(15, 30,30),
-            "Dolor en el pecho", Paciente,Triage);
-        
-        */
-        //listaAdmisiones.agregar(primera);
-        //listaAdmisiones.agregarAlArchivo("Archivos/Admisiones.txt", primera);
+
         ListaAdmisiones adm = DatosTaller.getAdmisiones();        
         
         
@@ -152,12 +138,6 @@ public class TallerPOO {
         //////////////////////////////////////////////////////////////////////////////////////           
         
         
-//        ArrayList lista=ResultadoEstudios.obtenerResultadoEstudios(LocalDate.of(2023,5,10));
-        
-//        System.out.println(lista);
 
-        /*BuscarEstFecha buscar=new BuscarEstFecha();
-        buscar.setVisible(true);
-        buscar.setLocationRelativeTo(null); */
     }
 }

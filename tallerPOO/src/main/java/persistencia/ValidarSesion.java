@@ -62,7 +62,7 @@ public class ValidarSesion {
                     funci.setContrasenia(split[10]);
 
                     if (funci.getDocumento() == (Integer.parseInt(usuario)) && funci.getContrasenia().equals(contrasenia)) {
-                        System.out.println("aaaaasdaasdas");
+                        
                         Mostrar mostrar = new Mostrar();
                         mostrar.valido(split[8]);
                         break;

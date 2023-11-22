@@ -57,6 +57,7 @@ public class PacientesConTriage extends javax.swing.JFrame {
             ArrayList<Paciente> pacientes = pac.leer(Ubicacion);
             if (pacientes != null) {
                 for (Paciente paciente : pacientes) {
+                    
                     agregar(paciente);
 
                 }
@@ -74,13 +75,13 @@ public class PacientesConTriage extends javax.swing.JFrame {
         AdmisionDeEmergencia encontrado = new AdmisionDeEmergencia();
         if (a != null) {  
             for(AdmisionDeEmergencia admi : a.getAdmisiones()){
-                encontrado = admi;
-            }
-            
+                   encontrado = admi; 
+                }
+        }        
             Object[] fila = {a.getDocumento(),a.getNombre(), a.getMotivo()};
             tabla.addRow(fila);
-        }
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
