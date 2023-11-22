@@ -175,7 +175,7 @@ public class AdmisionEmergencia extends javax.swing.JFrame {
         
         if(paci!=null){       
             ubicacion = System.getProperty("user.dir") + "\\Archivos\\Admisiones.txt";
-            String datos = txtDni.getText()+","+LocalDate.now() +","+ LocalTime.now().format(DateTimeFormatter.ofPattern("hh:mm:ss"))+","+txtMotivo.getText();
+            String datos = txtDni.getText()+","+LocalDate.now() +","+ LocalTime.now().format(DateTimeFormatter.ofPattern("hh:mm:ss"))+","+txtMotivo.getText()+","+"2"+","+"01/01/1990"+","+"01:01:01";
 
             RegistrarDatosNuevoPaciente cargar = new RegistrarDatosNuevoPaciente();
             cargar.Carga(ubicacion, datos);

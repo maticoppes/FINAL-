@@ -103,11 +103,11 @@ public class TallerPOO {
         
         
         
-        ArrayList<String> res=opa.obtenerTriageCambiadosPorFecha(fecha1,fecha2);
+        /*ArrayList<String> res=opa.obtenerTriageCambiadosPorFecha(fecha1,fecha2);
         for( int i=0; i<res.size() ;i++){
            // System.out.println( res.get(i));
         }                
-        
+        */
        
        ////////////////////////////////////////////////////////////////////
        

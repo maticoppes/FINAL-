@@ -49,7 +49,7 @@ public class BoxDisponibles extends javax.swing.JFrame {
                     System.out.println("abueno"+String.valueOf(tablaBox.getValueAt(fila, columna)));
                     DatosTaller.getBoxes().getPorNumero(Integer.parseInt(box_update)).setOcupado(true);
                     admi.setBox(DatosTaller.getBoxes().getPorNumero(Integer.parseInt(box_update)));
-                    System.out.println("a"+admi.getBox());
+
                     AsignacionBox asignacion = new AsignacionBox(LocalDate.now(),LocalTime.now(),DatosTaller.getBoxes().getPorNumero(Integer.parseInt(box_update)),admi);
                     DatosTaller.getAsignaciones().agregar(asignacion);
                     dispose();
